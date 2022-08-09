@@ -1,0 +1,1004 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo2.png">
+  <link rel="icon" href="/img/logo2.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="多双升">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="第一章 hexo下Markdown语法(GFM)第一篇博客测试用1. 语法精明阐述 分段  两个回车 换行  两个空格 + 回车 标题   # ~ ######，#号的个数表示几级标题，即表示一级标题到六级标题 强调   **文字** ， __文字__ ， _文字_ ， *文字* ，  文字 引用  &gt; 注意后面紧跟个空格 表格 - 和 | 分割行和列 ， : 控制对其方式 代码块 四个空格">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My First Blog Post | Test Post">
+<meta property="og:url" content="http://example.com/2021/12/08/My%20First%20Blog%20Post/index.html">
+<meta property="og:site_name" content="Liegu Corner">
+<meta property="og:description" content="第一章 hexo下Markdown语法(GFM)第一篇博客测试用1. 语法精明阐述 分段  两个回车 换行  两个空格 + 回车 标题   # ~ ######，#号的个数表示几级标题，即表示一级标题到六级标题 强调   **文字** ， __文字__ ， _文字_ ， *文字* ，  文字 引用  &gt; 注意后面紧跟个空格 表格 - 和 | 分割行和列 ， : 控制对其方式 代码块 四个空格">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images.unsplash.com/photo-1593642634443-44adaa06623a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1925&q=80">
+<meta property="article:published_time" content="2021-12-08T01:54:02.000Z">
+<meta property="article:modified_time" content="2022-02-03T13:09:55.000Z">
+<meta property="article:author" content="多双升">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="node.js">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1593642634443-44adaa06623a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1925&q=80">
+  
+  
+  
+  <title>My First Blog Post | Test Post - Liegu Corner</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading2.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"0cae1c0e6e41b699c896f4814a6f3951","google":"G-TM5TQ042BY","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0cae1c0e6e41b699c896f4814a6f3951";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.google-analytics.com/analytics.js', function() {
+          window.ga = window.ga || function() { (ga.q = ga.q || []).push(arguments) };
+          ga.l = +new Date;
+          ga('create', 'G-TM5TQ042BY', 'auto');
+          ga('send', 'pageview');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>LieGuのBlog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                类别
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-github-fill"></i>
+                站点
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://liegu0317.top/">
+                    
+                    主站
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://liegu0317.gitee.io/">
+                    
+                    镜像站
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="My First Blog Post | Test Post"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-12-08 09:54" pubdate>
+          2021年12月8日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          undefined 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          NaN 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">My First Blog Post | Test Post</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2022年2月3日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="第一章-hexo下Markdown语法-GFM"><a href="#第一章-hexo下Markdown语法-GFM" class="headerlink" title="第一章 hexo下Markdown语法(GFM)"></a>第一章 hexo下Markdown语法(GFM)</h1><h2 id="第一篇博客测试用"><a href="#第一篇博客测试用" class="headerlink" title="第一篇博客测试用"></a>第一篇博客测试用</h2><h2 id="1-语法精明阐述"><a href="#1-语法精明阐述" class="headerlink" title="1. 语法精明阐述"></a>1. 语法精明阐述</h2><ol>
+<li>分段  <code>两个回车</code></li>
+<li>换行  <code>两个空格</code> + <code>回车</code></li>
+<li>标题   <code># ~ ######，#</code>号的个数表示几级标题，即表示一级标题到六级标题</li>
+<li>强调   <code>**文字**</code> ， <code>__文字__</code> ， <code>_文字_</code> ， <code>*文字*</code> ， <code> </code><del>文字</del></li>
+<li>引用  <code>&gt;</code> 注意后面紧跟个空格</li>
+<li>表格 <code>-</code> 和 <code>|</code> 分割行和列 ，<code> :</code> 控制对其方式</li>
+<li>代码块 <code>四个空格</code> 开头或， 使用 <code>```</code>代码内容<code>```</code></li>
+<li>链接 <code>[文字](链接地址)</code>  </li>
+<li>图片 <code>![图片说明](图片地址)</code> ，地址可以是本地路劲，也可以是网络地址</li>
+<li>列表 <code>* </code>， <code>+ </code>， <code>- </code>， <code>1. </code>，选其中之一，注意后面紧跟个空格</li>
+</ol>
+<hr>
+<h2 id="2-标题"><a href="#2-标题" class="headerlink" title="2. 标题"></a>2. 标题</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 欢迎使用Markdown编辑器写博客    //一级标题 对应 &lt;h1&gt; &lt;/h1&gt;</span><br><span class="line">## 标题输入                     //二级标题 对应 &lt;h2&gt; &lt;/h2&gt;</span><br><span class="line">### 三级标题                    //三级标题 对应 &lt;h3&gt; &lt;/h3&gt;</span><br><span class="line">#### 四级标题                   //四级标题 对应 &lt;h4&gt; &lt;/h4&gt;</span><br><span class="line">##### 五级标题                  //五级标题 对应 &lt;h5&gt; &lt;/h5&gt;</span><br><span class="line">###### 六级标题                 //六级标题 对应 &lt;h6&gt; &lt;/h6&gt;</span><br><span class="line">####### 七级标题                //抱歉，木有了（但是他会影响生成的目录，目录行多出一行空行）  </span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>记得星号最后有空格</p>
+</blockquote>
+<hr>
+<h2 id="3-内容强调"><a href="#3-内容强调" class="headerlink" title="3. 内容强调"></a>3. 内容强调</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">字体 **加粗** 显示</span><br><span class="line">字体 *斜体* 显示</span><br><span class="line">字体 ***加粗并斜体*** 显示</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>字体 <strong>加粗</strong> 显示<br>字体 <em>斜体</em> 显示<br>字体 <em><strong>加粗并斜体</strong></em> 显示</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">字体 __加粗__ 显示</span><br><span class="line">字体 _斜体_ 显示</span><br><span class="line">字体 ___加粗并斜体___ 显示</span><br><span class="line">组合 *__加粗并斜体__* 显示</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>字体 <strong>加粗</strong> 显示<br>字体 <em>斜体</em> 显示<br>字体 <em><strong>加粗并斜体</strong></em> 显示<br>组合 <em><strong>加粗并斜体</strong></em> 显示</p>
+</blockquote>
+<hr>
+<h2 id="4-删除线"><a href="#4-删除线" class="headerlink" title="4. 删除线"></a>4. 删除线</h2><p><code>这样来 ~~删除一段文本~~</code></p>
+<blockquote>
+<p>这样来 <del>删除一段文本</del></p>
+</blockquote>
+<hr>
+<h2 id="5-高亮"><a href="#5-高亮" class="headerlink" title="5. 高亮"></a>5. 高亮</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">使用&lt;code&gt;\`&lt;/code&gt;来强调字符    </span><br><span class="line">//想打出 ` (反引号)需要转义的，加&lt;code&gt;&lt;/code&gt;标签强调  </span><br><span class="line">比如&lt;code&gt;`突出背景色`&lt;/code&gt;来显示强调效果</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用<code>`</code>来强调字符<br>想打出  ` (反引号)需要转义的，加<code>&lt;code&gt;&lt;/code&gt;</code>标签强调<br>比如<code><code>突出背景色</code></code>来显示强调效果</p>
+</blockquote>
+<hr>
+<h2 id="6-引用显示"><a href="#6-引用显示" class="headerlink" title="6. 引用显示"></a>6. 引用显示</h2><p>引用过程中任然支持<code>Markdown</code>语法！  </p>
+<h3 id="1-标准使用"><a href="#1-标准使用" class="headerlink" title="1. 标准使用"></a>1. 标准使用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; 每行开始都使用 &#x27;&gt;&#x27;；</span><br><span class="line">&gt; 引用**开始**；</span><br><span class="line">&gt; 引用**换行**；</span><br><span class="line">&gt; 引用**结束**。</span><br><span class="line"></span><br><span class="line">&gt; 还在引用中！</span><br><span class="line"></span><br><span class="line">两个回车结束引用！</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>每行开始都使用 ‘&gt;’；<br>引用<strong>开始</strong>；<br>引用<strong>换行</strong>；<br>引用<strong>结束</strong>。</p>
+</blockquote>
+<blockquote>
+<p>还在引用中！</p>
+</blockquote>
+<p><code>两个回车</code>结束引用！</p>
+<h3 id="2-省略使用"><a href="#2-省略使用" class="headerlink" title="2. 省略使用"></a>2. 省略使用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; 仅第一行加应用；</span><br><span class="line">引用**开始**；</span><br><span class="line">引用**换行**；</span><br><span class="line">引用**结束**；</span><br><span class="line"></span><br><span class="line">两个回车结束引用,不在引用范围内了！</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>仅第一行加应用；<br>引用<strong>开始</strong>；<br>引用<strong>换行</strong>：<br>引用<strong>结束</strong>；</p>
+</blockquote>
+<p><code>两个回车</code>结束引用,不在引用范围内了！</p>
+<h3 id="3-嵌套使用"><a href="#3-嵌套使用" class="headerlink" title="3. 嵌套使用"></a>3. 嵌套使用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt; 动物</span><br><span class="line">&gt;&gt; 水生动物</span><br><span class="line">&gt;&gt; 陆生动物</span><br><span class="line">&gt;&gt;&gt; 猴子</span><br><span class="line">&gt;&gt;&gt; 人</span><br><span class="line">&gt;&gt;&gt;&gt; 程序猿</span><br><span class="line">&gt;&gt;&gt;&gt; 攻城狮</span><br><span class="line">&gt;&gt;产品狗 //这里需要注意，没有空行间隔，忽略降级引用标记</span><br><span class="line">射鸡虱   //这里需要注意，没有空行间隔，忽略降级引用标记</span><br><span class="line"></span><br><span class="line">&gt;&gt; 两栖类动物</span><br><span class="line">&gt;&gt;&gt; 大鳄鱼</span><br><span class="line"></span><br><span class="line">&gt; 唐老鸭</span><br><span class="line"></span><br><span class="line">两个回车结束引用,不在引用范围内了！</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>动物</p>
+<blockquote>
+<p>水生动物<br>陆生动物</p>
+<blockquote>
+<p>猴子<br>人</p>
+<blockquote>
+<p>程序猿<br>攻城狮<br>产品狗 &#x2F;&#x2F;这里需要注意，没有空行间隔，忽略降级引用标记<br>射鸡虱   &#x2F;&#x2F;这里需要注意，没有空行间隔，忽略降级引用标记</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>两栖类动物</p>
+<blockquote>
+<p>大鳄鱼</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>唐老鸭</p>
+</blockquote>
+<p><code>两个回车</code>结束引用,不在引用范围内了！</p>
+<hr>
+<h2 id="7-表格"><a href="#7-表格" class="headerlink" title="7. 表格"></a>7. 表格</h2><blockquote>
+<p>表格语法：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">列1   | 列2 | 列3 </span><br><span class="line">----- | --- | ---- </span><br><span class="line">第1行 | 12  | 13  </span><br><span class="line">第2行 | 22  | 23  </span><br><span class="line">第3行 | 32  | 33  </span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>列1</th>
+<th>列2</th>
+<th>列3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第1行</td>
+<td>12</td>
+<td>13</td>
+</tr>
+<tr>
+<td>第2行</td>
+<td>22</td>
+<td>23</td>
+</tr>
+<tr>
+<td>第3行</td>
+<td>32</td>
+<td>33</td>
+</tr>
+</tbody></table>
+<p>可以使用<code>冒号</code>来定义对齐方式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 左对齐    |  右对齐 | 居中 |</span><br><span class="line">| :-------- | -------:| :--: |</span><br><span class="line">| Computer  | 5000 元 |  1台 |</span><br><span class="line">| Phone     | 1999 元 |  1部 |</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="right">右对齐</th>
+<th align="center">居中</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Computer</td>
+<td align="right">5000 元</td>
+<td align="center">1台</td>
+</tr>
+<tr>
+<td align="left">Phone</td>
+<td align="right">1999 元</td>
+<td align="center">1部</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="8-代码块"><a href="#8-代码块" class="headerlink" title="8. 代码块"></a>8. 代码块</h2><p>代码块语法遵循标准<code> markdown</code> 代码，使用<code>```</code> 开始 ，<code>```</code> 结束 例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">Python</span><br><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">print &#x27;Hello World! </span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>以上代码框及代码输入内容  </p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">print &#x27;Hello World!&#x27;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="特别提示"><a href="#特别提示" class="headerlink" title="特别提示"></a>特别提示</h3><blockquote>
+<p>如何在代码块中打出 <code>```</code><br>实际上是使用 4个<code> 包含 3个</code> 就可以了，想表示更多，最外层+1就好了。</p>
+</blockquote>
+<p><code>````</code>  </p>
+<p><code>```</code><br><code>```</code></p>
+<p><code>````</code></p>
+<hr>
+<h2 id="9-链接插入"><a href="#9-链接插入" class="headerlink" title="9. 链接插入"></a>9. 链接插入</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[我的Blog](https://liegu0317.github.io/)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://liegu0317.github.io/">我的Blog</a></p>
+</blockquote>
+<hr>
+<h2 id="10-图片插入"><a href="#10-图片插入" class="headerlink" title="10. 图片插入"></a>10. 图片插入</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![face](https://liegu0317.github.io/img/logo.png)</span><br></pre></td></tr></table></figure>
+<p><img src="https://liegu0317.github.io/img/face.png" alt="face"></p>
+<hr>
+<h2 id="11-列表"><a href="#11-列表" class="headerlink" title="11.  列表"></a>11.  列表</h2><h3 id="1-无序列表"><a href="#1-无序列表" class="headerlink" title="1. 无序列表"></a>1. 无序列表</h3><figure class="highlight plaintext"><figcaption><span>列表展示</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">* 列表展示</span><br><span class="line">     * 列表展示</span><br><span class="line">+ 列表展示</span><br><span class="line">+ 列表展示</span><br><span class="line">     + 列表展示</span><br><span class="line">- 列表展示</span><br><span class="line">- 列表展示</span><br><span class="line">     - 列表展示</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>列表展示</li>
+<li>列表展示<ul>
+<li>列表展示</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>列表展示</li>
+<li>列表展示<ul>
+<li>列表展示</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>列表展示</li>
+<li>列表展示<ul>
+<li>列表展示</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-有序列表"><a href="#1-有序列表" class="headerlink" title="1. 有序列表"></a>1. 有序列表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. **我是一级序列** </span><br><span class="line">1. **我是一级序列** </span><br><span class="line">1. **我是一级序列** </span><br><span class="line">     1. *我是二级序列* </span><br><span class="line">     1. *我是二级序列* </span><br><span class="line">     1. *我是二级序列* </span><br><span class="line">1. **我是一级序列** </span><br><span class="line">1. **我是一级序列** </span><br><span class="line">     1. *我是二级序列* </span><br><span class="line">     1. *我是二级序列* </span><br><span class="line">          1. 三级序列 </span><br></pre></td></tr></table></figure>
+
+<p>  这种方式不用手动设置序号，自动生成列表序列</p>
+<ol>
+<li><strong>我是一级序列</strong> </li>
+<li><strong>我是一级序列</strong> </li>
+<li><strong>我是一级序列</strong> <ol>
+<li><em>我是二级序列</em> </li>
+<li><em>我是二级序列</em> </li>
+<li><em>我是二级序列</em></li>
+</ol>
+</li>
+<li><strong>我是一级序列</strong> </li>
+<li><strong>我是一级序列</strong> <ol>
+<li><em>我是二级序列</em> </li>
+<li><em>我是二级序列</em> <ol>
+<li>三级序列</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="12-链接自动检测"><a href="#12-链接自动检测" class="headerlink" title="12. 链接自动检测"></a>12. 链接自动检测</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我的Blog:https://liegu0317.github.io</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>我的Blog:<a target="_blank" rel="noopener" href="https://liegu0317.github.io/">https://liegu0317.github.io/</a></p>
+</blockquote>
+<hr>
+<h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><blockquote>
+<p>感觉还可以，算是搭建起来了<br>接下来就是细节与应用了（2021.12.8）</p>
+</blockquote>
+<blockquote>
+<p>评论区已开启，来撒野吧（2021.12.）</p>
+</blockquote>
+<blockquote>
+<p>评论收到回复时，邮箱提醒已开启<br>可以及时收到他人的回复了（2022.2.3）</p>
+</blockquote>
+<p><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=GnZzf31vKikrLVprazR5dXc" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_21.png"/></a></p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_52034760/article/details/121047628?spm=1001.2014.3001.5501">【Hexo】+【Github】搭建blog</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">hexo-theme-fluid</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=erKYtw4Rfhk">手把手教你从0开始搭建自己的个人博客 |无坑版视频教程| hexo</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhuzhuyule/article/details/58347687">Hexo下的Markdown语法(GFM)写博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.github.com/cn/github/writing-on-github">github wrting</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BB%8F%E9%AA%8C/" class="category-chain-item">经验</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%BB%8F%E9%AA%8C/Blog%E8%BF%9B%E5%8C%96%E4%B9%8B%E8%B7%AF/" class="category-chain-item">Blog进化之路</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/hexo/">#hexo</a>
+      
+        <a href="/tags/Blog/">#Blog</a>
+      
+        <a href="/tags/node-js/">#node.js</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>My First Blog Post | Test Post</div>
+      <div>http://example.com/2021/12/08/My First Blog Post/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>多双升</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年12月8日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/12/08/LieGu%E3%81%AEBlog-%E6%90%AD%E5%BB%BA%E7%AF%87/" title="LieGuのBlog_搭建篇-快速搭建简约风格博客">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LieGuのBlog_搭建篇-快速搭建简约风格博客</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments">
+    
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.5.11/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://comments-hexo-blog.vercel.app/","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://liegu0317.top" target="_blank" rel="nofollow noopener"><span>Liegu</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

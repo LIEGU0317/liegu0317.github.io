@@ -1,0 +1,999 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo2.png">
+  <link rel="icon" href="/img/logo2.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="多双升">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="22&#x2F;4&#x2F;18更新|字符数组、scanf与gets、pringf与puts、字符串处理函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言学习笔记p3">
+<meta property="og:url" content="http://example.com/2022/04/13/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0p3/index.html">
+<meta property="og:site_name" content="Liegu Corner">
+<meta property="og:description" content="22&#x2F;4&#x2F;18更新|字符数组、scanf与gets、pringf与puts、字符串处理函数">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/550f2c7db0b5edcf7788a0acc35797e4.png">
+<meta property="article:published_time" content="2022-04-13T15:39:47.000Z">
+<meta property="article:modified_time" content="2022-04-18T05:00:49.000Z">
+<meta property="article:author" content="多双升">
+<meta property="article:tag" content="C语言">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="字符串处理">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/550f2c7db0b5edcf7788a0acc35797e4.png">
+  
+  
+  
+  <title>C语言学习笔记p3 - Liegu Corner</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading2.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"0cae1c0e6e41b699c896f4814a6f3951","google":"G-TM5TQ042BY","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0cae1c0e6e41b699c896f4814a6f3951";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.google-analytics.com/analytics.js', function() {
+          window.ga = window.ga || function() { (ga.q = ga.q || []).push(arguments) };
+          ga.l = +new Date;
+          ga('create', 'G-TM5TQ042BY', 'auto');
+          ga('send', 'pageview');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>LieGuのBlog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                类别
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-github-fill"></i>
+                站点
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://liegu0317.top/">
+                    
+                    主站
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://liegu0317.gitee.io/">
+                    
+                    镜像站
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="C语言学习笔记p3"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-04-13 23:39" pubdate>
+          2022年4月13日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          undefined 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          NaN 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">C语言学习笔记p3</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2022年4月18日 下午
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p><img src="https://img-blog.csdnimg.cn/img_convert/550f2c7db0b5edcf7788a0acc35797e4.png"></p>
+<h1 id="字符数组"><a href="#字符数组" class="headerlink" title="字符数组"></a>字符数组</h1><p>字符数组是数组元素类型为字符的数组，字符数组中的一个元素存放一个字符。<br>字符数组说明的一般形式是：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Char数组名[常量表达式]</span><br><span class="line"><span class="type">char</span> ch[<span class="number">10</span>]  </span><br><span class="line"><span class="type">char</span> c[<span class="number">10</span>][<span class="number">20</span>]</span><br><span class="line"><span class="type">char</span> ch[<span class="number">10</span>]=[<span class="string">&#x27;c.p.r.o.g.&quot;ra&quot;m)</span></span><br></pre></td></tr></table></figure>
+<h2 id="案例1"><a href="#案例1" class="headerlink" title="案例1"></a>案例1</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> ch[] = <span class="string">&quot;C program&quot;</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s \n &quot;</span>, ch);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="案例2"><a href="#案例2" class="headerlink" title="案例2"></a>案例2</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> ch[<span class="number">10</span>] = &#123;<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27; &#x27;</span>, <span class="string">&#x27;p&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27;g&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;m&#x27;</span>&#125;;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;ch[%d]=%c \n &quot;</span>, i, ch[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ch[<span class="number">0</span>]=c </span><br><span class="line"> ch[<span class="number">1</span>]=  </span><br><span class="line"> ch[<span class="number">2</span>]=p </span><br><span class="line"> ch[<span class="number">3</span>]=r </span><br><span class="line"> ch[<span class="number">4</span>]=o </span><br><span class="line"> ch[<span class="number">5</span>]=g </span><br><span class="line"> ch[<span class="number">6</span>]=r </span><br><span class="line"> ch[<span class="number">7</span>]=a </span><br><span class="line"> ch[<span class="number">8</span>]=m </span><br><span class="line"> ch[<span class="number">9</span>]= </span><br></pre></td></tr></table></figure>
+<h1 id="scanf-与-gets"><a href="#scanf-与-gets" class="headerlink" title="scanf() 与 gets()"></a>scanf() 与 gets()</h1><h2 id="scanf"><a href="#scanf" class="headerlink" title="scanf()"></a>scanf()</h2><blockquote>
+<ol>
+<li>scanf的功能是将键盘输入的字符串转换成整数、浮点数、字符或字符串。   </li>
+<li>scanf是一个变参函数。   (参数的数量和类型不确定) scanf的第一个参数是字符串。 scanf的第一个参数是需要输入的字符串以及需要被读取的占位符。   </li>
+<li>scanf的后续参数，是依次被读取并赋值的变量地址。 占位符的类型和数量需要与后续的参数类型和数量对应。   </li>
+<li>如果用scanf ()读取基本变量类型的值，在变量名前加一个&amp;。 如果用scanf ()把字符串去读到字符数组中，不要使用&amp;。   </li>
+<li>可以发现scanf是printf的逆向过程。 注意，键盘输入的时候，必须要和scanf的第一个参数的字符串对应。</li>
+</ol>
+</blockquote>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">///要求：从键盘输入一个人名，并让其显示在屏幕上</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">20</span>]; <span class="comment">// name[20] name2[20]</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Enter your name:&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, name); <span class="comment">// tom Ada</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello %s!\n&quot;</span>, name);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, name); <span class="comment">//读取输入缓冲区中余下的上次未被读走的字符(3.)</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello %s!\n&quot;</span>, name);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Enter your name:tom Ada</span><br><span class="line">Hello tom!</span><br><span class="line">Hello Ada!</span><br></pre></td></tr></table></figure>
+<h2 id="gets"><a href="#gets" class="headerlink" title="gets()"></a>gets()</h2><blockquote>
+<p>与scanf（）区别在于gets（）在键入enter时才视为完成一次输入，可以有空格存在，而scanf（）在空格处便识别为完成一次输入[#scanf](# scanf())</p>
+</blockquote>
+<h3 id="案例1-1"><a href="#案例1-1" class="headerlink" title="案例1"></a>案例1</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">///从键盘输入一个人名，并让其显示在屏幕上</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Enter your name:&quot;</span>);</span><br><span class="line">    gets(name);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello %s!\n&quot;</span>, name);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Enter your name:tom Ada</span><br><span class="line">Hello tom Ada!</span><br></pre></td></tr></table></figure>
+
+<h1 id="printf-与-puts"><a href="#printf-与-puts" class="headerlink" title="printf() 与 puts()"></a>printf() 与 puts()</h1><p>printf( )的一般格式如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;格式控制字符串&quot;</span>,输出表列)；        <span class="comment">//输出表列各项用符号,分隔开</span></span><br></pre></td></tr></table></figure>
+
+<p>puts( )函数是把字符串输出到电脑屏幕上并换行。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">puts</span>(<span class="string">&quot;Hello World!&quot;</span>);                            <span class="comment">//屏幕打印字符串消息并换行</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="C语言中的转化字符输出示例"><a href="#C语言中的转化字符输出示例" class="headerlink" title="C语言中的转化字符输出示例"></a>C语言中的转化字符输出示例</h3><table>
+<thead>
+<tr>
+<th>转化字符</th>
+<th>描述</th>
+<th>输出示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%d</td>
+<td>整数</td>
+<td>printf(“%d”,16);</td>
+<td>输出整数 16</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>浮点数</td>
+<td>printf(“%f”,3.14);</td>
+<td>输出小数 3.140000</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>字符</td>
+<td>printf(“%c”,’x’);</td>
+<td>输出字符 ‘x’</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>字符串</td>
+<td>printf(“%s”,”China”);</td>
+<td>输出字符串 “China”</td>
+</tr>
+</tbody></table>
+<h3 id="C语言常用的转义序列描述"><a href="#C语言常用的转义序列描述" class="headerlink" title="C语言常用的转义序列描述"></a>C语言常用的转义序列描述</h3><table>
+<thead>
+<tr>
+<th>转义序列</th>
+<th>描述</th>
+<th>输出示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\n</td>
+<td>换行</td>
+<td>printf(“第一行 \n 第二行”);</td>
+</tr>
+<tr>
+<td>\a</td>
+<td>警报（电脑响铃）</td>
+<td>printf(“电脑响铃一次 \a”);</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>制表符</td>
+<td>printf(“\t 首行缩进一个制表符位”);</td>
+</tr>
+<tr>
+<td>\</td>
+<td>反斜杠</td>
+<td>printf(“显示两个反斜杠 \\“);</td>
+</tr>
+<tr>
+<td>&quot;</td>
+<td>双引号（英文半角字符）</td>
+<td>printf(“显示双引号 &quot; 中国 &quot;!”);</td>
+</tr>
+</tbody></table>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> word[] = &#123;<span class="string">&#x27;H&#x27;</span>,<span class="string">&#x27;e&#x27;</span>,<span class="string">&#x27;l&#x27;</span>,<span class="string">&#x27;L&#x27;</span>,<span class="string">&#x27;o&#x27;</span>,<span class="string">&#x27;!&#x27;</span>,<span class="string">&#x27;\0&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>以0（整数0）结尾的一串字符</li>
+<li>0或’\0’是一样的，但是和’0’不同</li>
+<li>0标志字符串的结束，但它不是字符串的一部分</li>
+<li>计算字符串长度的时候不包含这个0</li>
+<li>字符串以数组的形式存在，以数组或指针的形式访问</li>
+<li>更多的是以指针的形式</li>
+<li>string.h里有很多处理字符串的函数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">word[0]</td>
+<td>H</td>
+</tr>
+<tr>
+<td align="center">word[1]</td>
+<td>e</td>
+</tr>
+<tr>
+<td align="center">word[2]</td>
+<td>l</td>
+</tr>
+<tr>
+<td align="center">word[3]</td>
+<td>L</td>
+</tr>
+<tr>
+<td align="center">word[4]</td>
+<td>o</td>
+</tr>
+<tr>
+<td align="center">word[5]</td>
+<td>!</td>
+</tr>
+<tr>
+<td align="center">word[6]</td>
+<td>\0</td>
+</tr>
+</tbody></table>
+<h1 id="字符串处理函数"><a href="#字符串处理函数" class="headerlink" title="字符串处理函数"></a>字符串处理函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-strcpy"><a href="#1-strcpy" class="headerlink" title="1. strcpy"></a>1. strcpy</h3><p>原型：<code>char *strcpy (char * __dest, const char * __src);</code><br>功能：将一个字符串(<code>__src</code>)拷贝到另一个字符串缓冲区中(<code>__dest</code>)，并返回拷贝后的字符串指针；<br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    const char* str1 = &quot;abcdefg&quot;;</span><br><span class="line">    char str2[32];</span><br><span class="line">    strcpy(str2,str1);</span><br><span class="line">    printf(&quot;after copy, str2 = %s\n&quot;,str2);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;12345678910</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">after copy, str2 = abcdefg1</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<ol>
+<li>必须保证拷贝后的缓冲区即上例中str2的大小足够，否则造成内存溢出到未分配的地址，容易产生各种未知错误；</li>
+<li>由于该函数原理是逐字节复制，所以如果str1和str2的空间有重叠，则会造成覆盖，可以看下面这个例子：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line"></span><br><span class="line">    char str1[32]=&quot;abcdefg&quot;;</span><br><span class="line">    strcpy(str1+3,str1);</span><br><span class="line">    printf(&quot;after copy, str1 = %s\n&quot;,str1);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;12345678910</span><br></pre></td></tr></table></figure>
+
+<p>拷贝后的空间和源字符串的空间是有重合的，则源字符串内容会被修改，运行结果为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">after copy, str1 = abcabcdefg1</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-strncpy"><a href="#2-strncpy" class="headerlink" title="2. strncpy"></a>2. strncpy</h3><p>原型：<code>char *strncpy (char * __dest, const char *__src, size_t __n);</code><br>功能：将一个字符串(<code>__src</code>)拷贝到另一个字符串缓冲区中(<code>__dest</code>)，拷贝<strong>最多不超过</strong><code>__n</code>字节，并返回拷贝后的字符串指针；<br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line"></span><br><span class="line">    const char* str1 = &quot;allen junyu&quot;;</span><br><span class="line">    char str2[32]=&quot;anything you can write&quot;;</span><br><span class="line">    char* p=strncpy(str2,str1,7);</span><br><span class="line">    printf(&quot;p=%s\n&quot;,p);</span><br><span class="line">    p[7]=0;</span><br><span class="line">    printf(&quot;p=%s\n&quot;,p);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;1234567891011121314</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p=allen jg you can write</span><br><span class="line">p=allen j12</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>: strncpy这个函数并不会自动的在字符串结尾加’\0’，需要我们去增加。</p>
+<h3 id="3-strcat"><a href="#3-strcat" class="headerlink" title="3. strcat"></a>3. strcat</h3><p>原型：<code>char *strcat (char *__dest, const char *__src);</code><br>功能：将一个字符串(<code>__src</code>)拼接到另一个字符串缓冲区中(<code>__dest</code>)，并返回拼接后的字符串指针；<br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    char str1[32] = &quot;allen&quot;;</span><br><span class="line">    const char* str2 = &quot;junyu&quot;;</span><br><span class="line">    char* p=strcat(str1,str2);</span><br><span class="line">    printf(&quot;p=%s\n&quot;,p);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;12345678910</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p=allenjunyu1</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：同样地，需要保证str1有足够的存储空间，否则，程序会顺着内存地址往后写，破坏其他内存数据。</p>
+<h3 id="4-strncat"><a href="#4-strncat" class="headerlink" title="4. strncat"></a>4. strncat</h3><p>原型：<code>char *strncat (char *__dest, const char *__src, size_t __n);</code><br>功能：将一个字符串(<code>__src</code>)拼接到另一个字符串缓冲区中(<code>__dest</code>)，<strong>最多不超过</strong><code>__n</code>个字节，并返回拼接后的字符串指针；<br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    char str1[32]=&quot;allen &quot;;</span><br><span class="line">    const char* str2=&quot;junyu&quot;;</span><br><span class="line"></span><br><span class="line">    strncat(str1,str2,3);</span><br><span class="line">    printf(&quot;str1=%s,length=%d\n&quot;,str1,strlen(str1));</span><br><span class="line">    strncat(str1,str2,1000000);</span><br><span class="line">    printf(&quot;str1=%s,length=%d\n&quot;,str1,strlen(str1));</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;1234567891011121314</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str1=allen jun,length=9</span><br><span class="line">str1=allen junjunyu,length=1412</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-strlen"><a href="#5-strlen" class="headerlink" title="5. strlen"></a>5. strlen</h3><p>原型：<code>size_t strlen (const char *__s);</code><br>功能：返回一个字符串(<code>__src</code>)的长度，即字节(符)数，这里仅考虑ASCII字符；</p>
+<h3 id="6-strcmp"><a href="#6-strcmp" class="headerlink" title="6. strcmp"></a>6. strcmp</h3><p>原型： <code>int strcmp (const char *__s1, const char *__s2);</code><br>功能：比较字符串<code>__s1</code>和字符串<code>__s2</code>，返回比较结果，如果相等，则返回0；<br>比较方式：两个字符串自左向右逐个字符相比（按ASCII值大小相比较），直到出现不同的字符或遇’\0’为止；<br>返回结果：当<code>s1&lt;s2</code>时，返回值&lt;0；当<code>s1=s2</code>时，返回值&#x3D;0；当<code>s1&gt;s2</code>时，返回值&gt;0；<br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line"></span><br><span class="line">    const char* str1 = &quot;allen junyu&quot;;</span><br><span class="line">    char str2[32]=&quot;allen junyu&quot;;</span><br><span class="line">    int ret = strcmp(str1,str2);</span><br><span class="line">    printf(&quot;ret=%d\n&quot;,ret);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;123456789101112</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ret=01</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-strncmp"><a href="#7-strncmp" class="headerlink" title="7. strncmp"></a>7. strncmp</h3><p>原型： <code>int strncmp (const char *__s1, const char *__s2, size_t __n);</code><br>功能：比较字符串<code>__s1</code>和字符串<code>__s2</code>的<code>__n</code>个字符，返回比较结果，如果相等，则返回0；<br>比较方式：同strcmp；<br>返回结果：同strcmp；<br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    const char* str1 = &quot;allen junyu&quot;;</span><br><span class="line">    char str2[32]=&quot;allen bob&quot;;</span><br><span class="line">    int ret = strncmp(str1,str2,5);</span><br><span class="line">    printf(&quot;ret=%d\n&quot;,ret);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;12345678910</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ret=01</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-strcasecmp"><a href="#8-strcasecmp" class="headerlink" title="8. strcasecmp"></a>8. strcasecmp</h3><p>原型： <code>int strcasecmp (const char *__s1, const char *__s2);</code><br>功能：比较字符串<code>__s1</code>和字符串<code>__s2</code>，忽略大小写的比较，返回比较结果，如果相等，则返回0；<br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line"></span><br><span class="line">    const char* str1 = &quot;allen&quot;;</span><br><span class="line">    char str2[32]=&quot;AlleN&quot;;</span><br><span class="line"></span><br><span class="line">    int ret = strcasecmp(str1,str2);</span><br><span class="line">    printf(&quot;strcasecmp ret=%d\n&quot;,ret);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;12345678910111213</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strcasecmp ret=01</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-strncasecmp"><a href="#9-strncasecmp" class="headerlink" title="9. strncasecmp"></a>9. strncasecmp</h3><p>原型： <code>int strncasecmp (const char *__s1, const char *__s2, size_t __n);</code><br>功能：比较字符串<code>__s1</code>和字符串<code>__s2</code>的<code>__n</code>个字符，忽略大小写的比较，返回比较结果，如果相等，则返回0；<br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line"></span><br><span class="line">    const char* str1 = &quot;allen&quot;;</span><br><span class="line">    char str2[32]=&quot;AlleN junyu&quot;;</span><br><span class="line"></span><br><span class="line">    int ret = strncasecmp(str1,str2,5);</span><br><span class="line">    printf(&quot;strncasecmp ret=%d\n&quot;,ret);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;12345678910111213</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strncasecmp ret=0</span><br></pre></td></tr></table></figure>
+<h3 id="10-strupr-x2F-strlwr"><a href="#10-strupr-x2F-strlwr" class="headerlink" title="10. strupr&#x2F;strlwr"></a>10. strupr&#x2F;strlwr</h3><p>原型：<code>char *strupr(char *str);</code><br>功能：将字符小写&#x2F;大写字母转换成大写&#x2F;小写<br>例子：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">char</span> str[] = <span class="string">&quot;liegu0317.top&quot;</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, strlwr(str));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, str);</span><br><span class="line">    <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="案例-字符串–-gt-整型数"><a href="#案例-字符串–-gt-整型数" class="headerlink" title="案例 - 字符串–&gt;整型数"></a>案例 - 字符串–&gt;整型数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编写一个程序，将一个有数字构成的字符串转换成一个整型数，例：“1234”--&gt;1234</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;string.h&quot;</span></span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> i,len,sum = <span class="number">0</span>;</span><br><span class="line">    <span class="type">char</span> ch[<span class="number">100</span>];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入一个数字字符串：\n&quot;</span>);</span><br><span class="line">    gets(ch);</span><br><span class="line">    len=<span class="built_in">strlen</span>(ch);<span class="comment">//&quot;1234&quot; len =4</span></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        sum = sum + (ch[i] - ‘<span class="number">0</span>’)*<span class="built_in">pow</span>(<span class="number">10</span> ,( len- <span class="number">1</span>- i));</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\&quot;%s\&quot;--&gt;j\&quot;%d\&quot;\n&quot;</span>,ch,sum)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BB%8F%E9%AA%8C/" class="category-chain-item">经验</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%BB%8F%E9%AA%8C/C%E8%AF%AD%E8%A8%80%E7%BB%8F%E5%8E%86/" class="category-chain-item">C语言经历</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/C%E8%AF%AD%E8%A8%80/">#C语言</a>
+      
+        <a href="/tags/%E7%AC%94%E8%AE%B0/">#笔记</a>
+      
+        <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">#字符串处理</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>C语言学习笔记p3</div>
+      <div>http://example.com/2022/04/13/C语言学习笔记p3/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>多双升</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年4月13日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/04/14/%E7%BB%9F%E4%BF%A1UOS%E6%A0%A1%E5%9B%AD%E8%81%94%E7%9B%9F%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%9F%B9%E8%AE%AD/" title="统信UOS校园联盟第一次培训">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">统信UOS校园联盟第一次培训</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/04/06/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B02-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="C语言学习杂记2|基本数据类型">
+                        <span class="hidden-mobile">C语言学习杂记2|基本数据类型</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments">
+    
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.5.11/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://comments-hexo-blog.vercel.app/","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://liegu0317.top" target="_blank" rel="nofollow noopener"><span>Liegu</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

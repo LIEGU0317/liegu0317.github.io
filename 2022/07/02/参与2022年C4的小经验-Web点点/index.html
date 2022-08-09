@@ -1,0 +1,821 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo2.png">
+  <link rel="icon" href="/img/logo2.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="多双升">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="我参与的是2022年网络技术挑战赛A系列赛项选拔赛作品已经提交了，无论结果如何都是一次经历，在提升相关知识的同时更加培养了小组协作的能力，我认为后者相较于前者更有意义。 作品很拉胯，接受嘲讽^1，第一次做还是完全从0开始 gitee仓库地址：https:&#x2F;&#x2F;gitee.com&#x2F;liegu0317&#x2F;e_school 最终提交在线演示链接：http:&#x2F;&#x2F;eschool.liegu0317.top&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="参与2022年C4的小经验（1）|Web点点">
+<meta property="og:url" content="http://example.com/2022/07/02/%E5%8F%82%E4%B8%8E2022%E5%B9%B4C4%E7%9A%84%E5%B0%8F%E7%BB%8F%E9%AA%8C-Web%E7%82%B9%E7%82%B9/index.html">
+<meta property="og:site_name" content="Liegu Corner">
+<meta property="og:description" content="我参与的是2022年网络技术挑战赛A系列赛项选拔赛作品已经提交了，无论结果如何都是一次经历，在提升相关知识的同时更加培养了小组协作的能力，我认为后者相较于前者更有意义。 作品很拉胯，接受嘲讽^1，第一次做还是完全从0开始 gitee仓库地址：https:&#x2F;&#x2F;gitee.com&#x2F;liegu0317&#x2F;e_school 最终提交在线演示链接：http:&#x2F;&#x2F;eschool.liegu0317.top&#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://oss.moocollege.com/10688/skin/YYU7QYdI_1646543703035.png">
+<meta property="article:published_time" content="2022-07-02T13:47:47.000Z">
+<meta property="article:modified_time" content="2022-07-08T15:17:19.000Z">
+<meta property="article:author" content="多双升">
+<meta property="article:tag" content="中国高校计算机大赛">
+<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="Element plus">
+<meta property="article:tag" content="Web开发">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://oss.moocollege.com/10688/skin/YYU7QYdI_1646543703035.png">
+  
+  
+  
+  <title>参与2022年C4的小经验（1）|Web点点 - Liegu Corner</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading2.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"0cae1c0e6e41b699c896f4814a6f3951","google":"G-TM5TQ042BY","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0cae1c0e6e41b699c896f4814a6f3951";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.google-analytics.com/analytics.js', function() {
+          window.ga = window.ga || function() { (ga.q = ga.q || []).push(arguments) };
+          ga.l = +new Date;
+          ga('create', 'G-TM5TQ042BY', 'auto');
+          ga('send', 'pageview');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>LieGuのBlog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                类别
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-github-fill"></i>
+                站点
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://liegu0317.top/">
+                    
+                    主站
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://liegu0317.gitee.io/">
+                    
+                    镜像站
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="参与2022年C4的小经验（1）|Web点点"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-07-02 21:47" pubdate>
+          2022年7月2日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          undefined 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          NaN 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">参与2022年C4的小经验（1）|Web点点</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2022年7月8日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p><img src="https://oss.moocollege.com/10688/skin/YYU7QYdI_1646543703035.png" alt="2022年C4"></p>
+<blockquote>
+<p>我参与的是<code>2022年网络技术挑战赛A系列赛项</code><br>选拔赛作品已经提交了，无论结果如何都是一次经历，在提升相关知识的同时更加培养了<strong>小组协作</strong>的能力，我认为后者相较于前者更有意义。</p>
+<p>作品很<em>拉胯</em>，<code>接受嘲讽</code><a href="%E6%AF%95%E7%AB%9F%E4%BD%9C%E5%93%81%E5%86%99%E7%9A%84%E5%AE%9E%E5%9C%A8%E6%98%AF%E4%B8%8D%E6%88%90%E6%A0%B7%E5%AD%90%EF%BC%88%E4%BB%85%E5%90%A6%E5%AE%9A%E6%88%91%E8%B4%9F%E8%B4%A3%E7%9A%84%E9%82%A3%E9%83%A8%E5%88%86%EF%BC%89%E3%80%82">^1</a>，第一次做还是完全从<code>0</code>开始</p>
+<p>gitee仓库地址：<a target="_blank" rel="noopener" href="https://gitee.com/liegu0317/e_school">https://gitee.com/liegu0317/e_school</a></p>
+<p>最终提交在线演示链接：<a target="_blank" rel="noopener" href="http://eschool.liegu0317.top/">http://eschool.liegu0317.top/</a><br>（演示服务器是借的，此链接随缘存活）</p>
+</blockquote>
+<blockquote>
+<p>本文仅代表个人观点，如有不当之处，欢迎评论区留言！<br>本文仅描述个人参赛经验，详细参赛流程请参见<a target="_blank" rel="noopener" href="http://net.c4best.cn/details/entryGuide">《参赛指南》</a></p>
+</blockquote>
+<h1 id="参赛经历总结"><a href="#参赛经历总结" class="headerlink" title="参赛经历总结"></a>参赛经历总结</h1><blockquote>
+<p>本文中引用赛事官网文档可能会随时间更新、或被弃用。请前往官网以最新文档为准<a target="_blank" rel="noopener" href="http://net.c4best.cn/">C4-网络技术挑战赛官网</a></p>
+</blockquote>
+<h2 id="一、正式参赛前准备"><a href="#一、正式参赛前准备" class="headerlink" title="一、正式参赛前准备"></a>一、正式参赛前准备</h2><ol>
+<li>阅读<a target="_blank" rel="noopener" href="http://net.c4best.cn/details/entryGuide">《参赛指南》</a><br>我认为阅读参赛指南参与赛事的第一步，毕竟我报名的时候是直接跟着医疗大数据科研室的学长们报的（报完一脸懵）。<code>组队也是在这个时候完成的</code><br>关于活动的全部基础问题都可以在<a target="_blank" rel="noopener" href="http://net.c4best.cn/details/entryGuide">参赛指南</a>了解。</li>
+<li>确定参与系列</li>
+<li>确定选题</li>
+</ol>
+<h2 id="二、竞赛阶段"><a href="#二、竞赛阶段" class="headerlink" title="二、竞赛阶段"></a>二、竞赛阶段</h2><h3 id="（一）资格赛"><a href="#（一）资格赛" class="headerlink" title="（一）资格赛"></a>（一）资格赛</h3><p>A系列的本阶段总结下来就是探讨构思、写文档、探讨修改、写文档……</p>
+<h4 id="1-构思"><a href="#1-构思" class="headerlink" title="1.构思"></a>1.构思</h4><p>对于首次参与此类竞赛的我们这一切是那么陌生。学长拿出了他们大一时参与《第七届河北省“互联网+”大学生创新创业大赛》的项目为我们提供了思路，参赛正是由此开始。</p>
+<h4 id="2-写文档"><a href="#2-写文档" class="headerlink" title="2.写文档"></a>2.写文档</h4><p><img src="https://oss.moocollege.com/10688/edit/I8YBWUSt_1646549210219.JPG"></p>
+<blockquote>
+<ol>
+<li><p>创意：设计理念、选题的创新性；</p>
+</li>
+<li><p>技术：所涉及技术的先进性、综合性与创新性；</p>
+</li>
+<li><p>应用：实用价值、市场潜力；</p>
+</li>
+</ol>
+</blockquote>
+<p>资格赛阶段文档内容要侧重这是这三个评分点写，可以有夸大的成分但是要尽量实际。<br>其中<code>创意</code>占比最多，因此文档中要更多的提及。<br>能用到的<code>技术</code>都可以写进去，哪怕最后不能完全实现。<br><code>应用</code>就展开想象就好了，在结合实际的情况下不局限于过去与当前，考虑未来也是很重要。</p>
+<p>在文档编写前期，我们根据评分内容确定了八条主体内容，分别为</p>
+<blockquote>
+<p>一、执行摘要<br>二、产品创意概述<br>三、相关产业背景<br>四、用户需求<br>五、市场分析<br>六、软件设计<br>七、应用内容<br>八、参考资料  </p>
+</blockquote>
+<p>还有一个<code>项目介绍</code>，在提交文档时需要填写。这个建议是最后写，因为这需要与文档内容紧密联系，文档完成后可以直接在文档主体中找出主要内容作为项目介绍。</p>
+<p>为了更加高效完成文档编写，我们的文档编写采用了<strong>线上协作</strong>的方式。这样队员们的构思会更加积极的碰撞，也可以跟进队员的<strong>实时进度</strong>（这很重要，可以及时地对于任务分配进行及时调整），同时避免了文档内容破碎最终产出了<code>N*1</code>份<em><strong>半成品</strong></em>的情况。</p>
+<p>注意做好对任务的分配，在了解队员的情况下，<strong>“加以引导“</strong><del>（强制）</del>的让队员自己选择负责部分，做到能力越大责任越大（合理分配）。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BB%8F%E9%AA%8C/" class="category-chain-item">经验</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%BB%8F%E9%AA%8C/Web%E5%BC%80%E5%8F%91%E7%BB%8F%E5%8E%86/" class="category-chain-item">Web开发经历</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E4%B8%AD%E5%9B%BD%E9%AB%98%E6%A0%A1%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%A4%A7%E8%B5%9B/">#中国高校计算机大赛</a>
+      
+        <a href="/tags/Vue/">#Vue</a>
+      
+        <a href="/tags/Element-plus/">#Element plus</a>
+      
+        <a href="/tags/Web%E5%BC%80%E5%8F%91/">#Web开发</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>参与2022年C4的小经验（1）|Web点点</div>
+      <div>http://example.com/2022/07/02/参与2022年C4的小经验-Web点点/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>多双升</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年7月2日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/24/PicGo-core%E3%80%81GitHub%E5%9B%BE%E5%BA%8A%E3%80%81Typora-%E4%BA%91%E7%AC%94%E8%AE%B0/" title="Linux环境下PicGo-core、GitHub图床、Typora|inux云笔记">
+                        <span class="hidden-mobile">Linux环境下PicGo-core、GitHub图床、Typora|inux云笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments">
+    
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.5.11/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://comments-hexo-blog.vercel.app/","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://liegu0317.top" target="_blank" rel="nofollow noopener"><span>Liegu</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,1825 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo2.png">
+  <link rel="icon" href="/img/logo2.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="多双升">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="C语言课程同步笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言学习笔记P2|7-10课">
+<meta property="og:url" content="http://example.com/2022/03/18/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0p2/index.html">
+<meta property="og:site_name" content="Liegu Corner">
+<meta property="og:description" content="C语言课程同步笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/550f2c7db0b5edcf7788a0acc35797e4.png">
+<meta property="article:published_time" content="2022-03-18T00:31:56.000Z">
+<meta property="article:modified_time" content="2022-05-11T06:32:19.000Z">
+<meta property="article:author" content="多双升">
+<meta property="article:tag" content="C语言">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/550f2c7db0b5edcf7788a0acc35797e4.png">
+  
+  
+  
+  <title>C语言学习笔记P2|7-10课 - Liegu Corner</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading2.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"0cae1c0e6e41b699c896f4814a6f3951","google":"G-TM5TQ042BY","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0cae1c0e6e41b699c896f4814a6f3951";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.google-analytics.com/analytics.js', function() {
+          window.ga = window.ga || function() { (ga.q = ga.q || []).push(arguments) };
+          ga.l = +new Date;
+          ga('create', 'G-TM5TQ042BY', 'auto');
+          ga('send', 'pageview');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>LieGuのBlog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                类别
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-github-fill"></i>
+                站点
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://liegu0317.top/">
+                    
+                    主站
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://liegu0317.gitee.io/">
+                    
+                    镜像站
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="C语言学习笔记P2|7-10课"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-03-18 08:31" pubdate>
+          2022年3月18日 早上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          undefined 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          NaN 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">C语言学习笔记P2|7-10课</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2022年5月11日 下午
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p><img src="https://img-blog.csdnimg.cn/img_convert/550f2c7db0b5edcf7788a0acc35797e4.png"></p>
+<p><a href="#%E6%9C%80%E6%96%B0%E6%9B%B4%E6%96%B0">点击此处跳转至最近更新</a></p>
+<h1 id="第七课"><a href="#第七课" class="headerlink" title="第七课"></a>第七课</h1><h2 id="printf使用"><a href="#printf使用" class="headerlink" title="printf使用"></a>printf使用</h2><blockquote>
+<p>printf函数称为格式输出函数，其关键字最末一个字母f即为“格式”(format)之意。其功能是按用户指定的格式，把指定的数据显示到显示器屏幕上。  </p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://c.biancheng.net/cpp/html/33.html">C语言格式输出函数printf()详解</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">一语句，两个参数，三个选项</th>
+<th align="left">格式控制</th>
+<th align="left">操作对象列表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">printf(“格式控制”,输出列表);<br>功能：按照“格式控制”格式输出一个或多个任意数据</td>
+<td align="left">1 格式字符；<br>2 有提示串原样输出；<br>3 转义字符用于输出操作行为，如退格、换行、回车</td>
+<td align="left">可以是常量，变量，表达式，其个数与格式控制参数中的格式字符数相同</td>
+</tr>
+<tr>
+<td align="left">scanf(“格式控制”,地址列表);<br>功能：按照“格式控制”格式从键盘接收若干个数据，依次存入“地址列表“对应的变量</td>
+<td align="left">1 格式字符<br>2 有提示串，则输入数据时原样输入；<br>3 输入数据可用空格、回车和跳格键Tab作为间隔</td>
+<td align="left">是变量的地址而不是变量</td>
+</tr>
+</tbody></table>
+<h2 id="1-局部变量与全局变量"><a href="#1-局部变量与全局变量" class="headerlink" title="1. 局部变量与全局变量"></a><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/1858.html">1. <strong>局部变量与全局变量</strong></a></h2><blockquote>
+<p>在《C语言形参和实参的区别》中提到，形参变量要等到函数被调用时才分配内存，调用结束后立即释放内存。这说明形参变量的作用域非常有限，只能在函数内部使用，离开该函数就无效了。所谓作用域（Scope），就是变量的有效范围。</p>
+</blockquote>
+<blockquote>
+<p>不仅对于形参变量，C语言中所有的变量都有自己的作用域。决定变量作用域的是变量的定义位置。</p>
+</blockquote>
+<blockquote>
+<p>自定义函数和主函数中变量不相干扰，可以使用相同字符</p>
+</blockquote>
+<h3 id="案例-jiojio表"><a href="#案例-jiojio表" class="headerlink" title="案例-jiojio表"></a>案例-jiojio表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#include&quot;stdio.h&quot;</span><br><span class="line">void main()</span><br><span class="line">&#123;</span><br><span class="line">	int m, n;</span><br><span class="line">	for (m = 1; m &lt; 10; m++)</span><br><span class="line">	&#123;</span><br><span class="line">		for (n = 1; n &lt;= m; n++)</span><br><span class="line">			printf(&quot;%d*%d=%d &quot;, m, n, m * n);</span><br><span class="line">		printf(&quot;\n&quot;);</span><br><span class="line">	&#125;printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="案例-2"><a href="#案例-2" class="headerlink" title="案例_2"></a>案例_2</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> a = <span class="number">100</span>, b = <span class="number">10</span>; <span class="comment">//外部变量</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>           <span class="comment">//变量的定义在所有函数外部</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">1</span>, c;</span><br><span class="line">    c = a + b;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d,&quot;</span>, c);</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> a = <span class="number">2</span>, b = <span class="number">2</span>; <span class="comment">//内部变量</span></span><br><span class="line">        c = a + b;        <span class="comment">//变量的定义在函数内部或复合语句内部</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d,&quot;</span>, c);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a + b); <span class="comment">// 11,4,11</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="案例-auto"><a href="#案例-auto" class="headerlink" title="案例_auto"></a>案例_auto</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">f</span><span class="params">(<span class="type">int</span> a)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">auto</span> <span class="type">int</span> b = <span class="number">0</span>;   <span class="comment">/*自动，auto可省*/</span></span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> c = <span class="number">3</span>; <span class="comment">/*静态，值保留*/</span></span><br><span class="line">    b++;</span><br><span class="line">    c++;</span><br><span class="line">    <span class="keyword">return</span> (a + b + c);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">2</span>, l;</span><br><span class="line">    <span class="keyword">for</span> (l = <span class="number">0</span>; l &lt; <span class="number">3</span>; l++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, f(a));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="第八课"><a href="#第八课" class="headerlink" title="第八课"></a>第八课</h1><h2 id="函数的调用过程"><a href="#函数的调用过程" class="headerlink" title="函数的调用过程"></a><a target="_blank" rel="noopener" href="https://liegu0317.github.io/2022/02/28/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0/#%E5%87%BD%E6%95%B0%E7%9A%84%E8%B0%83%E7%94%A8%E8%BF%87%E7%A8%8Bv">函数的调用过程</a></h2><h2 id="变量的存储属性"><a href="#变量的存储属性" class="headerlink" title="变量的存储属性"></a>变量的存储属性</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">f</span><span class="params">(<span class="type">int</span> a)</span>;<span class="comment">//首先声明函数</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">2</span>, i;</span><br><span class="line">    <span class="comment">/*自动,默认auto*/</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, f(a));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">f</span><span class="params">(<span class="type">int</span> a)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">auto</span> <span class="type">int</span> b = <span class="number">0</span>;   <span class="comment">/*自动,auto可省*/</span></span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> c = <span class="number">3</span>; <span class="comment">/*静态，值保留*/</span></span><br><span class="line">    <span class="comment">//做一次定义，c对应的存储单元一直存在</span></span><br><span class="line">    b++;</span><br><span class="line">    c++;</span><br><span class="line">    <span class="keyword">return</span> (a + b + c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://github.com/LIEGU0317/img/raw/master/Blogimg/202203161644389.png"></p>
+<h2 id="递归调用-小循环"><a href="#递归调用-小循环" class="headerlink" title="递归调用-小循环"></a>递归调用-小循环</h2><h3 id="求n的递推公式"><a href="#求n的递推公式" class="headerlink" title="求n的递推公式"></a>求n的递推公式</h3><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">a</span><span class="punctuation">(</span><span class="variable">n</span><span class="punctuation">)</span> <span class="operator">=</span> <span class="variable">n</span><span class="operator">*</span><span class="variable">a</span><span class="punctuation">(</span><span class="variable">n</span><span class="operator">-</span><span class="number">1</span><span class="punctuation">)</span><span class="punctuation">(</span><span class="variable">n</span><span class="operator">&gt;</span><span class="number">1</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<p>【n为1或0时值为1】</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">f</span><span class="params">(<span class="type">int</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="type">int</span> v;</span><br><span class="line"><span class="keyword">if</span>(n == <span class="number">0</span> || n == <span class="number">1</span>)v = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> v = n*f(n<span class="number">-1</span>);<span class="comment">//直接或间接调用自己</span></span><br><span class="line">    <span class="keyword">return</span>(v);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ul>
+<li><p>迄今为止，使用的变主都是单一的变量，相互之间没有联系，这样的变旦又叫离散性变量。当需要大量相同数据类型的变量时，必然想到变量的组合，数组就是这样一种结构。</p>
+</li>
+<li><p>数组是具有相同数据类型的元素所组成的有序集合，而每1个数组元素就是1个类型相同的变量。每个数组是用1个统一的名称表示数组元素的集合，数组中的每一元素具有惟一索引号（即下标），可以用数组名及下标惟一地识别1个数组元素，下标的个数决定数练的维数，1个下标的数组称为一维数组，两个下标的数组称为二维数组。</p>
+</li>
+</ul>
+<h2 id="数组的创建"><a href="#数组的创建" class="headerlink" title="数组的创建"></a>数组的创建</h2><ul>
+<li><p>数组是一种容器（放东西的东西），特点是：所有的元素具有相同的数据类型。</p>
+</li>
+<li><p>数组的声明并不是声明一个个单独的变量，比如 runoob0、runoob1、…、runoob99，而是声明一个数组变量，比如 runoob，然后使用 runoob[0]、runoob[1]、、…、runoob[99]来代表一个个单独的变量。(下表索引)</p>
+</li>
+<li><p>在 C �����要声明一个数组，需要指定元素的类型和元素的数量，一旦声明后续不可更改，如下所示：</p>
+</li>
+<li><p>&lt;类型&gt; 变量名称[元素数量]; int runoob[100]; double balance [10]</p>
+</li>
+<li><p>所有的数组都是由连续的内存位置组成。最低的地址对应第一个元素，最高的地址对应最后一个元素。</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> runoob[<span class="number">3</span>]=&#123;<span class="number">223</span>,<span class="number">666</span>,<span class="number">888</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组的输出"><a href="#数组的输出" class="headerlink" title="数组的输出"></a>数组的输出</h2><h3 id="下标、索引"><a href="#下标、索引" class="headerlink" title="下标、索引"></a>下标、索引</h3><p><strong>规定下标从0开始  0,1,2,3,4…</strong></p>
+<p>[0]代表第一个元素</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(plants[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>定义数组后元素数小于数组容量，自动补0</li>
+</ul>
+<h2 id="输入月份返回天数"><a href="#输入月份返回天数" class="headerlink" title="输入月份返回天数"></a>输入月份返回天数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#inclue<span class="string">&quot;studio.h&quot;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">getmonthdays</span><span class="params">(<span class="type">int</span> month,<span class="type">int</span> year)</span>;</span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> days;</span><br><span class="line">    days = getmonthdays(<span class="number">3</span>,<span class="number">2022</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;总共天数&quot;</span>,days);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//输入一个月份，返回这个月天数</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">gatmonthdays</span><span class="params">(<span class="type">int</span> month,<span class="type">int</span> year)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> days_arry[<span class="number">12</span>] = &#123;<span class="number">31</span>,<span class="number">28</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>&#125;</span><br><span class="line">    <span class="keyword">return</span> days_arry[month - <span class="number">1</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h1><h2 id="二维数组一般形式"><a href="#二维数组一般形式" class="headerlink" title="二维数组一般形式"></a>二维数组一般形式</h2><p>&lt;类型&gt; 变量名称[常量表达式1(行数)][常量表达式2(列数)]</p>
+<p><code>int a[6][6]   double b[6][3]</code></p>
+<h2 id="二维数组的访问"><a href="#二维数组的访问" class="headerlink" title="二维数组的访问"></a>二维数组的访问</h2><p><code>数组名[下标][下标] </code></p>
+<p><code>int a[3][3]  0-2 0-4</code></p>
+<blockquote>
+<p>C语言<strong>下标越界</strong>无警告，输出垃圾值</p>
+</blockquote>
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a[<span class="number">3</span>][<span class="number">4</span>] = &#123;&#123;<span class="number">1</span>&#125;, &#123;<span class="number">5</span>&#125;, &#123;<span class="number">9</span>&#125;&#125;;</span><br><span class="line">    <span class="type">int</span> i, j;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= <span class="number">3</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt;= <span class="number">4</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%5d&quot;</span>, a[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="二维数组的初始化"><a href="#二维数组的初始化" class="headerlink" title="二维数组的初始化"></a>二维数组的初始化</h2><ol>
+<li><pre><code class="c">int a[3]\[4]=&#123;1,2,3,4,5,6,7,8,9,10,11,12&#125;;
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. ```c</span><br><span class="line">   int b[3]\[4]=&#123;&#123;1,2,3,4&#125;,&#123;5,6,7,8&#125;,&#123;9,10,11,12&#125;&#125;;</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+<li><p>&#96;&#96;&#96;cint b[3][4]&#x3D;<br>   {<br>   {1,2,3,4},<br>   {5,6,7,8},<br>   {9,10,11,12}<br>   };</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">4. ```c</span><br><span class="line">   int d[3]\[4]=&#123;&#123;1&#125;,&#123;5&#125;,&#123;9&#125;&#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<blockquote>
+<p>结果</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>    <span class="number">0</span>    <span class="number">0</span>    <span class="number">0</span>    <span class="number">5</span></span><br><span class="line"><span class="number">5</span>    <span class="number">0</span>    <span class="number">0</span>    <span class="number">0</span>    <span class="number">9</span></span><br><span class="line"><span class="number">9</span>    <span class="number">0</span>    <span class="number">0</span>    <span class="number">0686177312</span></span><br></pre></td></tr></table></figure>
+
+</blockquote>
+<ol start="5">
+<li>&#96;&#96;&#96;c<br>int e[][4] &#x3D; {1,2,3,4,5,6,7,8,9,10,11,12}<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">自动识别为  `e[3][4]`</span><br><span class="line"></span><br><span class="line">## 案例</span><br><span class="line">```c</span><br><span class="line">#include&quot;stdio.h&quot;</span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">	int a[4][4] = &#123; &#123;12,76,4,1&#125;,&#123;-19,28,55,-6&#125;,&#123;2,10,13,-2&#125;,&#123;3,-9,112,111&#125; &#125;;</span><br><span class="line">	int i,j,min,row = 0,column = 0;</span><br><span class="line">	min = a[0][0];</span><br><span class="line">	for (i = 0; i &lt; 4; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		for (j = 0; j &lt; 4; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;%5d&quot;, a[i][j]);</span><br><span class="line">			if (a[i][j] &lt; min) &#123;</span><br><span class="line">				min = a[i][j];</span><br><span class="line">				row = i;</span><br><span class="line">				column = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		printf(&quot;\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;最小值=%d，位于矩阵第%d行，第%d列&quot;, min, row + 1, column + 1);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="经典案例1-矩阵的转置"><a href="#经典案例1-矩阵的转置" class="headerlink" title="经典案例1 - 矩阵的转置"></a>经典案例1 - 矩阵的转置</h2><p><img src="https://img-blog.csdnimg.cn/9c93f39b6d5d4a93abbf97a72ae2868c.png#pic_center" alt="矩阵的转置"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a[<span class="number">0</span>][j] ---→ b[j][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 经典案例1 - 矩阵的转置</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a[<span class="number">2</span>][<span class="number">3</span>], b[<span class="number">3</span>][<span class="number">2</span>];</span><br><span class="line">	<span class="type">int</span> j, i;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入A矩阵元素，一个元素一个回车\n&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt;= <span class="number">2</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;a[i][j]);</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;A矩阵：\n&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt;= <span class="number">2</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,a[i][j]); <span class="comment">//输出矩阵</span></span><br><span class="line">			b[j][i] = a[i][j];  <span class="comment">//矩阵A转置给B</span></span><br><span class="line">		&#125;;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;B矩阵：\n&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">2</span>; j++)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%5d&quot;</span>, b[i][j]);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="经典案例1-成绩均值计算"><a href="#经典案例1-成绩均值计算" class="headerlink" title="经典案例1 - 成绩均值计算"></a>经典案例1 - 成绩均值计算</h2><p><img src="https://img-blog.csdnimg.cn/e22d38a8d5304cadaf7fb5ac4a61b871.png#pic_center" alt="成绩均值计算"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> i, j, score[<span class="number">5</span>][<span class="number">3</span>], sum, aver[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请依次输入每名同学的各科成绩：&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) <span class="comment">// if代表的是学生的序号：</span></span><br><span class="line">    &#123;</span><br><span class="line">        sum = <span class="number">0</span>;                <span class="comment">//在每名同学成锁输入前，让其总成锁赋初值为0</span></span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) <span class="comment">// J理解为课程</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;score[i][j]); <span class="comment">//输入第i号学生第j门成绩</span></span><br><span class="line">            sum += score[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="第九课-我划水了"><a href="#第九课-我划水了" class="headerlink" title="第九课-我划水了"></a>第九课-我划水了</h1><blockquote>
+<p>无</p>
+</blockquote>
+<h1 id="第十课-优先级与结合性"><a href="#第十课-优先级与结合性" class="headerlink" title="第十课-优先级与结合性"></a>第十课-优先级与结合性</h1><h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a= <span class="number">5</span>;</span><br><span class="line">a-=a+=a;</span><br></pre></td></tr></table></figure>
+
+<h2 id="C语言中文网"><a href="#C语言中文网" class="headerlink" title="C语言中文网"></a><a target="_blank" rel="noopener" href="http://c.biancheng.net/cpp/html/462.html">C语言中文网</a></h2><div id="art-body">C语言的运算符众多，具有不同的优先级和结合性，我们将它们全部列了出来，方便大家对比和记忆：
+<table>
+<tbody>
+<tr>
+<th>
+<p>
+优先级</p>
+</th>
+<th>
+<p>
+运算符</p>
+</th>
+<th>
+<p>
+名称或含义</p>
+</th>
+<th>
+<p>
+使用形式</p>
+</th>
+<th>
+<p>
+结合方向</p>
+</th>
+<th>
+<p>
+说明</p>
+</th>
+</tr>
+<tr>
+<td rowspan="4">
+<p>
+1</p>
+</td>
+<td>
+<p>
+[]</p>
+</td>
+<td>
+<p>
+数组下标</p>
+</td>
+<td>
+<p>
+数组名[常量表达式]</p>
+</td>
+<td rowspan="4">
+<p>
+左到右</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td>
+<p>
+()</p>
+</td>
+<td>
+<p>
+圆括号</p>
+</td>
+<td>
+<p>
+（表达式）/函数名(形参表)</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td>
+<p>
+.</p>
+</td>
+<td>
+<p>
+成员选择（对象）</p>
+</td>
+<td>
+<p>
+对象.成员名</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td>
+<p>
+-></p>
+</td>
+<td>
+<p>
+成员选择（指针）</p>
+</td>
+<td>
+<p>
+对象指针->成员名</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td rowspan="9">
+<p>
+2</p>
+</td>
+<td>
+<p>
+-</p>
+</td>
+<td>
+<p>
+负号运算符</p>
+</td>
+<td>
+<p>
+-表达式</p>
+</td>
+<td rowspan="9">
+<p>
+右到左</p>
+</td>
+<td>
+<p>
+单目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+(类型)</p>
+</td>
+<td>
+<p>
+强制类型转换</p>
+</td>
+<td>
+<p>
+(数据类型)表达式</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td>
+<p>
+++</p>
+</td>
+<td>
+<p>
+自增运算符</p>
+</td>
+<td>
+<p>
+++变量名/变量名++</p>
+</td>
+<td>
+<p>
+单目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+--</p>
+</td>
+<td>
+<p>
+自减运算符</p>
+</td>
+<td>
+<p>
+--变量名/变量名--</p>
+</td>
+<td>
+<p>
+单目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+*</p>
+</td>
+<td>
+<p>
+取值运算符</p>
+</td>
+<td>
+<p>
+*指针变量</p>
+</td>
+<td>
+<p>
+单目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+&</p>
+</td>
+<td>
+<p>
+取地址运算符</p>
+</td>
+<td>
+<p>
+&变量名</p>
+</td>
+<td>
+<p>
+单目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+!</p>
+</td>
+<td>
+<p>
+逻辑非运算符</p>
+</td>
+<td>
+<p>
+!表达式</p>
+</td>
+<td>
+<p>
+单目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+~</p>
+</td>
+<td>
+<p>
+按位取反运算符</p>
+</td>
+<td>
+<p>
+~表达式</p>
+</td>
+<td>
+<p>
+单目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+sizeof</p>
+</td>
+<td>
+<p>
+长度运算符</p>
+</td>
+<td>
+<p>
+sizeof(表达式)</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td rowspan="3">
+<p>
+3</p>
+</td>
+<td>
+<p>
+/</p>
+</td>
+<td>
+<p>
+除</p>
+</td>
+<td>
+<p>
+表达式/表达式</p>
+</td>
+<td rowspan="3">
+<p>
+左到右</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+*</p>
+</td>
+<td>
+<p>
+乘</p>
+</td>
+<td>
+<p>
+表达式*表达式</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+%</p>
+</td>
+<td>
+<p>
+余数（取模）</p>
+</td>
+<td>
+<p>
+整型表达式/整型表达式</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td rowspan="2">
+<p>
+4</p>
+</td>
+<td>
+<p>
++</p>
+</td>
+<td>
+<p>
+加</p>
+</td>
+<td>
+<p>
+表达式+表达式</p>
+</td>
+<td rowspan="2">
+<p>
+左到右</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+-</p>
+</td>
+<td>
+<p>
+减</p>
+</td>
+<td>
+<p>
+表达式-表达式</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td rowspan="2">
+<p>
+5</p>
+</td>
+<td>
+<p>
+<<</p>
+</td>
+<td>
+<p>
+左移</p>
+</td>
+<td>
+<p>
+变量<<表达式</p>
+</td>
+<td rowspan="2">
+<p>
+左到右</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+>></p>
+</td>
+<td>
+<p>
+右移</p>
+</td>
+<td>
+<p>
+变量>>表达式</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td rowspan="4">
+<p>
+6</p>
+</td>
+<td>
+<p>
+></p>
+</td>
+<td>
+<p>
+大于</p>
+</td>
+<td>
+<p>
+表达式>表达式</p>
+</td>
+<td rowspan="4">
+<p>
+左到右</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+>=</p>
+</td>
+<td>
+<p>
+大于等于</p>
+</td>
+<td>
+<p>
+表达式>=表达式</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<</p>
+</td>
+<td>
+<p>
+小于</p>
+</td>
+<td>
+<p>
+表达式<表达式</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<=</p>
+</td>
+<td>
+<p>
+小于等于</p>
+</td>
+<td>
+<p>
+表达式<=表达式</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td rowspan="2">
+<p>
+7</p>
+</td>
+<td>
+<p>
+==</p>
+</td>
+<td>
+<p>
+等于</p>
+</td>
+<td>
+<p>
+表达式==表达式</p>
+</td>
+<td rowspan="2">
+<p>
+左到右</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+!=</p>
+</td>
+<td>
+<p>
+不等于</p>
+</td>
+<td>
+<p>
+表达式!= 表达式</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+8</p>
+</td>
+<td>
+<p>
+&</p>
+</td>
+<td>
+<p>
+按位与</p>
+</td>
+<td>
+<p>
+表达式&表达式</p>
+</td>
+<td>
+<p>
+左到右</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+9</p>
+</td>
+<td>
+<p>
+^</p>
+</td>
+<td>
+<p>
+按位异或</p>
+</td>
+<td>
+<p>
+表达式^表达式</p>
+</td>
+<td>
+<p>
+左到右</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+10</p>
+</td>
+<td>
+<p>
+|</p>
+</td>
+<td>
+<p>
+按位或</p>
+</td>
+<td>
+<p>
+表达式|表达式</p>
+</td>
+<td>
+<p>
+左到右</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+11</p>
+</td>
+<td>
+<p>
+&&</p>
+</td>
+<td>
+<p>
+逻辑与</p>
+</td>
+<td>
+<p>
+表达式&&表达式</p>
+</td>
+<td>
+<p>
+左到右</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+12</p>
+</td>
+<td>
+<p>
+||</p>
+</td>
+<td>
+<p>
+逻辑或</p>
+</td>
+<td>
+<p>
+表达式||表达式</p>
+</td>
+<td>
+<p>
+左到右</p>
+</td>
+<td>
+<p>
+双目运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+13</p>
+</td>
+<td>
+<p>
+?:</p>
+</td>
+<td>
+<p>
+条件运算符</p>
+</td>
+<td>
+<p>
+表达式1? 表达式2: 表达式3</p>
+</td>
+<td>
+<p>
+右到左</p>
+</td>
+<td>
+<p>
+三目运算符</p>
+</td>
+</tr>
+<tr>
+<td rowspan="11">
+<p>
+14</p>
+</td>
+<td>
+<p>
+=</p>
+</td>
+<td>
+<p>
+赋值运算符</p>
+</td>
+<td>
+<p>
+变量=表达式</p>
+</td>
+<td rowspan="11">
+<p>
+右到左</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td>
+<p>
+/=</p>
+</td>
+<td>
+<p>
+除后赋值</p>
+</td>
+<td>
+<p>
+变量/=表达式</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td>
+<p>
+*=</p>
+</td>
+<td>
+<p>
+乘后赋值</p>
+</td>
+<td>
+<p>
+变量*=表达式</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td>
+<p>
+%=</p>
+</td>
+<td>
+<p>
+取模后赋值</p>
+</td>
+<td>
+<p>
+变量%=表达式</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td>
+<p>
++=</p>
+</td>
+<td>
+<p>
+加后赋值</p>
+</td>
+<td>
+<p>
+变量+=表达式</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td>
+<p>
+-=</p>
+</td>
+<td>
+<p>
+减后赋值</p>
+</td>
+<td>
+<p>
+变量-=表达式</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td>
+<p>
+<<=</p>
+</td>
+<td>
+<p>
+左移后赋值</p>
+</td>
+<td>
+<p>
+变量<<=表达式</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td>
+<p>
+>>=</p>
+</td>
+<td>
+<p>
+右移后赋值</p>
+</td>
+<td>
+<p>
+变量>>=表达式</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td>
+<p>
+&=</p>
+</td>
+<td>
+<p>
+按位与后赋值</p>
+</td>
+<td>
+<p>
+变量&=表达式</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td>
+<p>
+^=</p>
+</td>
+<td>
+<p>
+按位异或后赋值</p>
+</td>
+<td>
+<p>
+变量^=表达式</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td>
+<p>
+|=</p>
+</td>
+<td>
+<p>
+按位或后赋值</p>
+</td>
+<td>
+<p>
+变量|=表达式</p>
+</td>
+<td>
+ </td>
+</tr>
+<tr>
+<td>
+<p>
+15</p>
+</td>
+<td>
+<p>
+,</p>
+</td>
+<td>
+<p>
+逗号运算符</p>
+</td>
+<td>
+<p>
+表达式,表达式,…</p>
+</td>
+<td>
+<p>
+左到右</p>
+</td>
+<td>
+<p>
+从左向右顺序运算</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<span style="color:#a52a2a;">注：同一优先级的运算符，运算次序由结合方向所决定。</span><br>
+<br>
+上面的表无需死记硬背，很多运算符的规则和数学中是相同的，用得多，看得多自然就记得了。如果你是在记不住，可以使用( )。<br>
+<h2>
+一些容易出错的优先级问题</h2>
+上表中，优先级同为1 的几种运算符如果同时出现，那怎么确定表达式的优先级呢？这是很多初学者迷糊的地方。下表就整理了这些容易出错的情况：
+<div style="text-align: center; ">
+<img alt="" src="http://c.biancheng.net/cpp/uploads/allimg/120205/1-120205192420113.jpg" style="width: 500px; height: 318px; "></div>
+这些容易出错的情况，希望读者好好在编译器上调试调试，这样印象会深一些。一定要多调试，光靠看代码，水平是很难提上来的。调试代码才是最长水平的。</div>
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="http://c.biancheng.net/cpp/html/33.html">http://c.biancheng.net/cpp/html/33.html</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BB%8F%E9%AA%8C/" class="category-chain-item">经验</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%BB%8F%E9%AA%8C/C%E8%AF%AD%E8%A8%80%E7%BB%8F%E5%8E%86/" class="category-chain-item">C语言经历</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/C%E8%AF%AD%E8%A8%80/">#C语言</a>
+      
+        <a href="/tags/%E7%AC%94%E8%AE%B0/">#笔记</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>C语言学习笔记P2|7-10课</div>
+      <div>http://example.com/2022/03/18/C语言学习笔记p2/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>多双升</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年3月18日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/03/18/UOS01/" title="从深度deepin到统信UOS，因理想而出生，为责任而成长">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">从深度deepin到统信UOS，因理想而出生，为责任而成长</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/02/28/FixedFormatter-should-only-be-used-together-with-FixedLocator/" title="解决警告 FixedFormatter should only be used together with FixedLocator|Python点点">
+                        <span class="hidden-mobile">解决警告 FixedFormatter should only be used together with FixedLocator|Python点点</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments">
+    
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.5.11/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://comments-hexo-blog.vercel.app/","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://liegu0317.top" target="_blank" rel="nofollow noopener"><span>Liegu</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
