@@ -307,7 +307,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          undefined 字
+          1.2k 字
         
       </span>
     
@@ -318,7 +318,7 @@
         
         
         
-          NaN 分钟
+          12 分钟
         
       </span>
     
@@ -377,7 +377,7 @@
             
               <div class="markdown-body">
                 
-                <p><img src="https://s2.loli.net/2021/12/18/OkWFomyTA6qN3jS.png"></p>
+                <p><img src="https://s2.loli.net/2021/12/18/OkWFomyTA6qN3jS.png" srcset="/img/loading2.gif" lazyload></p>
 <h1 id="工具简介"><a href="#工具简介" class="headerlink" title="工具简介"></a>工具简介</h1><blockquote>
 <p>OpenCV的全称是Open Source Computer Vision Library，是一个跨平台的计算机视觉库。OpenCV是由英特尔公司发起并参与开发，以BSD许可证授权发行，可以在商业和研究领域中免费使用。OpenCV可用于开发实时的图像处理、计算机视觉以及模式识别程序。该程序库也可以使用英特尔公司的IPP进行加速处理。</p>
 </blockquote>
@@ -388,9 +388,9 @@
 <p>下面两个版本各取所需</p>
 </blockquote>
 <h2 id="使用pip进行安装最新版"><a href="#使用pip进行安装最新版" class="headerlink" title="使用pip进行安装最新版"></a>使用pip进行安装最新版</h2><p>打开<code>Anaconda</code>的<code>Anaconda Prompt</code></p>
-<p><img src="https://s2.loli.net/2021/12/18/bZPUsmv7pSRjMfn.png"></p>
+<p><img src="https://s2.loli.net/2021/12/18/bZPUsmv7pSRjMfn.png" srcset="/img/loading2.gif" lazyload></p>
 <p>运行命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ opencv-python</span><br><span class="line"></span><br><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ opencv-contrib-python</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">pip install -i https:<span class="hljs-regexp">//</span>pypi.tuna.tsinghua.edu.cn<span class="hljs-regexp">/simple/</span> opencv-python<br><br>pip install -i https:<span class="hljs-regexp">//</span>pypi.tuna.tsinghua.edu.cn<span class="hljs-regexp">/simple/</span> opencv-contrib-python<br></code></pre></td></tr></table></figure>
 
 <p>来安装<code>OpenCV-Python</code>最新版</p>
 <blockquote>
@@ -398,18 +398,23 @@
 </blockquote>
 <h2 id="OpenCV-Python装3-4-1-15版本（最后一个含有sift-surf的版本）"><a href="#OpenCV-Python装3-4-1-15版本（最后一个含有sift-surf的版本）" class="headerlink" title="OpenCV-Python装3.4.1.15版本（最后一个含有sift,surf的版本）"></a>OpenCV-Python装3.4.1.15版本（最后一个含有sift,surf的版本）</h2><p>Anaconda要装Anaconda3 5.2.0，对应python3.6版本</p>
 <p>依旧推荐<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">清华大学开源软件镜像站-anaconda&#x2F;archive</a></p>
-<p><img src="https://github.com/LIEGU0317/img/raw/master/Blogimg/202112202350676.png" alt="image-20211220235037549"></p>
+<p><img src="https://github.com/LIEGU0317/img/raw/master/Blogimg/202112202350676.png" srcset="/img/loading2.gif" lazyload alt="image-20211220235037549"></p>
 <p>安装OpenCV-python</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python==3.4.1.15</span><br><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-contrib-python==3.4.1.15</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">pip</span> install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python==<span class="hljs-number">3.4.1.15</span><br>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-contrib-python==<span class="hljs-number">3.4.1.15</span><br></code></pre></td></tr></table></figure>
 
-<p>若失效，不存在的请自行更换镜像源 <a href="%E5%B8%B8%E8%A7%81%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90">^1</a></p>
+<p>若失效，不存在的请自行更换镜像源 <sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="常见国内镜像源  
+        http://pypi.douban.com/simple/ 豆瓣 
+        http://mirrors.aliyun.com/pypi/simple/ 阿里 
+        http://pypi.hustunique.com/simple/ 华中理工大学 
+        http://pypi.sdutlinux.org/simple/ 山东理工大学 
+        http://pypi.mirrors.ustc.edu.cn/simple/ 中国科学技术大学">[1]</span></a></sup></p>
 <p>注</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-i https://pypi.tuna.tsinghua.edu.cn/simple --使用源</span><br><span class="line"></span><br><span class="line">-contrib- --添加模块</span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">-i <span class="hljs-keyword">https</span>://pypi.tuna.tsinghua.edu.cn/simple <span class="hljs-comment">--使用源</span><br><br>-contrib- <span class="hljs-comment">--添加模块</span><br></code></pre></td></tr></table></figure>
 
 
 
-<h2 id="查看已安装opencv版本"><a href="#查看已安装opencv版本" class="headerlink" title="查看已安装opencv版本"></a>查看已安装opencv版本</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python  </span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.__version__</span><br></pre></td></tr></table></figure>
+<h2 id="查看已安装opencv版本"><a href="#查看已安装opencv版本" class="headerlink" title="查看已安装opencv版本"></a>查看已安装opencv版本</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">python</span>  <br></code></pre></td></tr></table></figure>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc">cv2.<span class="hljs-emphasis">__version__</span><br></code></pre></td></tr></table></figure>
 
 
 
@@ -418,14 +423,9 @@
 <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
 <li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/OpenCV">opencv-维基百科</a></li>
 </ul>
-<p><img src="https://s2.loli.net/2021/12/19/9OxY3cKsAdXRjNb.png"></p>
-<pre><code>    http://pypi.douban.com/simple/ 豆瓣 
-    http://mirrors.aliyun.com/pypi/simple/ 阿里 
-    http://pypi.hustunique.com/simple/ 华中理工大学 
-    http://pypi.sdutlinux.org/simple/ 山东理工大学 
-    http://pypi.mirrors.ustc.edu.cn/simple/ 中国科学技术大学
-</code></pre>
-
+<p><img src="https://s2.loli.net/2021/12/19/9OxY3cKsAdXRjNb.png" srcset="/img/loading2.gif" lazyload></p>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>常见国内镜像源<br>        <a target="_blank" rel="noopener" href="http://pypi.douban.com/simple/">http://pypi.douban.com/simple/</a> 豆瓣<br>        <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a> 阿里<br>        <a target="_blank" rel="noopener" href="http://pypi.hustunique.com/simple/">http://pypi.hustunique.com/simple/</a> 华中理工大学<br>        <a target="_blank" rel="noopener" href="http://pypi.sdutlinux.org/simple/">http://pypi.sdutlinux.org/simple/</a> 山东理工大学<br>        <a target="_blank" rel="noopener" href="http://pypi.mirrors.ustc.edu.cn/simple/">http://pypi.mirrors.ustc.edu.cn/simple/</a> 中国科学技术大学
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
                 
               </div>
             

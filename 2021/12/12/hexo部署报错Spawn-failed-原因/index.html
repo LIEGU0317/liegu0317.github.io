@@ -27,8 +27,8 @@
 <meta property="article:published_time" content="2021-12-12T06:31:51.000Z">
 <meta property="article:modified_time" content="2022-03-29T14:45:04.000Z">
 <meta property="article:author" content="多双升">
-<meta property="article:tag" content="hexo">
 <meta property="article:tag" content="Blog">
+<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jinzhi0123/image/img/index_img.jpg">
   
@@ -306,7 +306,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          undefined 字
+          606 字
         
       </span>
     
@@ -317,7 +317,7 @@
         
         
         
-          NaN 分钟
+          7 分钟
         
       </span>
     
@@ -377,19 +377,19 @@
               <div class="markdown-body">
                 
                 <h1 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1.问题描述"></a>1.问题描述</h1><p>正常编写发布hexo博客</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<figure class="highlight sas"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sas">hexo clean <span class="hljs-variable">&amp;&amp;</span> hexo g <span class="hljs-variable">&amp;&amp;</span> hexo d<br></code></pre></td></tr></table></figure>
 
 <p>部署修改，遇到名为Spawn failed报错。然后无脑尝试了二次执行，依然报错如下</p>
-<p><img src="https://img-blog.csdnimg.cn/699e938641aa48509efb10ae92384e3a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<p><img src="https://img-blog.csdnimg.cn/699e938641aa48509efb10ae92384e3a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading2.gif" lazyload></p>
 <h1 id="2-问题原因"><a href="#2-问题原因" class="headerlink" title="2.问题原因"></a>2.问题原因</h1><p>询问学长以及在网上通过简单的查询之后发现问题出在.deploy_git文件夹，这是由hexo框架渲染生成的一个Git仓库,hexo d命令就是将其push到github。</p>
 <p>这是解决后的截图，更新时间全部为一样的</p>
-<p><img src="https://img-blog.csdnimg.cn/b4efcdff7ed342aa8717f244e5a80b78.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<p><img src="https://img-blog.csdnimg.cn/b4efcdff7ed342aa8717f244e5a80b78.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading2.gif" lazyload></p>
 <p>这是github liegu0317.github.io截图</p>
-<p><img src="https://img-blog.csdnimg.cn/6c1d68b51ad84b6bba33cf40098d0fb4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<p><img src="https://img-blog.csdnimg.cn/6c1d68b51ad84b6bba33cf40098d0fb4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading2.gif" lazyload></p>
 <p>问题大多是因为git进行push或者hexo d的时候改变了一些.deploy_git文件下的内容，多余本地提交之类的导致了报错。</p>
 <p>总之是本地文件的问题，</p>
 <p>于是运行了如下解决方法。</p>
-<h1 id="3-解决办法"><a href="#3-解决办法" class="headerlink" title="3.解决办法"></a>3.解决办法</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">进入站点根目录</span><br><span class="line">cd E:/hexo</span><br><span class="line"></span><br><span class="line">删除git提交内容文件夹</span><br><span class="line">rm -rf .deploy_git/</span><br><span class="line"></span><br><span class="line">执行</span><br><span class="line">git config --global core.autocrlf false</span><br><span class="line"></span><br><span class="line">最后</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<h1 id="3-解决办法"><a href="#3-解决办法" class="headerlink" title="3.解决办法"></a>3.解决办法</h1><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">进入站点根目录<br><span class="hljs-keyword">cd</span> E:<span class="hljs-string">/hexo</span><br><br>删除git提交内容文件夹<br>rm -rf <span class="hljs-string">.deploy_git/</span><br><br>执行<br>git config <span class="hljs-params">--global</span> core.autocrlf <span class="hljs-literal">false</span><br><br>最后<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<br></code></pre></td></tr></table></figure>
 
 <p>还有些回滚的方法，真的麻烦，但也有那样做的好处，各取所需吧。<br>其他方法可参见我的上一篇文章：‘Hexo部署Error:Spawn failed 解决方式’</p>
 <h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/liegu0317/article/details/121886380?spm=1001.2014.3001.5501">Hexo部署Error:Spawn failed 解决方式</a></p>
@@ -434,9 +434,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/hexo/">#hexo</a>
-      
         <a href="/tags/Blog/">#Blog</a>
+      
+        <a href="/tags/hexo/">#hexo</a>
       
     </div>
   
