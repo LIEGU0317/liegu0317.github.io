@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo2.png">
-  <link rel="icon" href="/img/logo2.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img%5C%5Cfavicon.png">
+  <link rel="icon" href="/img%5C%5Cfavicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -16,25 +16,25 @@
   <meta name="author" content="多双升">
   <meta name="keywords" content="">
   
-    <meta name="description" content="12.13中国政府设立的纪念日 请留一分钟，为南京大屠杀死难者默哀">
+    <meta name="description" content="以管理员身份打开PowerShell 输入 set-executionpolicy remotesigned">
 <meta property="og:type" content="article">
-<meta property="og:title" content="12.13国家公祭日 | 致敬英雄">
-<meta property="og:url" content="http://example.com/2021/12/13/12-13%E5%9B%BD%E5%AE%B6%E5%85%AC%E7%A5%AD%E6%97%A5-%E8%87%B4%E6%95%AC%E8%8B%B1%E9%9B%84/index.html">
+<meta property="og:title" content="PowerShell：因为在此系统上禁止运行脚本，解决方法">
+<meta property="og:url" content="http://example.com/2022/10/13/PowerShell%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5-%E7%A6%81%E7%94%A8%E8%84%9A%E6%9C%AC/index.html">
 <meta property="og:site_name" content="Liegu Corner">
-<meta property="og:description" content="12.13中国政府设立的纪念日 请留一分钟，为南京大屠杀死难者默哀">
+<meta property="og:description" content="以管理员身份打开PowerShell 输入 set-executionpolicy remotesigned">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic1.zhimg.com/v2-8a685f5066deee88768a6bb46db281a0_r.jpg">
-<meta property="article:published_time" content="2021-12-13T01:15:26.000Z">
-<meta property="article:modified_time" content="2022-10-13T14:07:08.327Z">
+<meta property="og:image" content="https://s2.loli.net/2022/10/13/xED35QMTcA9UClV.png">
+<meta property="article:published_time" content="2022-10-13T14:36:04.000Z">
+<meta property="article:modified_time" content="2022-10-13T15:32:21.861Z">
 <meta property="article:author" content="多双升">
-<meta property="article:tag" content="国家公祭日">
-<meta property="article:tag" content="日志">
+<meta property="article:tag" content="PowerShell">
+<meta property="article:tag" content="about_Execution_Policies">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://pic1.zhimg.com/v2-8a685f5066deee88768a6bb46db281a0_r.jpg">
+<meta name="twitter:image" content="https://s2.loli.net/2022/10/13/xED35QMTcA9UClV.png">
   
   
   
-  <title>12.13国家公祭日 | 致敬英雄 - Liegu Corner</title>
+  <title>PowerShell：因为在此系统上禁止运行脚本，解决方法 - Liegu Corner</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -72,7 +72,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading2.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"0cae1c0e6e41b699c896f4814a6f3951","google":"G-TM5TQ042BY","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"0cae1c0e6e41b699c896f4814a6f3951","google":"G-TM5TQ042BY","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -240,7 +240,7 @@
                   
                   <a class="dropdown-item" target="_blank" rel="noopener" href="https://liegu0317.top/">
                     
-                    主站
+                    GitHub主站
                   </a>
                 
                   
@@ -248,7 +248,7 @@
                   
                   <a class="dropdown-item" target="_blank" rel="noopener" href="https://liegu0317.gitee.io/">
                     
-                    镜像站
+                    Gitee站点
                   </a>
                 
               </div>
@@ -283,7 +283,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="12.13国家公祭日 | 致敬英雄"></span>
+            <span id="subtitle" data-typed-text="PowerShell：因为在此系统上禁止运行脚本，解决方法"></span>
           
         </div>
 
@@ -294,8 +294,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2021-12-13 09:15" pubdate>
-          2021年12月13日 上午
+        <time datetime="2022-10-13 22:36" pubdate>
+          2022年10月13日 晚上
         </time>
       </span>
     
@@ -306,7 +306,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          32 字
+          982 字
         
       </span>
     
@@ -317,7 +317,7 @@
         
         
         
-          1 分钟
+          10 分钟
         
       </span>
     
@@ -363,7 +363,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">12.13国家公祭日 | 致敬英雄</h1>
+            <h1 style="display: none">PowerShell：因为在此系统上禁止运行脚本，解决方法</h1>
             
               <p class="note note-info">
                 
@@ -376,10 +376,51 @@
             
               <div class="markdown-body">
                 
-                <p><img src="https://pic2.zhimg.com/v2-b89d685c9514ccf1500dbe3738fd8b21_r.jpg" srcset="/img/loading2.gif" lazyload></p>
-<p>12.13<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8D%97%E4%BA%AC%E5%A4%A7%E5%B1%A0%E6%9D%80%E6%AD%BB%E9%9A%BE%E8%80%85%E5%9B%BD%E5%AE%B6%E5%85%AC%E7%A5%AD%E6%97%A5">中国政府设立的纪念日</a></p>
-<p>请留一分钟，为南京大屠杀死难者默哀</p>
-<iframe src="//player.bilibili.com/player.html?aid=507289505&bvid=BV1Jg411w7yY&cid=459938924&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+                <p><img src="https://s2.loli.net/2022/10/13/xED35QMTcA9UClV.png" srcset="/img/loading2.gif" lazyload alt="powershell.png"></p>
+<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><blockquote>
+<p>Problem Description</p>
+</blockquote>
+<p>在使用WebStom的终端里使用PowerShell是出现这个报错</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo : 无法加载文件 C:\Users\shuan\AppData\Roaming\npm\hexo.ps1，因为在此系统上禁止运行脚本。有关详细信息，请参阅 https:/go.microsoft.com/fwlink/?LinkI<br>D=135170 中的 about_Execution_Policies。<br>所在位置 行:1 字符: 1<br>+ hexo s<br>+ ~~~~<br>    + CategoryInfo          : SecurityError: (:) []，PSSecurityException<br>    + FullyQualifiedErrorId : UnauthorizedAccess<br><br></code></pre></td></tr></table></figure>
+
+<h1 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a>报错原因</h1><blockquote>
+<p>Reason for error report</p>
+</blockquote>
+<p>根据提示内容进入[powershell](https:&#x2F;go.microsoft.com&#x2F;fwlink&#x2F;?LinkI<br>D&#x3D;135170)官网，阅读后发现是<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2">执行策略</a>默认设置<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2#restricted">Restricted</a>的问题</p>
+<blockquote>
+<h3 id="Restricted"><a href="#Restricted" class="headerlink" title="Restricted"></a>Restricted</h3><ul>
+<li>Windows 客户端计算机的默认执行策略。</li>
+<li>允许单个命令，但不允许脚本。</li>
+<li>防止运行所有脚本文件，包括格式化和配置文件 () <code>.ps1xml</code> 、模块脚本文件 (<code>.psm1</code>) ，以及 powerShell 配置文件 (<code>.ps1</code>) 。</li>
+</ul>
+</blockquote>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><blockquote>
+<p>Solutions</p>
+</blockquote>
+<p><strong>查询当前执行策略</strong></p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">Get-ExecutionPolicy</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>更改执行策略</strong></p>
+<p>更改为remotesigned</p>
+<blockquote>
+<h3 id="RemoteSigned"><a href="#RemoteSigned" class="headerlink" title="RemoteSigned"></a>RemoteSigned</h3><ul>
+<li>Windows 服务器计算机的默认执行策略。</li>
+<li>脚本可以运行。</li>
+<li>需要来自受信任的发布者对从 Internet 下载的脚本和配置文件（包括电子邮件和即时消息程序）的数字签名。</li>
+<li>不需要对在本地计算机上编写的脚本（而不是从 Internet 下载）进行数字签名。</li>
+<li>如果脚本被取消阻止，则运行从 Internet 下载且未签名的脚本，例如使用 <code>Unblock-File</code> cmdlet。</li>
+<li>从 Internet 以外的源运行未签名脚本的风险，以及可能是恶意的签名脚本。</li>
+</ul>
+</blockquote>
+<p>以<strong>管理员身份</strong>打开<strong>PowerShell</strong> 输入如下命令</p>
+<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dsconfig"><span class="hljs-built_in">set-executionpolicy</span> <span class="hljs-string">remotesigned</span><br></code></pre></td></tr></table></figure>
+
+<p>选择<code>A</code>或者<code>Y</code>即可在电脑上执行第三方脚本</p>
+<h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><blockquote>
+<p>Reference</p>
+</blockquote>
+<p>#<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2#restricted"> about_Execution_Policies</a></p>
+
                 
               </div>
             
@@ -397,8 +438,15 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%89%B9%E6%AE%8A%E7%9A%84%E6%97%A5%E5%AD%90/" class="category-chain-item">特殊的日子</a>
+  <a href="/categories/%E7%BB%8F%E9%AA%8C/" class="category-chain-item">经验</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%BB%8F%E9%AA%8C/%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="category-chain-item">错误总结</a>
+  
+  
+
   
 
       </span>
@@ -412,9 +460,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%9B%BD%E5%AE%B6%E5%85%AC%E7%A5%AD%E6%97%A5/">#国家公祭日</a>
+        <a href="/tags/PowerShell/">#PowerShell</a>
       
-        <a href="/tags/%E6%97%A5%E5%BF%97/">#日志</a>
+        <a href="/tags/about-Execution-Policies/">#about_Execution_Policies</a>
       
     </div>
   
@@ -426,8 +474,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>12.13国家公祭日 | 致敬英雄</div>
-      <div>http://example.com/2021/12/13/12-13国家公祭日-致敬英雄/</div>
+      <div>PowerShell：因为在此系统上禁止运行脚本，解决方法</div>
+      <div>http://example.com/2022/10/13/PowerShell执行策略-禁用脚本/</div>
     </div>
     <div class="license-meta">
       
@@ -439,7 +487,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2021年12月13日</div>
+          <div>2022年10月13日</div>
         </div>
       
       
@@ -471,18 +519,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/12/14/%E7%90%86%E8%A7%A3%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F-%E6%84%8F%E4%B9%89%E3%80%81%E4%BD%9C%E7%94%A8/" title="理解环境变量|意义、作用">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">理解环境变量|意义、作用</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/12/12/Hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99Spawn-failed-%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F/" title="Hexo部署Error:Spawn failed 解决方式">
-                        <span class="hidden-mobile">Hexo部署Error:Spawn failed 解决方式</span>
+                      <a href="/2022/08/09/Blog%E9%87%8D%E6%9E%84%E4%B9%8B%E8%B7%AF-Blog%E8%BF%9B%E5%8C%96%E4%B9%8B%E8%B7%AF/" title="Blog重构之路|Blog进化之路">
+                        <span class="hidden-mobile">Blog重构之路|Blog进化之路</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -803,5 +845,5 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-</body>
+<script src="/live2d-widget-models/packages/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2d-widget-models/packages/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"mobile":{"show":true},"display":{"position":"left","width":200,"height":324},"model":{"jsonPath":"/live2d-widget-models/packages/assets/miku.model.json"},"log":false});</script></body>
 </html>

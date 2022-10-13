@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>PowerShell：因为在此系统上禁止运行脚本，解决方法</title>
+    <link href="/2022/10/13/PowerShell%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5-%E7%A6%81%E7%94%A8%E8%84%9A%E6%9C%AC/"/>
+    <url>/2022/10/13/PowerShell%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5-%E7%A6%81%E7%94%A8%E8%84%9A%E6%9C%AC/</url>
+    
+    <content type="html"><![CDATA[<p><img src="https://s2.loli.net/2022/10/13/xED35QMTcA9UClV.png" srcset="/img/loading2.gif" lazyload alt="powershell.png"></p><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><blockquote><p>Problem Description</p></blockquote><p>在使用WebStom的终端里使用PowerShell是出现这个报错</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo : 无法加载文件 C:\Users\shuan\AppData\Roaming\npm\hexo.ps1，因为在此系统上禁止运行脚本。有关详细信息，请参阅 https:/go.microsoft.com/fwlink/?LinkI<br>D=135170 中的 about_Execution_Policies。<br>所在位置 行:1 字符: 1<br>+ hexo s<br>+ ~~~~<br>    + CategoryInfo          : SecurityError: (:) []，PSSecurityException<br>    + FullyQualifiedErrorId : UnauthorizedAccess<br><br></code></pre></td></tr></table></figure><h1 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a>报错原因</h1><blockquote><p>Reason for error report</p></blockquote><p>根据提示内容进入[powershell](https:&#x2F;go.microsoft.com&#x2F;fwlink&#x2F;?LinkI<br>D&#x3D;135170)官网，阅读后发现是<a href="https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2">执行策略</a>默认设置<a href="https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2#restricted">Restricted</a>的问题</p><blockquote><h3 id="Restricted"><a href="#Restricted" class="headerlink" title="Restricted"></a>Restricted</h3><ul><li>Windows 客户端计算机的默认执行策略。</li><li>允许单个命令，但不允许脚本。</li><li>防止运行所有脚本文件，包括格式化和配置文件 () <code>.ps1xml</code> 、模块脚本文件 (<code>.psm1</code>) ，以及 powerShell 配置文件 (<code>.ps1</code>) 。</li></ul></blockquote><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><blockquote><p>Solutions</p></blockquote><p><strong>查询当前执行策略</strong></p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">Get-ExecutionPolicy</span><br></code></pre></td></tr></table></figure><p><strong>更改执行策略</strong></p><p>更改为remotesigned</p><blockquote><h3 id="RemoteSigned"><a href="#RemoteSigned" class="headerlink" title="RemoteSigned"></a>RemoteSigned</h3><ul><li>Windows 服务器计算机的默认执行策略。</li><li>脚本可以运行。</li><li>需要来自受信任的发布者对从 Internet 下载的脚本和配置文件（包括电子邮件和即时消息程序）的数字签名。</li><li>不需要对在本地计算机上编写的脚本（而不是从 Internet 下载）进行数字签名。</li><li>如果脚本被取消阻止，则运行从 Internet 下载且未签名的脚本，例如使用 <code>Unblock-File</code> cmdlet。</li><li>从 Internet 以外的源运行未签名脚本的风险，以及可能是恶意的签名脚本。</li></ul></blockquote><p>以<strong>管理员身份</strong>打开<strong>PowerShell</strong> 输入如下命令</p><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dsconfig"><span class="hljs-built_in">set-executionpolicy</span> <span class="hljs-string">remotesigned</span><br></code></pre></td></tr></table></figure><p>选择<code>A</code>或者<code>Y</code>即可在电脑上执行第三方脚本</p><h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><blockquote><p>Reference</p></blockquote><p>#<a href="https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2#restricted"> about_Execution_Policies</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>经验</category>
+      
+      <category>错误总结</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>PowerShell</tag>
+      
+      <tag>about_Execution_Policies</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Blog重构之路|Blog进化之路</title>
     <link href="/2022/08/09/Blog%E9%87%8D%E6%9E%84%E4%B9%8B%E8%B7%AF-Blog%E8%BF%9B%E5%8C%96%E4%B9%8B%E8%B7%AF/"/>
     <url>/2022/08/09/Blog%E9%87%8D%E6%9E%84%E4%B9%8B%E8%B7%AF-Blog%E8%BF%9B%E5%8C%96%E4%B9%8B%E8%B7%AF/</url>
@@ -982,33 +1011,6 @@
       <tag>environment variables</tag>
       
       <tag>名词理解</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>12.13国家公祭日 | 致敬英雄</title>
-    <link href="/2021/12/13/12-13%E5%9B%BD%E5%AE%B6%E5%85%AC%E7%A5%AD%E6%97%A5-%E8%87%B4%E6%95%AC%E8%8B%B1%E9%9B%84/"/>
-    <url>/2021/12/13/12-13%E5%9B%BD%E5%AE%B6%E5%85%AC%E7%A5%AD%E6%97%A5-%E8%87%B4%E6%95%AC%E8%8B%B1%E9%9B%84/</url>
-    
-    <content type="html"><![CDATA[<p><img src="https://pic2.zhimg.com/v2-b89d685c9514ccf1500dbe3738fd8b21_r.jpg" srcset="/img/loading2.gif" lazyload></p><p>12.13<a href="https://baike.baidu.com/item/%E5%8D%97%E4%BA%AC%E5%A4%A7%E5%B1%A0%E6%9D%80%E6%AD%BB%E9%9A%BE%E8%80%85%E5%9B%BD%E5%AE%B6%E5%85%AC%E7%A5%AD%E6%97%A5">中国政府设立的纪念日</a></p><p>请留一分钟，为南京大屠杀死难者默哀</p><iframe src="//player.bilibili.com/player.html?aid=507289505&bvid=BV1Jg411w7yY&cid=459938924&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>]]></content>
-    
-    
-    <categories>
-      
-      <category>特殊的日子</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>国家公祭日</tag>
-      
-      <tag>日志</tag>
       
     </tags>
     
