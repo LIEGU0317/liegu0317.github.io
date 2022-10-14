@@ -355,9 +355,9 @@ navbar:
     - { key: "标签", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "关于", link: "/about/", icon: "iconfont icon-user-fill" }
     - { key: "友链", link: "/links/", icon: "iconfont icon-link-fill" }
-    - { key: "站点",  icon: "iconfont icon-github-fill", submenu: [
-{ key: "GitHub主站", link: 'https://liegu0317.top/'}, 
-{key: "Gitee站点", link: 'https://liegu0317.gitee.io/'}] }
+    - { key: "链接",  icon: "iconfont icon-github-fill", submenu: [
+{ key: "GitHub", link: 'https://github.com/LIEGU0317'}, 
+{key: "BiliBili", link: 'https://space.bilibili.com/498275682'}] }
 #    - { key: "主站", link: "", icon: "iconfont icon-github-fill" }
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -970,7 +970,7 @@ about:
   #  - { class: "iconfont icon-wechat-fill", qrcode: "/img/WeChat.png" }
     - { class: "iconfont icon-bilibili", link: "https://space.bilibili.com/498275682",tip: "bilibili"}
     - { class: "iconfont icon-users", link: "https://jq.qq.com/?_wv=1027&k=Il71L5sN",tip: "统信UOS北院QQ群"}
-    - { class: "iconfont icon-alipay-fill", qrcode: "img\\Alipay.jpg" }
+    - { class: "iconfont icon-alipay-fill", qrcode: "img/Alipay.jpg" }
     - { class: "iconfont icon-mail", link: "mailto:liegu0317@qq.com", tip: "QQMail" }
    # - { class: "iconfont icon-weibo-fill", link: "https://weibo.com/u/5948777259",tip: "weibo"}
    # - { class: "iconfont icon-twitter-fill", link: "https://twitter.com/liegu0317",tip: "twitter"}
