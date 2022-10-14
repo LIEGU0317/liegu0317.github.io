@@ -21,11 +21,11 @@ since: 2021
 
 # 用于浏览器标签的图标
 # Icon for browser tab
-favicon: img\\favicon.png
+favicon: img/favicon.png
 
 # 用于苹果设备的图标
 # Icon for Apple touch
-apple_touch_icon: img\\favicon.png
+apple_touch_icon: img/favicon.png
 
 # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 # Title separator in browser tab, eg: article - site
@@ -955,7 +955,7 @@ about:
   banner_img_height: 60
   banner_mask_alpha: 0.3
   # avatar: https://s2.loli.net/2022/04/13/zGqvnVm9lZ3RTEs.png
-  avatar: https://sm.ms/image/c2EWKFaqfjHoLbA
+  avatar: https://s2.loli.net/2022/10/14/c2EWKFaqfjHoLbA.jpg
   name: "多双升"
   intro: "<p>
 河北北方学院在校生<br>
