@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta name="theme-color" content="#2f4154">
+  <meta name="theme-color" content="#428a7f">
   <meta name="author" content="多双升">
   <meta name="keywords" content="">
   
@@ -380,12 +380,12 @@
 <figure class="highlight sas"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sas">hexo clean <span class="hljs-variable">&amp;&amp;</span> hexo g <span class="hljs-variable">&amp;&amp;</span> hexo d<br></code></pre></td></tr></table></figure>
 
 <p>部署修改，遇到名为Spawn failed报错。然后无脑尝试了二次执行，依然报错如下</p>
-<p><img src="https://img-blog.csdnimg.cn/699e938641aa48509efb10ae92384e3a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading2.gif" lazyload></p>
+<p><img src="https://img-blog.csdnimg.cn/699e938641aa48509efb10ae92384e3a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload></p>
 <h1 id="2-问题原因"><a href="#2-问题原因" class="headerlink" title="2.问题原因"></a>2.问题原因</h1><p>询问学长以及在网上通过简单的查询之后发现问题出在.deploy_git文件夹，这是由hexo框架渲染生成的一个Git仓库,hexo d命令就是将其push到github。</p>
 <p>这是解决后的截图，更新时间全部为一样的</p>
-<p><img src="https://img-blog.csdnimg.cn/b4efcdff7ed342aa8717f244e5a80b78.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading2.gif" lazyload></p>
+<p><img src="https://img-blog.csdnimg.cn/b4efcdff7ed342aa8717f244e5a80b78.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload></p>
 <p>这是github liegu0317.github.io截图</p>
-<p><img src="https://img-blog.csdnimg.cn/6c1d68b51ad84b6bba33cf40098d0fb4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading2.gif" lazyload></p>
+<p><img src="https://img-blog.csdnimg.cn/6c1d68b51ad84b6bba33cf40098d0fb4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload></p>
 <p>问题大多是因为git进行push或者hexo d的时候改变了一些.deploy_git文件下的内容，多余本地提交之类的导致了报错。</p>
 <p>总之是本地文件的问题，</p>
 <p>于是运行了如下解决方法。</p>
@@ -825,5 +825,5 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<script src="/live2d-widget-models/packages/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2d-widget-models/packages/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"mobile":{"show":true},"display":{"position":"left","width":200,"height":324},"model":{"jsonPath":"/live2d-widget-models/packages/assets/miku.model.json"},"log":false});</script></body>
+<script src="/live2dwm/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dwm/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"mobile":{"show":true},"display":{"position":"left","width":200,"height":324},"model":{"jsonPath":"/live2dwm/assets/miku.model.json"},"log":false});</script></body>
 </html>
