@@ -1,3 +1,5 @@
 # liegu0317.github.io
-多双升的个人博客重构版
-# 使用hexo博客框架
+- 💁‍♂️Introduction: 多双升的个人博客2022
+# Applied 
+- 🧱frame: [hexo](https://github.com/hexojs/hexo)
+- 🎈theme: [hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)
