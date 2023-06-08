@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "hexo": "^6.3.0",
-    "hexo-deployer-git": "^3.0.0",
+    "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^3.0.0",
@@ -25,9 +25,9 @@
     "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
-    "hexo-theme-butterfly": "^4.5.1",
+    "hexo-theme-butterfly": "^4.9.0",
     "hexo-theme-fluid": "^1.9.3",
-    "hexo-theme-landscape": "^0.0.3",
+    "hexo-theme-landscape": "^1.0.0",
     "live2d-widget-model-miku": "file:live2d-widget-models/packages/live2d-widget-model-miku"
   }
 }
