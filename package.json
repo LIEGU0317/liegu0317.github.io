@@ -26,7 +26,7 @@
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
     "hexo-theme-butterfly": "^4.9.0",
-    "hexo-theme-fluid": "^1.9.3",
+    "hexo-theme-fluid": "^1.9.4",
     "hexo-theme-landscape": "^1.0.0",
     "live2d-widget-model-miku": "file:live2d-widget-models/packages/live2d-widget-model-miku"
   }
