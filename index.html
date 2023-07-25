@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo.png">
+  <link rel="icon" href="/img/logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -58,7 +58,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"liegu0317.top","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"0cae1c0e6e41b699c896f4814a6f3951","google":"G-TM5TQ042BY","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"liegu0317.top","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"0cae1c0e6e41b699c896f4814a6f3951","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -85,19 +85,19 @@
   
 
   
-    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
     <script async>
       if (!Fluid.ctx.dnt) {
-        Fluid.utils.createScript('https://www.google-analytics.com/analytics.js', function() {
-          window.ga = window.ga || function() { (ga.q = ga.q || []).push(arguments) };
-          ga.l = +new Date;
-          ga('create', 'G-TM5TQ042BY', 'auto');
-          ga('send', 'pageview');
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
         });
       }
     </script>
-  
-
   
 
   
@@ -307,17 +307,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/11/14/J4125-01/" target="_self">
-          <img src="https://s2.loli.net/2023/07/01/Vhqfe6YmdMR824c.png" alt="倍控G30-J4125工控机开箱">
+          <img src="https://s2.loli.net/2023/07/01/Vhqfe6YmdMR824c.png" srcset="/img/loading.gif" lazyload alt="倍控G30-J4125工控机开箱">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/11/14/J4125-01/" target="_self">
           倍控G30-J4125工控机开箱
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/11/14/J4125-01/" target="_self">
@@ -385,17 +385,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/11/13/tools-md/" target="_self">
-          <img src="https://justyy.com/wp-content/uploads/2016/01/markdown-syntax-language.png" alt="Markdown|Tools分享">
+          <img src="https://justyy.com/wp-content/uploads/2016/01/markdown-syntax-language.png" srcset="/img/loading.gif" lazyload alt="Markdown|Tools分享">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/11/13/tools-md/" target="_self">
           Markdown|Tools分享
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/11/13/tools-md/" target="_self">
@@ -448,9 +448,9 @@
             
               <a href="/tags/%E5%9B%BE%E5%BA%8A/">#图床</a>
             
-              <a href="/tags/Markdown/">#Markdown</a>
-            
               <a href="/tags/Typora/">#Typora</a>
+            
+              <a href="/tags/Markdown/">#Markdown</a>
             
           </div>
         
@@ -463,17 +463,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/11/09/Deep-Learning-illustrated/" target="_self">
-          <img src="https://s2.loli.net/2022/11/09/s81pIFut6LT7BnZ.jpg" alt="《深度学习图解》读书笔记">
+          <img src="https://s2.loli.net/2022/11/09/s81pIFut6LT7BnZ.jpg" srcset="/img/loading.gif" lazyload alt="《深度学习图解》读书笔记">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/11/09/Deep-Learning-illustrated/" target="_self">
           《深度学习图解》读书笔记
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/11/09/Deep-Learning-illustrated/" target="_self">
@@ -539,17 +539,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/10/15/1124time/" target="_self">
-          <img src="https://s2.loli.net/2022/10/15/VgCYQasxF4zEM7n.jpg" alt="1124酱——time">
+          <img src="https://s2.loli.net/2022/10/15/VgCYQasxF4zEM7n.jpg" srcset="/img/loading.gif" lazyload alt="1124酱-time">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/10/15/1124time/" target="_self">
-          1124酱——time
+          1124酱-time
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/10/15/1124time/" target="_self">
@@ -615,17 +615,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/10/14/live2Dreboot/" target="_self">
-          <img src="https://s2.loli.net/2022/10/14/2chydDe9WX8bqvE.png" alt="博客live2D/看板娘配置|Blog进化之路">
+          <img src="https://s2.loli.net/2022/10/14/2chydDe9WX8bqvE.png" srcset="/img/loading.gif" lazyload alt="博客live2D/看板娘配置|Blog进化之路">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/10/14/live2Dreboot/" target="_self">
           博客live2D/看板娘配置|Blog进化之路
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/10/14/live2Dreboot/" target="_self">
@@ -691,17 +691,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/10/13/PowerShell%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5-%E7%A6%81%E7%94%A8%E8%84%9A%E6%9C%AC/" target="_self">
-          <img src="https://s2.loli.net/2022/10/13/xED35QMTcA9UClV.png" alt="PowerShell：因为在此系统上禁止运行脚本，解决方法">
+          <img src="https://s2.loli.net/2022/10/13/xED35QMTcA9UClV.png" srcset="/img/loading.gif" lazyload alt="PowerShell：因为在此系统上禁止运行脚本，解决方法">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/10/13/PowerShell%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5-%E7%A6%81%E7%94%A8%E8%84%9A%E6%9C%AC/" target="_self">
           PowerShell：因为在此系统上禁止运行脚本，解决方法
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/10/13/PowerShell%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5-%E7%A6%81%E7%94%A8%E8%84%9A%E6%9C%AC/" target="_self">
@@ -767,17 +767,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/08/09/Blog%E9%87%8D%E6%9E%84%E4%B9%8B%E8%B7%AF-Blog%E8%BF%9B%E5%8C%96%E4%B9%8B%E8%B7%AF/" target="_self">
-          <img src="https://s2.loli.net/2022/08/09/wtCnWMqGUS5D4ik.png" alt="Blog重构之路|Blog进化之路">
+          <img src="https://s2.loli.net/2022/08/09/wtCnWMqGUS5D4ik.png" srcset="/img/loading.gif" lazyload alt="Blog重构之路|Blog进化之路">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/08/09/Blog%E9%87%8D%E6%9E%84%E4%B9%8B%E8%B7%AF-Blog%E8%BF%9B%E5%8C%96%E4%B9%8B%E8%B7%AF/" target="_self">
           Blog重构之路|Blog进化之路
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/08/09/Blog%E9%87%8D%E6%9E%84%E4%B9%8B%E8%B7%AF-Blog%E8%BF%9B%E5%8C%96%E4%B9%8B%E8%B7%AF/" target="_self">
@@ -843,17 +843,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/07/02/%E5%8F%82%E4%B8%8E2022%E5%B9%B4C4%E7%9A%84%E5%B0%8F%E7%BB%8F%E9%AA%8C-Web%E7%82%B9%E7%82%B9/" target="_self">
-          <img src="https://oss.moocollege.com/10688/skin/YYU7QYdI_1646543703035.png" alt="参与2022年C4的小经验（1）|Web点点">
+          <img src="https://oss.moocollege.com/10688/skin/YYU7QYdI_1646543703035.png" srcset="/img/loading.gif" lazyload alt="参与2022年C4的小经验（1）|Web点点">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/07/02/%E5%8F%82%E4%B8%8E2022%E5%B9%B4C4%E7%9A%84%E5%B0%8F%E7%BB%8F%E9%AA%8C-Web%E7%82%B9%E7%82%B9/" target="_self">
           参与2022年C4的小经验（1）|Web点点
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/07/02/%E5%8F%82%E4%B8%8E2022%E5%B9%B4C4%E7%9A%84%E5%B0%8F%E7%BB%8F%E9%AA%8C-Web%E7%82%B9%E7%82%B9/" target="_self">
@@ -923,17 +923,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/05/24/PicGo-core%E3%80%81GitHub%E5%9B%BE%E5%BA%8A%E3%80%81Typora-%E4%BA%91%E7%AC%94%E8%AE%B0/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/liegu0317/img/Blogimgpicgo-core-github-typora.png" alt="Linux环境下PicGo-core、GitHub图床、Typora|inux云笔记">
+          <img src="https://cdn.jsdelivr.net/gh/liegu0317/img/Blogimgpicgo-core-github-typora.png" srcset="/img/loading.gif" lazyload alt="Linux环境下PicGo-core、GitHub图床、Typora|inux云笔记">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/05/24/PicGo-core%E3%80%81GitHub%E5%9B%BE%E5%BA%8A%E3%80%81Typora-%E4%BA%91%E7%AC%94%E8%AE%B0/" target="_self">
           Linux环境下PicGo-core、GitHub图床、Typora|inux云笔记
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/05/24/PicGo-core%E3%80%81GitHub%E5%9B%BE%E5%BA%8A%E3%80%81Typora-%E4%BA%91%E7%AC%94%E8%AE%B0/" target="_self">
@@ -1003,17 +1003,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/04/14/%E7%BB%9F%E4%BF%A1UOS%E6%A0%A1%E5%9B%AD%E8%81%94%E7%9B%9F%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%9F%B9%E8%AE%AD/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/liegu0317/img@master/Blogimg/第一次培训.jpg" alt="统信UOS校园联盟第一次培训">
+          <img src="https://cdn.jsdelivr.net/gh/liegu0317/img@master/Blogimg/第一次培训.jpg" srcset="/img/loading.gif" lazyload alt="统信UOS校园联盟第一次培训">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/04/14/%E7%BB%9F%E4%BF%A1UOS%E6%A0%A1%E5%9B%AD%E8%81%94%E7%9B%9F%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%9F%B9%E8%AE%AD/" target="_self">
           统信UOS校园联盟第一次培训
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/04/14/%E7%BB%9F%E4%BF%A1UOS%E6%A0%A1%E5%9B%AD%E8%81%94%E7%9B%9F%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%9F%B9%E8%AE%AD/" target="_self">
@@ -1177,7 +1177,7 @@
   </script>
 
 
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
@@ -1202,7 +1202,7 @@
 
 
   
-    
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 

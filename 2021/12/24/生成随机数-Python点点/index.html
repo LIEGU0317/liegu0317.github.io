@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo.png">
+  <link rel="icon" href="/img/logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -73,7 +73,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"liegu0317.top","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"0cae1c0e6e41b699c896f4814a6f3951","google":"G-TM5TQ042BY","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"liegu0317.top","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"0cae1c0e6e41b699c896f4814a6f3951","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -100,19 +100,19 @@
   
 
   
-    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
     <script async>
       if (!Fluid.ctx.dnt) {
-        Fluid.utils.createScript('https://www.google-analytics.com/analytics.js', function() {
-          window.ga = window.ga || function() { (ga.q = ga.q || []).push(arguments) };
-          ga.l = +new Date;
-          ga('create', 'G-TM5TQ042BY', 'auto');
-          ga('send', 'pageview');
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
         });
       }
     </script>
-  
-
   
 
   
@@ -364,8 +364,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">生成随机数|Python点点</h1>
+            <h1 id="seo-header">生成随机数|Python点点</h1>
             
               <p class="note note-info">
                 
@@ -385,12 +384,12 @@
 <h1 id="一、使用random模块生成随机数组"><a href="#一、使用random模块生成随机数组" class="headerlink" title="一、使用random模块生成随机数组"></a><strong>一、使用random模块生成随机数组</strong></h1><img src="https://github.com/LIEGU0317/img/raw/master/Blogimg/202112242105953.jpeg" srcset="/img/loading.gif" lazyload alt="python 生成随机数模块random 常用方法总结" style="zoom:80%;" />
 
 <p>python的random模块中有一些生成随机数字的方法，例如random.randint， random.random, random.uniform, random.randrange,这些函数大同小异，均是在返回指定范围内的一个整数或浮点数，下边简单解释一下这几个函数。</p>
-<h2 id="1、random-randint-low-hight-gt-返回一个位于-low-hight-之间的整数"><a href="#1、random-randint-low-hight-gt-返回一个位于-low-hight-之间的整数" class="headerlink" title="1、random.randint(low, hight) -&gt; 返回一个位于[low,hight]之间的整数"></a>1、random.randint(low, hight) -&gt; 返回一个位于[low,hight]之间的<em>整数</em></h2><p>该函数接受两个参数，这两个参数必须是整数（或者小数位是0的浮点数），并且第一个参数必须不大于第二个参数</p>
+<h2 id="1、random-randint-low-hight-返回一个位于-low-hight-之间的整数"><a href="#1、random-randint-low-hight-返回一个位于-low-hight-之间的整数" class="headerlink" title="1、random.randint(low, hight) -&gt; 返回一个位于[low,hight]之间的整数"></a>1、random.randint(low, hight) -&gt; 返回一个位于[low,hight]之间的<em>整数</em></h2><p>该函数接受两个参数，这两个参数必须是整数（或者小数位是0的浮点数），并且第一个参数必须不大于第二个参数</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">random</span>.randint<br><span class="hljs-attribute">import</span> random<br><span class="hljs-attribute">random</span>.randint(<span class="hljs-number">1</span>,<span class="hljs-number">10</span>)<br><span class="hljs-attribute">6</span><br><span class="hljs-attribute">random</span>.randint(<span class="hljs-number">1</span>.<span class="hljs-number">0</span>, <span class="hljs-number">10</span>.<span class="hljs-number">0</span>)<br><span class="hljs-attribute">1</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="2、random-random-gt-不接受参数，返回一个-0-0-1-0-之间的浮点数"><a href="#2、random-random-gt-不接受参数，返回一个-0-0-1-0-之间的浮点数" class="headerlink" title="2、random.random() -&gt; 不接受参数，返回一个[0.0, 1.0)之间的浮点数"></a>2、random.random() -&gt; 不接受参数，返回一个[0.0, 1.0)之间的<em>浮点数</em></h2><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-built_in">random</span>.<span class="hljs-built_in">random</span>()<br><span class="hljs-number">0.227730775007011</span><br></code></pre></td></tr></table></figure>
-<h2 id="3、random-uniform-val1-val2-gt-接受两个数字参数，返回两个数字区间的一个浮点数，不要求val1小于等于val2"><a href="#3、random-uniform-val1-val2-gt-接受两个数字参数，返回两个数字区间的一个浮点数，不要求val1小于等于val2" class="headerlink" title="3、random.uniform(val1, val2) -&gt; 接受两个数字参数，返回两个数字区间的一个浮点数，不要求val1小于等于val2"></a>3、random.uniform(val1, val2) -&gt; 接受两个数字参数，返回两个数字区间的一个<em>浮点数</em>，不要求val1小于等于val2</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs random.uniform(1,5.0)">random.uniform(9.9, 2)<br>5.189511116007191<br></code></pre></td></tr></table></figure>
-<h2 id="4、random-randrange-start-stop-step-gt-返回以start开始，stop结束，step为步长的列表中的随机整数，同样，三个参数均为整数（或者小数位为0），若start大于stop时-，setp必须为负数-step不能是0"><a href="#4、random-randrange-start-stop-step-gt-返回以start开始，stop结束，step为步长的列表中的随机整数，同样，三个参数均为整数（或者小数位为0），若start大于stop时-，setp必须为负数-step不能是0" class="headerlink" title="4、random.randrange(start, stop, step) -&gt; 返回以start开始，stop结束，step为步长的列表中的随机整数，同样，三个参数均为整数（或者小数位为0），若start大于stop时 ，setp必须为负数.step不能是0."></a>4、random.randrange(start, stop, step) -&gt; 返回以start开始，stop结束，step为步长的列表中的随机<em>整数</em>，同样，三个参数均为<em>整数（或者小数位为0）</em>，若start大于stop时 ，setp必须为负数.step不能是0.</h2><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">random</span>.randrange(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>, <span class="hljs-number">2</span>)  #返回[<span class="hljs-number">1</span>,<span class="hljs-number">100</span>]之间的奇数<br><span class="hljs-attribute">random</span>.ranrange(<span class="hljs-number">100</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">2</span>)  #返回[<span class="hljs-number">100</span>,<span class="hljs-number">1</span>]之间的偶数<br><span class="hljs-attribute">2</span><br></code></pre></td></tr></table></figure>
+<h2 id="2、random-random-不接受参数，返回一个-0-0-1-0-之间的浮点数"><a href="#2、random-random-不接受参数，返回一个-0-0-1-0-之间的浮点数" class="headerlink" title="2、random.random() -&gt; 不接受参数，返回一个[0.0, 1.0)之间的浮点数"></a>2、random.random() -&gt; 不接受参数，返回一个[0.0, 1.0)之间的<em>浮点数</em></h2><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-built_in">random</span>.<span class="hljs-built_in">random</span>()<br><span class="hljs-number">0.227730775007011</span><br></code></pre></td></tr></table></figure>
+<h2 id="3、random-uniform-val1-val2-接受两个数字参数，返回两个数字区间的一个浮点数，不要求val1小于等于val2"><a href="#3、random-uniform-val1-val2-接受两个数字参数，返回两个数字区间的一个浮点数，不要求val1小于等于val2" class="headerlink" title="3、random.uniform(val1, val2) -&gt; 接受两个数字参数，返回两个数字区间的一个浮点数，不要求val1小于等于val2"></a>3、random.uniform(val1, val2) -&gt; 接受两个数字参数，返回两个数字区间的一个<em>浮点数</em>，不要求val1小于等于val2</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs random.uniform(1,5.0)">random.uniform(9.9, 2)<br>5.189511116007191<br></code></pre></td></tr></table></figure>
+<h2 id="4、random-randrange-start-stop-step-返回以start开始，stop结束，step为步长的列表中的随机整数，同样，三个参数均为整数（或者小数位为0），若start大于stop时-，setp必须为负数-step不能是0"><a href="#4、random-randrange-start-stop-step-返回以start开始，stop结束，step为步长的列表中的随机整数，同样，三个参数均为整数（或者小数位为0），若start大于stop时-，setp必须为负数-step不能是0" class="headerlink" title="4、random.randrange(start, stop, step) -&gt; 返回以start开始，stop结束，step为步长的列表中的随机整数，同样，三个参数均为整数（或者小数位为0），若start大于stop时 ，setp必须为负数.step不能是0."></a>4、random.randrange(start, stop, step) -&gt; 返回以start开始，stop结束，step为步长的列表中的随机<em>整数</em>，同样，三个参数均为<em>整数（或者小数位为0）</em>，若start大于stop时 ，setp必须为负数.step不能是0.</h2><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">random</span>.randrange(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>, <span class="hljs-number">2</span>)  #返回[<span class="hljs-number">1</span>,<span class="hljs-number">100</span>]之间的奇数<br><span class="hljs-attribute">random</span>.ranrange(<span class="hljs-number">100</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">2</span>)  #返回[<span class="hljs-number">100</span>,<span class="hljs-number">1</span>]之间的偶数<br><span class="hljs-attribute">2</span><br></code></pre></td></tr></table></figure>
 
 <h2 id="5、生成随机数组"><a href="#5、生成随机数组" class="headerlink" title="5、生成随机数组"></a>5、生成随机数组</h2><p>下边我们用random.randint来生成一个随机数组</p>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">import <span class="hljs-built_in">random</span><br>def random_int_list(<span class="hljs-built_in">start</span>, <span class="hljs-built_in">stop</span>, <span class="hljs-built_in">length</span>):<br>    <span class="hljs-built_in">start</span>, <span class="hljs-built_in">stop</span> = (int(<span class="hljs-built_in">start</span>), int(<span class="hljs-built_in">stop</span>)) <span class="hljs-keyword">if</span> <span class="hljs-built_in">start</span> &lt;= <span class="hljs-built_in">stop</span> <span class="hljs-keyword">else</span> (int(<span class="hljs-built_in">stop</span>), int(<span class="hljs-built_in">start</span>))<br>    <span class="hljs-built_in">length</span> = int(<span class="hljs-built_in">abs</span>(<span class="hljs-built_in">length</span>)) <span class="hljs-keyword">if</span> <span class="hljs-built_in">length</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span><br>    random_list = []<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-built_in">length</span>):<br>        random_list.append(<span class="hljs-built_in">random</span>.randint(<span class="hljs-built_in">start</span>, <span class="hljs-built_in">stop</span>))<br>    <span class="hljs-literal">return</span> random_list<br></code></pre></td></tr></table></figure>
@@ -457,11 +456,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Python/">#Python</a>
+        <a href="/tags/Python/" class="print-no-link">#Python</a>
       
-        <a href="/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/">#随机数</a>
+        <a href="/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/" class="print-no-link">#随机数</a>
       
-        <a href="/tags/Numpy/">#Numpy</a>
+        <a href="/tags/Numpy/" class="print-no-link">#Numpy</a>
       
     </div>
   
@@ -497,7 +496,7 @@
             
               
               
-                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                   <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-by"></i>
                   </span>
@@ -542,21 +541,23 @@
             
   
   
-    <article id="comments">
+    <article id="comments" lazyload>
       
   <div id="twikoo"></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
-      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.5.11/twikoo.all.min.js', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js', function() {
         var options = Object.assign(
           {"envId":"https://comments-hexo-blog.vercel.app/","region":"ap-shanghai","path":"window.location.pathname"},
           {
             el: '#twikoo',
             path: 'window.location.pathname',
             onCommentLoaded: function() {
-              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
-              Fluid.plugins.imageCaption(imgSelector);
-              Fluid.plugins.fancyBox(imgSelector);
+              Fluid.utils.listenDOMLoaded(function() {
+                var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+                Fluid.plugins.imageCaption(imgSelector);
+                Fluid.plugins.fancyBox(imgSelector);
+              });
             }
           }
         )
@@ -712,7 +713,7 @@
   </script>
 
 
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
@@ -737,9 +738,7 @@
 
 
   
-    
-      <script  src="/js/img-lazyload.js" ></script>
-    
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -747,7 +746,7 @@
 
   
 <script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
     var toc = jQuery('#toc');
     if (toc.length === 0 || !window.tocbot) { return; }
     var boardCtn = jQuery('#board-ctn');
@@ -785,7 +784,7 @@
 </script>
 
 
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
   <script>Fluid.plugins.codeWidget();</script>
 

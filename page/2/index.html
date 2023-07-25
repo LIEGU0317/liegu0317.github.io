@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo.png">
+  <link rel="icon" href="/img/logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -58,7 +58,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"liegu0317.top","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"0cae1c0e6e41b699c896f4814a6f3951","google":"G-TM5TQ042BY","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"liegu0317.top","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"0cae1c0e6e41b699c896f4814a6f3951","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -85,19 +85,19 @@
   
 
   
-    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
     <script async>
       if (!Fluid.ctx.dnt) {
-        Fluid.utils.createScript('https://www.google-analytics.com/analytics.js', function() {
-          window.ga = window.ga || function() { (ga.q = ga.q || []).push(arguments) };
-          ga.l = +new Date;
-          ga('create', 'G-TM5TQ042BY', 'auto');
-          ga('send', 'pageview');
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
         });
       }
     </script>
-  
-
   
 
   
@@ -307,17 +307,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/04/13/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0p3/" target="_self">
-          <img src="https://img-blog.csdnimg.cn/img_convert/550f2c7db0b5edcf7788a0acc35797e4.png" alt="C语言学习笔记p3">
+          <img src="https://img-blog.csdnimg.cn/img_convert/550f2c7db0b5edcf7788a0acc35797e4.png" srcset="/img/loading.gif" lazyload alt="C语言学习笔记p3">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/04/13/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0p3/" target="_self">
           C语言学习笔记p3
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/04/13/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0p3/" target="_self">
@@ -385,17 +385,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/04/06/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B02-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" target="_self">
-          <img src="https://img-blog.csdnimg.cn/img_convert/550f2c7db0b5edcf7788a0acc35797e4.png" alt="C语言学习杂记2|基本数据类型">
+          <img src="https://img-blog.csdnimg.cn/img_convert/550f2c7db0b5edcf7788a0acc35797e4.png" srcset="/img/loading.gif" lazyload alt="C语言学习杂记2|基本数据类型">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/04/06/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B02-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" target="_self">
           C语言学习杂记2|基本数据类型
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/04/06/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B02-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" target="_self">
@@ -461,17 +461,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/04/01/About%E7%BB%9F%E4%BF%A1UOS%E5%AE%89%E8%A3%85/" target="_self">
-          <img src="https://img-blog.csdnimg.cn/c71b6e6f2d064fd2bce7094c44ffc737.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="About统信UOS安装">
+          <img src="https://img-blog.csdnimg.cn/c71b6e6f2d064fd2bce7094c44ffc737.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload alt="About统信UOS安装">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/04/01/About%E7%BB%9F%E4%BF%A1UOS%E5%AE%89%E8%A3%85/" target="_self">
           About统信UOS安装
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/04/01/About%E7%BB%9F%E4%BF%A1UOS%E5%AE%89%E8%A3%85/" target="_self">
@@ -537,17 +537,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/03/29/Gitee%E5%9B%BE%E5%BA%8A%E5%B4%A9%E4%BA%86-%E6%88%91%E5%8F%88%E8%BD%AC%E5%88%B0%E4%BA%86Github/" target="_self">
-          <img src="https://img-blog.csdnimg.cn/5a786df14bc848f19069765c1eeb1bc6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="Gitee图床崩了 我又转到了Github | 封面无法加载">
+          <img src="https://img-blog.csdnimg.cn/5a786df14bc848f19069765c1eeb1bc6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload alt="Gitee图床崩了 我又转到了Github | 封面无法加载">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/03/29/Gitee%E5%9B%BE%E5%BA%8A%E5%B4%A9%E4%BA%86-%E6%88%91%E5%8F%88%E8%BD%AC%E5%88%B0%E4%BA%86Github/" target="_self">
           Gitee图床崩了 我又转到了Github | 封面无法加载
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/03/29/Gitee%E5%9B%BE%E5%BA%8A%E5%B4%A9%E4%BA%86-%E6%88%91%E5%8F%88%E8%BD%AC%E5%88%B0%E4%BA%86Github/" target="_self">
@@ -617,17 +617,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/03/21/ASC2/" target="_self">
-          <img src="https://github.com/LIEGU0317/img/raw/master/Blogimg/ASC.png" alt="ASCII">
+          <img src="https://github.com/LIEGU0317/img/raw/master/Blogimg/ASC.png" srcset="/img/loading.gif" lazyload alt="ASCII">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/03/21/ASC2/" target="_self">
           ASCII
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/03/21/ASC2/" target="_self">
@@ -693,17 +693,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/03/18/UOS01/" target="_self">
-          <img src="https://img-blog.csdnimg.cn/b8e1631aee8f441a956a440665f311b8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="从深度deepin到统信UOS，因理想而出生，为责任而成长">
+          <img src="https://img-blog.csdnimg.cn/b8e1631aee8f441a956a440665f311b8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA54ix5ZCD6LGG55qu,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" srcset="/img/loading.gif" lazyload alt="从深度deepin到统信UOS，因理想而出生，为责任而成长">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/03/18/UOS01/" target="_self">
           从深度deepin到统信UOS，因理想而出生，为责任而成长
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/03/18/UOS01/" target="_self">
@@ -777,17 +777,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/03/18/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0p2/" target="_self">
-          <img src="https://img-blog.csdnimg.cn/img_convert/550f2c7db0b5edcf7788a0acc35797e4.png" alt="C语言学习笔记P2|7-10课">
+          <img src="https://img-blog.csdnimg.cn/img_convert/550f2c7db0b5edcf7788a0acc35797e4.png" srcset="/img/loading.gif" lazyload alt="C语言学习笔记P2|7-10课">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/03/18/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0p2/" target="_self">
           C语言学习笔记P2|7-10课
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/03/18/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0p2/" target="_self">
@@ -853,17 +853,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/02/28/FixedFormatter-should-only-be-used-together-with-FixedLocator/" target="_self">
-          <img src="https://github.com/LIEGU0317/img/raw/master/Blogimg/202112222052316.png" alt="解决警告 FixedFormatter should only be used together with FixedLocator|Python点点">
+          <img src="https://github.com/LIEGU0317/img/raw/master/Blogimg/202112222052316.png" srcset="/img/loading.gif" lazyload alt="解决警告 FixedFormatter should only be used together with FixedLocator|Python点点">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/02/28/FixedFormatter-should-only-be-used-together-with-FixedLocator/" target="_self">
           解决警告 FixedFormatter should only be used together with FixedLocator|Python点点
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/02/28/FixedFormatter-should-only-be-used-together-with-FixedLocator/" target="_self">
@@ -931,17 +931,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/02/28/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0/" target="_self">
-          <img src="https://github.com/LIEGU0317/img/raw/master/Blogimg/202202211019720.png" alt="C语言学习笔记P1|第1-6课">
+          <img src="https://github.com/LIEGU0317/img/raw/master/Blogimg/202202211019720.png" srcset="/img/loading.gif" lazyload alt="C语言学习笔记P1|第1-6课">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/02/28/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0/" target="_self">
           C语言学习笔记P1|第1-6课
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/02/28/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0/" target="_self">
@@ -1007,17 +1007,17 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/02/24/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%B0%88/" target="_self">
-          <img src="https://github.com/LIEGU0317/img/raw/master/Blogimg/202202211019720.png" alt="C语言学习杂记1|学习软件选择">
+          <img src="https://github.com/LIEGU0317/img/raw/master/Blogimg/202202211019720.png" srcset="/img/loading.gif" lazyload alt="C语言学习杂记1|学习软件选择">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/02/24/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%B0%88/" target="_self">
           C语言学习杂记1|学习软件选择
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/02/24/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%B0%88/" target="_self">
@@ -1181,7 +1181,7 @@
   </script>
 
 
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
@@ -1206,7 +1206,7 @@
 
 
   
-    
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
