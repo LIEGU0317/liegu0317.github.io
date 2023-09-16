@@ -97,6 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
+# theme目录下主题目录文件夹
 theme: hexo-theme-fluid-1.9.5
 
 # Deployment
