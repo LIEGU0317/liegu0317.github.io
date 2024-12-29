@@ -1,0 +1,926 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/liegu.png">
+  <link rel="icon" href="/img/liegu.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#428a7f">
+  <meta name="author" content="多双升">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="著:[美]-安德鲁·特拉斯克(Andrew w.Trask);译:王晓雷、严烈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《深度学习图解》读书笔记">
+<meta property="og:url" content="https://liegu0317.top/2022/11/09/Deep-Learning-illustrated/index.html">
+<meta property="og:site_name" content="Liegu Corner">
+<meta property="og:description" content="著:[美]-安德鲁·特拉斯克(Andrew w.Trask);译:王晓雷、严烈">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/11/09/s81pIFut6LT7BnZ.jpg">
+<meta property="article:published_time" content="2022-11-09T11:58:06.000Z">
+<meta property="article:modified_time" content="2024-12-29T14:12:05.303Z">
+<meta property="article:author" content="多双升">
+<meta property="article:tag" content="《深度学习图解》">
+<meta property="article:tag" content="安德鲁·特拉斯克(Andrew w.Trask)">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s2.loli.net/2022/11/09/s81pIFut6LT7BnZ.jpg">
+  
+  
+  
+  <title>《深度学习图解》读书笔记 - Liegu Corner</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"liegu0317.top","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"0cae1c0e6e41b699c896f4814a6f3951","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0cae1c0e6e41b699c896f4814a6f3951";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>LieGuのBlog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>类别</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-github-fill"></i>
+                <span>链接</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://github.com/LIEGU0317">
+                    
+                    <span>GitHub</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://space.bilibili.com/498275682">
+                    
+                    <span>BiliBili</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="《深度学习图解》读书笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-11-09 19:58" pubdate>
+          2022年11月9日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          57 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">《深度学习图解》读书笔记</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2024年12月29日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p>先看看一个有趣的问题：“国王 - 男人 + 女人 &#x3D; ？” 自然语言的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C&spm=1001.2101.3001.7020">神经网络</a>NLP用了词向量解决了这个问题。答案是女王 Queen。</p>
+<p><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%B7%B1%E5%BA%A6&spm=1001.2101.3001.7020">深度</a>学习是人工智能的一个分支，受到人类大脑的启发，致力于指导计算机用神经网络进行学习。在线文本翻译、自动驾驶、商品推荐和智能语音助手等一系列令人兴奋的现代技术应用领域，都在深度学习的辅助下取得了突破性进展。</p>
+<p>本书主要内容包括：</p>
+<ul>
+<li>深度学习的基础科学原理。</li>
+<li>自行设计和训练神经网络。</li>
+<li>隐私保护的知识，包括联邦学习。</li>
+<li>帮助你继续深度学习之旅的建议。</li>
+</ul>
+<p>不要担心你在数学上遇到的困难。我可以向你保证，我遇到的困难甚至更大。 – 阿尔伯特 · 爱因斯坦<br>“噢，深思熟虑的计算机，” 他说，“我们设计你来执行的任务是这样的。我们想让你告诉我们…” 他停顿一下，“答案”。 – 道格拉斯 · 亚当斯《银河系漫游指南》</p>
+<p><img src="https://s2.loli.net/2022/11/09/2Fs5rWHofBLePgZ.jpg" srcset="/img/loading.gif" lazyload alt="微信图片_20221109205616.jpg"></p>
+<p><img src="https://s2.loli.net/2022/11/09/urhwxZBsNeOgG5p.jpg" srcset="/img/loading.gif" lazyload alt="微信图片_20221109205622.jpg"></p>
+<h1 id="1-机器如何学习"><a href="#1-机器如何学习" class="headerlink" title="1. 机器如何学习"></a>1. 机器如何学习</h1><p>使计算机不需要显示编程就能拥有学习能力的研究领域。 – 亚瑟 · 塞缪尔<br><img src="https://s2.loli.net/2022/11/09/xsW1H2PgzlfkYnr.png" srcset="/img/loading.gif" lazyload alt="image-20221109172719658"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">机器学习 ≈ 先观察，后照做<br></code></pre></td></tr></table></figure>
+
+<p>机器学习分类：</p>
+<ul>
+<li>有监督的：对结果进行打标签，比如阴性、阳性。</li>
+<li>无监督的：不对结果打标签，自动根据想形似分类。</li>
+</ul>
+<p>或者</p>
+<ul>
+<li>参数： 参数模型的特征是具有固定数量的参数。</li>
+<li>非参数：分参数模型的参数数量是无线的（由数据决定）。</li>
+</ul>
+<h2 id="1-1-监督机器学习"><a href="#1-1-监督机器学习" class="headerlink" title="1.1 监督机器学习"></a>1.1 监督机器学习</h2><p><img src="https://s2.loli.net/2022/11/09/9PtGYT8FZsM6UKu.png" srcset="/img/loading.gif" lazyload alt="image-20221109172755153"></p>
+<p>有监督的机器学习可以直接模仿两个数据集之间的模式。它总是尝试获取一个输入数据集并将其转换为对应的输出数据集。比如：</p>
+<ul>
+<li>使用图像的像素来检测猫存在与否</li>
+<li>使用你喜欢的电影来预测你可能喜欢的电影</li>
+<li>使用人们所说的话来预测他们是高兴还是难过</li>
+<li>使用天气传感器数据预测下雨的概率</li>
+<li>使用汽车发动机传感器预测最佳调节设置</li>
+<li>使用新闻数据预测明天的股价</li>
+<li>使用输入的数字预测其两倍规模的值</li>
+<li>使用原始音频文件预测音频文本<br><img src="https://s2.loli.net/2022/11/09/CYIv23jJXMW4zcx.png" srcset="/img/loading.gif" lazyload alt="image-20221109172805674"></li>
+</ul>
+<h2 id="1-2-无监督机器学习"><a href="#1-2-无监督机器学习" class="headerlink" title="1.2 无监督机器学习"></a>1.2 无监督机器学习</h2><p>监督学习是给训练数据的结果打标签，比如天气预测是下雨、下雪、晴天、阴天等。<br>无监督机器学习是不给结果数据打标签，然后在对数据进行分类。比如google分类文章为：科技类、地理类、娱乐类等等。<br><img src="https://s2.loli.net/2022/11/09/k3SUFaxoABficIg.png" srcset="/img/loading.gif" lazyload alt="image-20221109172813928"></p>
+<h1 id="2-神经网络"><a href="#2-神经网络" class="headerlink" title="2. 神经网络"></a>2. 神经网络</h1><p>神经网络的步骤： <code>预测 - 比较 - 学习</code> 模式。</p>
+<h2 id="2-1-预测导论：前向传播。"><a href="#2-1-预测导论：前向传播。" class="headerlink" title="2.1 预测导论：前向传播。"></a>2.1 预测导论：前向传播。</h2><p>神经网络如何学习？ 秘诀是试错！首先，它试图做出预测。然后，它会看到预测的结果是过高合适过低。最后，它改变权重（增大或者减小），以便下次看到相同的输入时能够给出更准确的预测。<br><img src="https://s2.loli.net/2022/11/09/a76Lhwy9UjpXTqC.png" srcset="/img/loading.gif" lazyload alt="image-20221109172823583"><br><img src="https://s2.loli.net/2022/11/09/oRLfPOMaU5vE7Hx.png" srcset="/img/loading.gif" lazyload alt="image-20221109172831613"></p>
+<h2 id="2-2-梯度下降"><a href="#2-2-梯度下降" class="headerlink" title="2.2 梯度下降"></a>2.2 梯度下降</h2><h3 id="2-2-1-冷热学习"><a href="#2-2-1-冷热学习" class="headerlink" title="2.2.1 冷热学习"></a>2.2.1 冷热学习</h3><p>冷热学习：冷热学习指的是通过扰动权重来确定向哪个方向调整可以使得误差的降低幅度最大，基于此将权重的值向那个方向移动，不断重复这个过程，直到误差趋于0.<br>冷热学习效率低下。你必须通过多次预测才能进行一次权重的更新。<br>冷热学习就，有时准确预测出的目标是不可能的。如果选择的步长太大，就会导致在一定周围来回波动。</p>
+<ul>
+<li>什么是比较： 比较为预测的 “误差”提供度量。</li>
+<li>学习：“学习” 告诉权重应该如何改变以降低误差。</li>
+</ul>
+<h3 id="2-2-2-梯度下降"><a href="#2-2-2-梯度下降" class="headerlink" title="2.2.2 梯度下降"></a>2.2.2 梯度下降</h3><p><img src="https://s2.loli.net/2022/11/09/6n5MjJlLKpYFUwh.png" srcset="/img/loading.gif" lazyload alt="image-20221109172845067"><br>梯度下降是向着导数的方向进行修正，使得成本函数逐步减少，直到为0.</p>
+<h1 id="2-3-反向传播"><a href="#2-3-反向传播" class="headerlink" title="2.3 反向传播"></a>2.3 反向传播</h1><ul>
+<li>关联抽象：神经网络视图寻找在输入层和输出层之间的直接和间接关联，这种关联由输入和输出数据集决定。</li>
+<li>局部关联抽象：任何给定的权重集合通过优化来学习如何关联输入层与输出层的要求。</li>
+</ul>
+<p>因为结果是准确的，根据结果也就是最后一层，从后往前逐步调整中间层的权重，这就是反向传播。</p>
+<ul>
+<li>全局关联抽象：前一层神经网络所应该得到的值，可以通过后一层神经网络（所应该得到的）的值和它们之间的权重的乘积来确定。这样，后面的层就可以告诉前面的层它们需要什么样的信号，从而最终找到与输出的相关性。这种交叉通信成为反向传播。<br><img src="https://s2.loli.net/2022/11/09/XMsaPgjnmOyZkCc.png" srcset="/img/loading.gif" lazyload alt="image-20221109172854701"></li>
+<li>底线： 预测结果是输入数据的加权和。学习算法对<strong>与输出相关</strong>的输入所对应的权重以向上（向1的方向）压力作为奖励。而对于<strong>与输出不相关</strong> 的输入所对应的权重以向下的（向0 的方向）压力作为惩罚。输入数据的加权和通过将无关输入所对应的权重项推向0，可以找到输入和输出之间存在完美相关性。</li>
+<li>深度学习的最大弱点：过拟合。所有的权值都有误差。如果某个特性的权重配置意外地在预测数据集和输出数据集之间建立了完美的吻合（比如是的error &#x3D;&#x3D; 0），而此时并没有给真正最重要的输入赋予最大的权重，那么神经网络将停止学习。深度学习所面临的最大挑战是训练你的神经网络去泛化而不仅仅是记忆。</li>
+<li>选择性相关的秘密：通过再任何中间节点为负时关闭它，你能够允许神经网络选择性接受来自不同输入的相关性。这对于两层神经网络来说是不可能的，因此，三层网络具有更强的能力。</li>
+</ul>
+<p>创建具有相关性的“中间数据” 是深度学习的本质。深度学习就是创建从数据集到预测结果的中间层，中间层中的每个节点表示输入数据中不同类型的组合模式是否存在。</p>
+<p>良好的神经网络结构能够引导信号，使相关性易于发现。优秀的神经网络结构还可以过滤噪声以防止过拟合。</p>
+<h2 id="2-4-正则化"><a href="#2-4-正则化" class="headerlink" title="2.4 正则化"></a>2.4 正则化</h2><p>正则化：正则化是用于机器学习模型中鼓励泛化的方法的一个子集，通常通过提高模型学习训练数据的细粒度细节的难度来实现。<br>行业标准正则化：dropout<br>方法：在训练过程中随机关闭神经元（设置为0）。<br>dropout为什么有效：通过每次随机训练神经网络中的一小部分，dropout能够让一张大网络向小网络一样进行学习 – 较小的神经网络不会发生过拟合。</p>
+<h2 id="2-5-激活函数"><a href="#2-5-激活函数" class="headerlink" title="2.5 激活函数"></a>2.5 激活函数</h2><p>激活函数式在预测过程中应用于某一层神经元的函数。<br><img src="https://s2.loli.net/2022/11/09/AVWZHOohpYKQGCR.png" srcset="/img/loading.gif" lazyload alt="image-20221109172903452"><br>约束1：函数必须连续且定义域是无穷的。<br>约束2：好的激活函数式单调的，不会改变方向。<br>约束3：好的激活函数是非线性的（扭曲或反转）。<br>约束4：合适的激活函数（及其导数)应该可以高效计算。</p>
+<h3 id="2-5-1-标准输出层激活函数"><a href="#2-5-1-标准输出层激活函数" class="headerlink" title="2.5.1 标准输出层激活函数"></a>2.5.1 标准输出层激活函数</h3><p>你的选择取决于你想预测什么。<br>类型1：预测原始数据值（没有激活函数）<br>类型2：预测不相关的“是” 或 “否”的概率（sigmoid）<br>类型3：预测 “哪一个”的概率（softmax）</p>
+<h1 id="3-CNN卷积神经网络概论：关于边与角的神经学习"><a href="#3-CNN卷积神经网络概论：关于边与角的神经学习" class="headerlink" title="3. CNN卷积神经网络概论：关于边与角的神经学习"></a>3. CNN卷积神经网络概论：关于边与角的神经学习</h1><p>在多个位置复用权重：如果需要在多个位置检查相同的特征，请使用相同的权重！<br>卷基层：化整为0，将许多小线性神经元层在各处重用。<br>卷积层背后的核心思想是，它不是一个大的、稠密的线性神经元层，在其中从每个输入到每个输出都有连接，而是由很多非常小的线性层构成，每个线性层通常拥有少于25个输入和一个输出，我们可以在任意输入位置使用它。每个小神经元层被称为卷积核，但它实际上只是一个很小的线性层，接收少量的输入并作为单一输出。<br><img src="https://s2.loli.net/2022/11/09/bDGquahrljUJ7v3.png" srcset="/img/loading.gif" lazyload alt="image-20221109172912613"><br>复用权重是深度学习中最重要的创新之一。</p>
+<p>网络结构的诀窍：当神经网络需要在多处使用相同的想法时，应试着在这些地方使用相同的权重。这样做会使哪些权重有更多的样本可以学习并提高泛化能力，从而让权重更智能。</p>
+<p>在过去5年（或更久远一些），深度学习领域的许多重大发展都是对这一理念的重复。卷积神经网络、递归神经网络（RNN）、<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%AF%8D%E5%90%91%E9%87%8F&spm=1001.2101.3001.7020">词向量</a>，以及最近发表的胶囊网络都可以通过这个概念理解。当你知道一个网络在很多地方都需要用到相同的思想时，可以强迫它在这些地方使用相同的权重。</p>
+<p>想想你需要了解什么才能确定图像中是否有一只猫。首先，你需要了解颜色的概念，然后了解线、边、角和简单的形状，还有与猫对应的这些低层次特征的组合。很可能神经网络也需要学习（像线和边）这些较低层次的特征，而检测线和边的智能在权重中学习。</p>
+<h1 id="4-NLP自然语言处理-Natural-Language-Processing"><a href="#4-NLP自然语言处理-Natural-Language-Processing" class="headerlink" title="4. NLP自然语言处理 Natural Language Processing"></a>4. <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=NLP&spm=1001.2101.3001.7020">NLP</a>自然语言处理 Natural Language Processing</h1><p>能够理解自然语言中的神经网络：国王 - 男人 + 女人 &#x3D; ？<br><img src="https://s2.loli.net/2022/11/09/z8vm9MjYKxTg5aw.png" srcset="/img/loading.gif" lazyload alt="image-20221109172920586.png"></p>
+<h2 id="4-1-NLP-可被划分为一系列任务或挑战的集合"><a href="#4-1-NLP-可被划分为一系列任务或挑战的集合" class="headerlink" title="4.1 NLP 可被划分为一系列任务或挑战的集合"></a>4.1 NLP 可被划分为一系列任务或挑战的集合</h2><ul>
+<li>使用文档中的字符，预测单词的开始和结束的位置。</li>
+<li>使用文档中的单词，预测句子的开头和结束位置。</li>
+<li>使用句子中的单词，预测每个单词的词性。词袋模型：给定电影评论中的词汇，预测其情绪。</li>
+<li>在句子中，使用单词，预测短语的开头和结尾。</li>
+<li>在句子中，使用单词，预测命名实体（例如人、地点、事务）指代的开始和结束的位置。</li>
+<li>在文档中，使用句子，预测哪个代词指代同一个人&#x2F;地点&#x2F;事物。</li>
+<li>在句子中，使用单词，预测句子的情感色彩： IMDB电影评论数据集预测人们发表的评论是正面还是负面的。</li>
+</ul>
+<h2 id="4-2-神经网络研究NLP的基本原理"><a href="#4-2-神经网络研究NLP的基本原理" class="headerlink" title="4.2 神经网络研究NLP的基本原理"></a>4.2 神经网络研究NLP的基本原理</h2><p>神经网络并不能真正从数据中学习，它们知识使损失函数最小化。<br><img src="https://s2.loli.net/2022/11/09/eXmUS9Md86Yzsb1.png" srcset="/img/loading.gif" lazyload alt="image-20221109172929841.png"></p>
+<ol>
+<li>首先概述了自然语言中的主要问题，</li>
+<li>然后探讨了神经网络如何在单词的层次上，利用单词的嵌入向量来建模语言。还讲解了如何选择损失函数来更改词向量所提取的属性。</li>
+<li>最后，神经网络学到的最神奇现象：单词类比。</li>
+</ol>
+<h2 id="4-3-单词嵌入表达的对比、神经元"><a href="#4-3-单词嵌入表达的对比、神经元" class="headerlink" title="4.3 单词嵌入表达的对比、神经元"></a>4.3 单词嵌入表达的对比、神经元</h2><p>单词嵌入表达的对比：对于每个输入单词，通过选择 weights_0_1 中对应的行，你可以筛选其输出给隐藏层神经元的权重列表。行中的每个条目表示从其中的单词到每个隐藏层神经元的权重。因此，要找出与目标条目最相似的单词，只需要将每个单词的向量（矩阵的行）与目标条目的向量进行比较。这里选择的比较方法被称为欧氏距离。</p>
+<p>神经元：其意义完全基于所预测的目标标签。<br>如果要找一项能够让神经网络学到更有价值的权重的任务，那么经过处理的“填空”任务可能颇为合适。为什么使用这个任务呢？收现金，它有几乎无线的训练数据（来自于互联网），这意味着神经网络能够使用几乎无限的信号来学习关于单词的更细微信息。此外，要准确地填补语句中的空白，至少需要对真实世界的语义上线文有一定的了解。</p>
+<h2 id="4-4-国王-男人-女人-≈-女王"><a href="#4-4-国王-男人-女人-≈-女王" class="headerlink" title="4.4 国王 - 男人 + 女人 ≈ 女王"></a>4.4 国王 - 男人 + 女人 ≈ 女王</h2><p><img src="https://s2.loli.net/2022/11/09/12RUZf8N9iSBoFs.png" srcset="/img/loading.gif" lazyload alt="image-20221109204535443.png"></p>
+<p>单词类比是先前投建的网络的一个有趣结果。<br>数据中现有属性的线性压缩表达。<br>当单词类比这一特性首次被发现时，它引起了一系列轰动，研究者们推断出了这种技术在许多领域可能发挥作用的实践。就其本身而言，它是一个令人惊叹的特性，围绕着生成各种各样的词嵌入向量，单词类比技术确实创造了一个名副其实的产业链。但是近年来，单词类比这一特性本身并没有发生颠覆性的发展，自然语言处理当前的大部分工作都几种在循环网络架构上。比如有1750亿个参数的GPT-3。</p>
+<h1 id="5-介绍自动优化：搭建深度学习框架"><a href="#5-介绍自动优化：搭建深度学习框架" class="headerlink" title="5. 介绍自动优化：搭建深度学习框架"></a>5. 介绍自动优化：搭建深度学习框架</h1><p>框架是前向与反向传播逻辑的高效方便的抽象。<br>优秀的工具能够减少错误、加速开发并提高运行性能。<br>深度学习框架：PyTorch、TensorFlow、Keras、Lasagne、DyNet。</p>
+<h2 id="5-1-张量-Tensor"><a href="#5-1-张量-Tensor" class="headerlink" title="5.1 张量 Tensor"></a>5.1 张量 Tensor</h2><p>张量是向量与矩阵的抽象形式：向量是一维张量，矩阵是二维张量，而更高维的被称作 n 为张量。</p>
+<h2 id="5-2-如何学习一个框架。"><a href="#5-2-如何学习一个框架。" class="headerlink" title="5.2 如何学习一个框架。"></a>5.2 如何学习一个框架。</h2><p>学习新框架的一般流程是先找到尽可能简单的样例代码，微调代码并了解其中 autograd 系统的 API，然后一段一段地修改样例代码直到写出你关心的试验。<br>简单而言，框架就是 autograd 加上一组预先定义好的神经元层和优化器。</p>
+<h1 id="6-像莎士比亚一样写作的神经网络：变长数据的递归层、长短期记忆网络LSTM"><a href="#6-像莎士比亚一样写作的神经网络：变长数据的递归层、长短期记忆网络LSTM" class="headerlink" title="6. 像莎士比亚一样写作的神经网络：变长数据的递归层、长短期记忆网络LSTM"></a>6. 像莎士比亚一样写作的神经网络：变长数据的递归层、长短期记忆网络LSTM</h1><p>任意长度的挑战：让我们用神经网络建模任意长度的序列！</p>
+<p>信息是如何存储在这些向量嵌入中的？ 对词嵌入进行平均时，其平均形状能够保持。</p>
+<p><img src="https://s2.loli.net/2022/11/09/I1g6WGodY9KVa7B.png" srcset="/img/loading.gif" lazyload></p>
+<p>神经网络是如何把一堆变长信息放入一个定长盒子里的？事实是，句子向量没有编码句子的所有内容。递归神经网络的主要目的不仅在于这些向量记住了什么，也在于它们忘记了什么。在预测下一个单词的例子中，大多数 RNN 学到了最近的几个单词是必要的，以及学会了忘记更远的单词历史（也可以说，不为其创建单独的模式）。</p>
+<h2 id="6-1-长短期记忆（LSTM）元胞"><a href="#6-1-长短期记忆（LSTM）元胞" class="headerlink" title="6.1 长短期记忆（LSTM）元胞"></a>6.1 长短期记忆（LSTM）元胞</h2><p>长短期记忆网络（LSTM， Long Short - Term Memory）的神经网络：通过非线性函数和门限函数形成的长短期记忆网络的神经网络。<br>LSTM是业内处理梯度消失和梯度激增的标准模型。<br>门限复制技巧：LSTM通过复制前一个隐藏状态并根据需要添加或移除信息来创建一个隐藏状态。LSTM使用的添加或移除信息的机制叫作门限（Gate）。<br>LSTM门限的语义与内存的读写相近。</p>
+<p>LSTM是强大到不可思议的模型。<br>LSTM学会生成的莎士比亚语言的分布不容小觑。语言是一种复杂到难以置信的统计分布，而LSTM能够达到很好的效果，这件事使大家感到震惊。这种模型的各类变种现在是实现相当数量任务的领先方法。而且，除了词嵌入和卷积层，他无疑会在很长一段时间内作为我们可以依赖的一种工具而存在。</p>
+<h1 id="7-在看不见的数据上做深度学习：联邦学习导论"><a href="#7-在看不见的数据上做深度学习：联邦学习导论" class="headerlink" title="7. 在看不见的数据上做深度学习：联邦学习导论"></a>7. 在看不见的数据上做深度学习：联邦学习导论</h1><p>深度学习的隐私问题：使用深度学习常常意味着你可以访问你的训练数据。<br>2017年Google发布了激动人心关于联邦学习的论文和文章：如果不把训练数据的语料集中到一个地方训练，而是模型一生成就把它传到数据那边训练，得到反馈后传回训练源头，继续调优。如此反复，模型得到提升，用户隐私也得到保护。</p>
+<p>联邦学习是深度学习最重要的突破之一。我坚信联邦学习会在未来几年改变深度学习的图景。它会解锁之前因为过于敏感而不能使用的新数据集，并通过由此产生的新的创业机会，创造巨大的社会效益。这是加密算法与人工智能研究之间广泛融合的一部分，在我看来，这是这十年来最令人振奋的融合。</p>
+<h1 id="8-学习建议"><a href="#8-学习建议" class="headerlink" title="8. 学习建议"></a>8. 学习建议</h1><ol>
+<li>开始学习 PyTorch。本书的教程搭建的深度学习框架与 PyTorch很相似。</li>
+<li>开始另一个深度学习课程。在YouTube上找擅长深度学习的大学或AI实验室：Stanford、MIT、Oxford、Montreal、NYU，或者选修 fast.ai 或 Udacity的项目。</li>
+<li>找一本偏数学的深度学习材料。推荐 Deep Learning(MIT 出版社 2016)，by Ian Goodfellow, Yoshua Bengio, Aaron Courville.</li>
+<li>开设博客讲授深度学习. 写得好的话，会出现在Reddit或Hacker News上。</li>
+<li>Twitter 上接触世界各地的是最多的，追踪最新进展。</li>
+<li>实现学术论文： Twitter + 你的博客 &#x3D; 学术论文教程。</li>
+<li>设法使用GPU。 GPU 可以让训练速度加快 10 ~ 100 倍已经不是秘密，但是这意味着你可以把迭代自己的想法的速度提高100倍。 我在职业生涯中犯过的错误之一就是太晚开始用 GPU。 不妨想 NVIDIA 买一块 GPU，或者用 Google Colab notebooks可以访问免费的 K80s。</li>
+<li>成为从业者：你越有时间做深度学习，你学得越快。</li>
+<li>参与开源项目：在AI领域建立关系网和提升职业发展的方式是成为开源项目的核心开发者。大型的深度学习框架PyTorch, TensorFlow, Keras.</li>
+<li>发展你的本地社区. 我真正学会深度学习是因为我喜欢和其他也在学习的朋友一起玩。</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="category-chain-item">深度学习</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="category-chain-item">读书笔记</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9B%BE%E8%A7%A3%E3%80%8B/" class="print-no-link">#《深度学习图解》</a>
+      
+        <a href="/tags/%E5%AE%89%E5%BE%B7%E9%B2%81%C2%B7%E7%89%B9%E6%8B%89%E6%96%AF%E5%85%8B-Andrew-w-Trask/" class="print-no-link">#安德鲁·特拉斯克(Andrew w.Trask)</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>《深度学习图解》读书笔记</div>
+      <div>https://liegu0317.top/2022/11/09/Deep-Learning-illustrated/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>多双升</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年11月9日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/11/13/tools-md/" title="Markdown|Tools分享">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Markdown|Tools分享</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/10/15/1124time/" title="1124酱-time">
+                        <span class="hidden-mobile">1124酱-time</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://comments-hexo-blog.vercel.app/","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.utils.listenDOMLoaded(function() {
+                var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+                Fluid.plugins.imageCaption(imgSelector);
+                Fluid.plugins.fancyBox(imgSelector);
+              });
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://liegu0317.top" target="_blank" rel="nofollow noopener"><span>Liegu</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dwm/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dwm/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"mobile":{"show":true},"display":{"position":"left","width":200,"height":324},"model":{"jsonPath":"/live2dwm/assets/miku.model.json"},"log":false});</script></body>
+</html>

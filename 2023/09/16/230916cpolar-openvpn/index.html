@@ -1,0 +1,893 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/liegu.png">
+  <link rel="icon" href="/img/liegu.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#428a7f">
+  <meta name="author" content="多双升">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="随时随地连接内网、校园网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cpolar与OpenVPN实现任意内网接入|随时随地连接内网">
+<meta property="og:url" content="https://liegu0317.top/2023/09/16/230916cpolar-openvpn/index.html">
+<meta property="og:site_name" content="Liegu Corner">
+<meta property="og:description" content="随时随地连接内网、校园网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/7cdcb2ed1797a308f8a2bb48cc38d662.png">
+<meta property="article:published_time" content="2023-09-16T02:07:01.000Z">
+<meta property="article:modified_time" content="2024-12-29T14:12:05.273Z">
+<meta property="article:author" content="多双升">
+<meta property="article:tag" content="中国知网">
+<meta property="article:tag" content="cpolar">
+<meta property="article:tag" content="openvpn">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/7cdcb2ed1797a308f8a2bb48cc38d662.png">
+  
+  
+  
+  <title>Cpolar与OpenVPN实现任意内网接入|随时随地连接内网 - Liegu Corner</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"liegu0317.top","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"0cae1c0e6e41b699c896f4814a6f3951","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0cae1c0e6e41b699c896f4814a6f3951";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>LieGuのBlog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>类别</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-github-fill"></i>
+                <span>链接</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://github.com/LIEGU0317">
+                    
+                    <span>GitHub</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://space.bilibili.com/498275682">
+                    
+                    <span>BiliBili</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Cpolar与OpenVPN实现任意内网接入|随时随地连接内网"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-16 10:07" pubdate>
+          2023年9月16日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          22 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Cpolar与OpenVPN实现任意内网接入|随时随地连接内网</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2024年12月29日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p><img src="https://img-blog.csdnimg.cn/img_convert/7cdcb2ed1797a308f8a2bb48cc38d662.png#pic_center" srcset="/img/loading.gif" lazyload></p>
+<h1 id="Cpolar与OpenVPN实现任意内网接入"><a href="#Cpolar与OpenVPN实现任意内网接入" class="headerlink" title="Cpolar与OpenVPN实现任意内网接入"></a>Cpolar与OpenVPN实现任意内网接入</h1><p>该经验帖依赖于<strong>cpolar官方教程</strong>：<a target="_blank" rel="noopener" href="https://www.cpolar.com/blog/cpolar-and-openvpn-any-intranet-access">cpolar与OpenVPN实现任意内网接入</a>，补充一部分小细节以及常见问题。</p>
+<blockquote>
+<p>请按照官方教程操作，以下内容同其标题一致。</p>
+</blockquote>
+<h4 id="2-2-添加公网TCP固定端口"><a href="#2-2-添加公网TCP固定端口" class="headerlink" title="2.2 添加公网TCP固定端口"></a>2.2 添加公网TCP固定端口</h4><blockquote>
+<p>此步骤是整个解决方案中唯一需要消费的地方，免费套餐端口不固定，最长使用到过将近两个月</p>
+<p>偶尔使用选择免费套餐即可。</p>
+</blockquote>
+<h4 id="2-3-cpolar客户端的部署"><a href="#2-3-cpolar客户端的部署" class="headerlink" title="2.3 cpolar客户端的部署"></a>2.3 cpolar客户端的部署</h4><blockquote>
+<p>该部分建议按照<a target="_blank" rel="noopener" href="https://www.cpolar.com/docs#expose-a-local-web-server-to-the-internet">文档-入门指南</a>进行操作，学习使用<a target="_blank" rel="noopener" href="https://www.cpolar.com/docs#cpolar_web_ui_management-interface">Cpolar web UI</a>后期维护会简单很多。</p>
+</blockquote>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
+<li><p>无法连接到openvpn server端</p>
+<blockquote>
+<ol>
+<li><p><strong>检查服务器是否正在运行</strong>：首先，请确保 OpenVPN 服务器正在运行并且没有崩溃。您可以通过在服务器上运行 <code>sudo systemctl status openvpn@server</code>（如果您使用 systemd）或 <code>sudo service openvpn status</code>（如果您使用 init.d）来检查 OpenVPN 服务器的状态。</p>
+</li>
+<li><p><strong>检查服务器配置文件</strong>：确保您的 OpenVPN 服务器配置文件 (<code>server.conf</code> 或类似的文件) 中没有语法错误或配置问题。请检查文件路径是否正确，并且配置是否按照需要设置。</p>
+</li>
+<li><p><strong>检查防火墙规则|最大可能性问题</strong>：确保服务器上的防火墙规则允许 OpenVPN 流量通过。您需要确保服务器的防火墙配置允许 OpenVPN 端口（默认是 UDP 1194）的流量。</p>
+<blockquote>
+<p><strong>1. 查看当前防火墙规则：</strong></p>
+<p>在服务器上打开终端，以管理员权限运行以下命令来查看当前的防火墙规则：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-symbol">bashCopy</span> <span class="hljs-meta">code</span><br><span class="hljs-symbol">sudo</span> iptables -L<br></code></pre></td></tr></table></figure>
+
+<p>这将列出当前的防火墙规则。您应该查找有关 OpenVPN 端口（默认是 UDP 1194）的规则。</p>
+<p><strong>2. 添加允许 OpenVPN 流量的规则：</strong></p>
+<p>如果没有看到与 OpenVPN 端口相关的规则，或者规则中没有允许流量通过，您需要添加规则以允许 OpenVPN 流量。以下是如何添加规则的示例：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css">bashCopy <span class="hljs-selector-tag">code</span># 允许UDP <span class="hljs-number">1194</span>端口上的OpenVPN流量<br>sudo iptables -<span class="hljs-selector-tag">A</span> <span class="hljs-selector-tag">INPUT</span> -<span class="hljs-selector-tag">p</span> udp <span class="hljs-attr">--dport</span> <span class="hljs-number">1194</span> -j ACCEPT<br></code></pre></td></tr></table></figure>
+
+<p>上述命令将添加一条规则，允许UDP协议的流量通过1194端口。</p>
+<p><strong>3. 保存防火墙规则：</strong></p>
+<p>一旦添加了规则，您需要确保它们在系统重启后仍然有效。您可以使用以下命令将当前的防火墙规则保存到永久配置中：</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs arcade">bashCopy code<br>sudo iptables-save &gt; <span class="hljs-regexp">/etc/i</span>ptables/rules.v4<br></code></pre></td></tr></table></figure>
+
+<p><strong>4. 重新加载防火墙规则：</strong></p>
+<p>最后，重新加载防火墙规则以使更改生效：</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs arcade">bashCopy code<br>sudo iptables-restore &lt; <span class="hljs-regexp">/etc/i</span>ptables/rules.v4<br></code></pre></td></tr></table></figure>
+
+<p><strong>5. 检查 OpenVPN 连接：</strong></p>
+<p>现在，您可以尝试重新连接到 OpenVPN 服务器并查看是否已解决连接问题。</p>
+</blockquote>
+</li>
+<li><p><strong>网络连接</strong>：检查客户端的网络连接，确保您的计算机能够访问服务器的 IP 地址。如果您尝试在不同网络（例如，从家庭网络连接到公司网络）上连接，请确保网络设置正确。</p>
+</li>
+<li><p><strong>客户端配置</strong>：确保您的 OpenVPN 客户端配置正确，包括服务器地址和端口。客户端配置文件应该与服务器配置相匹配。</p>
+</li>
+<li><p><strong>更新 OpenVPN</strong>：如果您的 OpenVPN 版本较旧，请考虑升级到最新版本，以确保安全性和兼容性。</p>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p>连接后只能访问运行openvpn主机（服务器端）上运行的内容</p>
+<blockquote>
+<ol>
+<li><strong>路由设置问题|最大可能性问题|使用路由系统如OpenWrt可以避免此问题</strong>：您的 OpenVPN 服务器可能没有正确配置路由，导致客户端只能访问服务器本身。这通常通过配置服务器的路由表和防火墙规则来实现。</li>
+<li><strong>防火墙问题</strong>：服务器的防火墙规则可能阻止了从 VPN 客户端到服务器以外的网络的流量。您需要检查服务器上的防火墙规则，并确保它们允许通过 VPN 访问服务器以外的网络。</li>
+<li><strong>NAT (网络地址转换) 设置</strong>：如果服务器配置了 NAT，它可能会导致只有服务器本身可以访问外部网络。您需要检查服务器上的 NAT 配置，并确保它允许 VPN 客户端的流量通过。</li>
+<li><strong>DNS 配置问题</strong>：如果 DNS 配置不正确，客户端可能无法解析服务器以外的域名。请检查 DNS 设置，确保客户端可以正确解析外部域名。</li>
+<li><strong>OpenVPN 配置问题</strong>：最后，确保您的 OpenVPN 服务器和客户端配置正确。您可能需要检查配置文件，确保它们没有限制流量或访问。</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<h2 id="免责声明-Cpolar-和-OpenVPN-内网接入"><a href="#免责声明-Cpolar-和-OpenVPN-内网接入" class="headerlink" title="免责声明 - Cpolar 和 OpenVPN 内网接入"></a>免责声明 - Cpolar 和 OpenVPN 内网接入</h2><ol>
+<li><p>使用 Cpolar 和 OpenVPN 工具（以下简称 “工具”）进行内网接入，需要遵守所有适用的法律和法规。用户必须确保他们的使用方式合法且符合适用法律。</p>
+</li>
+<li><p>用户明白，工具仅供合法目的使用，例如远程办公、合法的网络连接或安全测试等。工具的滥用或非法用途将不受支持。</p>
+</li>
+<li><p>使用工具涉及安全和隐私风险。用户必须自行采取适当的安全措施，包括但不限于使用强密码、加密通信以及遵循网络安全最佳实践。</p>
+</li>
+<li><p>Cpolar 和 OpenVPN 工具的使用是基于用户自行决策的，用户对其后果负全部责任。</p>
+</li>
+<li><p>使用工具之前，用户必须获得适用的许可或授权，包括但不限于网络管理员的批准。用户必须遵循所有内部政策和规定。</p>
+</li>
+<li><p>通过使用 Cpolar 和 OpenVPN 工具，用户确认已阅读、理解并同意本免责声明的所有条款和条件。如有任何疑问或疑虑，用户应在使用工具之前咨询法律或网络安全专业人士。</p>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BB%8F%E9%AA%8C/" class="category-chain-item">经验</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%BB%8F%E9%AA%8C/Tools/" class="category-chain-item">Tools</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E4%B8%AD%E5%9B%BD%E7%9F%A5%E7%BD%91/" class="print-no-link">#中国知网</a>
+      
+        <a href="/tags/cpolar/" class="print-no-link">#cpolar</a>
+      
+        <a href="/tags/openvpn/" class="print-no-link">#openvpn</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Cpolar与OpenVPN实现任意内网接入|随时随地连接内网</div>
+      <div>https://liegu0317.top/2023/09/16/230916cpolar-openvpn/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>多双升</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月16日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/11/14/J4125-01/" title="倍控G30-J4125工控机开箱">
+                        <span class="hidden-mobile">倍控G30-J4125工控机开箱</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://comments-hexo-blog.vercel.app/","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.utils.listenDOMLoaded(function() {
+                var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+                Fluid.plugins.imageCaption(imgSelector);
+                Fluid.plugins.fancyBox(imgSelector);
+              });
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://liegu0317.top" target="_blank" rel="nofollow noopener"><span>Liegu</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dwm/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dwm/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"mobile":{"show":true},"display":{"position":"left","width":200,"height":324},"model":{"jsonPath":"/live2dwm/assets/miku.model.json"},"log":false});</script></body>
+</html>
