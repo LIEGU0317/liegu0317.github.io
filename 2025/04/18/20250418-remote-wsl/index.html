@@ -19,26 +19,25 @@
   <meta name="author" content="多双升">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。">
+    <meta name="description" content="本文详细介绍如何配置 VSCode 通过 SSH 远程连接 Windows 的 WSL 子系统，实现本地 VSCode 直接进入 WSL 环境的完整解决方案，包括 Windows SSH 服务配置、自动进入 WSL 的设置方法以及 VSCode Remote-SSH 的配置步骤。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown|Tools分享">
-<meta property="og:url" content="https://liegu0317.top/2022/11/13/tools-md/index.html">
+<meta property="og:title" content="远程连接WSL 的最佳解决方案">
+<meta property="og:url" content="https://liegu0317.top/2025/04/18/20250418-remote-wsl/index.html">
 <meta property="og:site_name" content="Liegu Corner">
-<meta property="og:description" content="Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。">
+<meta property="og:description" content="本文详细介绍如何配置 VSCode 通过 SSH 远程连接 Windows 的 WSL 子系统，实现本地 VSCode 直接进入 WSL 环境的完整解决方案，包括 Windows SSH 服务配置、自动进入 WSL 的设置方法以及 VSCode Remote-SSH 的配置步骤。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://justyy.com/wp-content/uploads/2016/01/markdown-syntax-language.png">
-<meta property="article:published_time" content="2022-11-12T16:25:27.000Z">
-<meta property="article:modified_time" content="2024-12-29T14:12:05.361Z">
+<meta property="og:image" content="https://s2.loli.net/2025/04/18/Oz4NVt7STRDU3hw.png">
+<meta property="article:published_time" content="2025-04-18T14:53:25.000Z">
+<meta property="article:modified_time" content="2025-04-18T15:14:17.424Z">
 <meta property="article:author" content="多双升">
-<meta property="article:tag" content="图床">
-<meta property="article:tag" content="Typora">
-<meta property="article:tag" content="Markdown">
+<meta property="article:tag" content="Remote">
+<meta property="article:tag" content="WSL">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://justyy.com/wp-content/uploads/2016/01/markdown-syntax-language.png">
+<meta name="twitter:image" content="https://s2.loli.net/2025/04/18/Oz4NVt7STRDU3hw.png">
   
   
   
-  <title>Markdown|Tools分享 - Liegu Corner</title>
+  <title>远程连接WSL 的最佳解决方案 - Liegu Corner</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -274,7 +273,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Markdown|Tools分享"></span>
+            <span id="subtitle" data-typed-text="远程连接WSL 的最佳解决方案"></span>
           
         </div>
 
@@ -285,8 +284,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-13 00:25" pubdate>
-          2022年11月13日 凌晨
+        <time datetime="2025-04-18 22:53" pubdate>
+          2025年4月18日 晚上
         </time>
       </span>
     
@@ -297,7 +296,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          317 字
+          493 字
         
       </span>
     
@@ -308,7 +307,7 @@
         
         
         
-          4 分钟
+          5 分钟
         
       </span>
     
@@ -354,12 +353,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Markdown|Tools分享</h1>
+            <h1 id="seo-header">远程连接WSL 的最佳解决方案</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年12月29日 晚上
+                    本文最后更新于 2025年4月18日 晚上
                   
                 
               </p>
@@ -367,39 +366,71 @@
             
               <div class="markdown-body">
                 
-                <blockquote>
-<p>2022年11月12日</p>
-</blockquote>
-<h1 id="学习工具推荐-Markdown"><a href="#学习工具推荐-Markdown" class="headerlink" title="学习工具推荐-Markdown"></a>学习工具推荐-<strong>Markdown</strong></h1><h2 id="1-前提认知"><a href="#1-前提认知" class="headerlink" title="1. 前提认知"></a>1. 前提认知</h2><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
-<h2 id="2-常见应用"><a href="#2-常见应用" class="headerlink" title="2. 常见应用"></a>2. 常见应用</h2><ol>
-<li>Markdown 能被使用来撰写电子书，如：Gitbook。</li>
-<li>当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、简书、CSDN、reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge等。</li>
-<li>常见的个人博客框架（如：hexo、wordpress、Pelican等。）同样支持md语法，同学们有了自己的博客后可以很方便的编写文章。</li>
-</ol>
-<h2 id="3-推荐学习资源"><a href="#3-推荐学习资源" class="headerlink" title="3. 推荐学习资源"></a>3. 推荐学习资源</h2><ol>
-<li><p><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程-Markdown 教程</a></p>
-<p><img src="https://s2.loli.net/2022/11/12/xAXkCse9lB48pKc.png" srcset="/img/loading.gif" lazyload alt="菜鸟教程-Markdown 教程"></p>
-<blockquote>
-<p>菜鸟教程的很多教程同样值得推荐，此文中推荐用VScode编写md（依据个人习惯即可，我习惯使用Typora）</p>
-<p>Markdown语法有原生的基础用法，也有很多拓展用法（不同平台有略微差异）。如：<strong>GitHub Flavored Markdown</strong> ， 简称 GFM，为github平台扩充后的md语法。</p>
-</blockquote>
-</li>
-<li><p>B站等搜索Markdown</p>
-</li>
-</ol>
-<h2 id="4-学习成本"><a href="#4-学习成本" class="headerlink" title="4.学习成本"></a>4.学习成本</h2><blockquote>
-<p>不超过30分钟，内容简单仅需要在使用过程中进行巩固即可</p>
-</blockquote>
-<h2 id="5-相关推荐"><a href="#5-相关推荐" class="headerlink" title="5.相关推荐"></a>5.相关推荐</h2><ul>
-<li><p><a target="_blank" rel="noopener" href="https://sm.ms/">SMMS图床</a>、<a target="_blank" rel="noopener" href="https://imgtu.com/">路过图床</a> 、<a target="_blank" rel="noopener" href="https://imgurl.org/">ImgURL</a> 等在线图床</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://typora.io/">Typora</a></p>
-</li>
+                <h2 id="💡-目标"><a href="#💡-目标" class="headerlink" title="💡 目标"></a>💡 <strong>目标</strong></h2><p>本地 VSCode → SSH 远程登录 Windows 主机 → 自动进入 Windows 的 WSL 环境。<br>后续 VSCode 打开目录、运行调试都在 WSL 内，体验跟 Linux 机器一样。</p>
+<hr>
+<h2 id="🧑‍💻-步骤一：Windows-端配置-SSH-服务"><a href="#🧑‍💻-步骤一：Windows-端配置-SSH-服务" class="headerlink" title="🧑‍💻 步骤一：Windows 端配置 SSH 服务"></a>🧑‍💻 <strong>步骤一：Windows 端配置 SSH 服务</strong></h2><p>1️⃣ 确保 Windows 安装 <code>OpenSSH Server</code>。</p>
+<ul>
+<li><code>设置</code> → <code>应用</code> → <code>可选功能</code> → <code>添加功能</code> → 安装 <code>OpenSSH Server</code>。</li>
+<li>安装好后，打开服务管理器，找到 <code>OpenSSH SSH Server</code>。</li>
+<li>设置为：<strong>自动</strong>，然后启动。</li>
 </ul>
-<blockquote>
-<p>↑免激活版见<a target="_blank" rel="noopener" href="https://jq.qq.com/?_wv=1027&k=lyguTR68">群文件</a></p>
-</blockquote>
-<p><em>此文如有错误可私信留言纠正</em></p>
+<p>2️⃣ 检查 Windows 防火墙，允许 <code>22端口</code>。</p>
+<p>3️⃣ 配置 Windows 上的 SSH，找到配置文件：</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">C:</span>\ProgramData\ssh\sshd_config<br></code></pre></td></tr></table></figure>
+<p>添加或确保这行配置（一般默认打开）：</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">Subsystem   sftp    sftp-<span class="hljs-keyword">server</span>.exe<br></code></pre></td></tr></table></figure>
+<p>✅ 确保 SSH 连接正常：用 <code>ssh</code> 从其他机器连接测试。</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ssh</span> your_windows_user<span class="hljs-variable">@your_windows_ip</span><br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="🧑‍🔧-步骤二：设置-SSH-自动进入-WSL"><a href="#🧑‍🔧-步骤二：设置-SSH-自动进入-WSL" class="headerlink" title="🧑‍🔧 步骤二：设置 SSH 自动进入 WSL"></a>🧑‍🔧 <strong>步骤二：设置 SSH 自动进入 WSL</strong></h2><p>重点来了！Windows 可以用 <code>ForceCommand</code> 强制登录时执行 <code>wsl.exe</code>，直接落进 Linux 子系统。</p>
+<p>1️⃣ 在 Windows 上，打开：</p>
+<figure class="highlight moonscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs moonscript"><span class="hljs-name">C</span>:\Users\your_windows_user\.ssh\authorized_keys<br></code></pre></td></tr></table></figure>
+<p>如果没有，就创建一个，加入你的公钥（如果用密钥登录的话）。</p>
+<p>2️⃣ 修改 Windows 上 <code>sshd_config</code> 文件：</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">C:</span>\ProgramData\ssh\sshd_config<br></code></pre></td></tr></table></figure>
+<p>添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">Match User your_windows_user<br>    ForceCommand C:\\Windows\\System32\\wsl.exe<br></code></pre></td></tr></table></figure>
+<p>注意路径是 <code>双反斜杠 \\</code>，不能写错！</p>
+<p>保存后，重启 SSH 服务：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Restart-Service</span> sshd<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="💻-步骤三：本地-VSCode-配置-Remote-SSH"><a href="#💻-步骤三：本地-VSCode-配置-Remote-SSH" class="headerlink" title="💻 步骤三：本地 VSCode 配置 Remote-SSH"></a>💻 <strong>步骤三：本地 VSCode 配置 Remote-SSH</strong></h2><p>1️⃣ 本地 VSCode 安装插件：</p>
+<ul>
+<li><code>Remote - SSH</code></li>
+</ul>
+<p>2️⃣ 配置本地 <code>~/.ssh/config</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">Host mywslserver<br>    HostName your_windows_ip<br>    User your_windows_user<br>    Port 22<br></code></pre></td></tr></table></figure>
+
+<p>3️⃣ 用 VSCode 连接：</p>
+<ul>
+<li><code>F1</code> → 输入 <code>Remote-SSH: Connect to Host...</code></li>
+<li>选择 <code>mywslserver</code>。</li>
+</ul>
+<p><strong>这时候会发现：</strong></p>
+<ul>
+<li>登录完成后，<code>Remote Explorer</code> 直接显示的路径就是 <code>WSL</code> 里的路径！</li>
+<li>VSCode 的终端默认是 <code>bash</code> 或你设置的 <code>wsl</code> shell。</li>
+</ul>
+<hr>
+<h2 id="🚀-补充优化（可选）"><a href="#🚀-补充优化（可选）" class="headerlink" title="🚀 补充优化（可选）"></a>🚀 <strong>补充优化（可选）</strong></h2><p>如果你的 Windows 上装了多个 WSL 发行版，默认用哪个，可以设置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wsl.exe --set-default &lt;DistroName&gt;<br></code></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wsl.exe --set-default Ubuntu-22.04<br></code></pre></td></tr></table></figure>
+
+<p>这样 SSH 登录时 <code>ForceCommand</code> 执行的就是这个默认发行版。</p>
+<hr>
+<h2 id="🎯-最终效果"><a href="#🎯-最终效果" class="headerlink" title="🎯 最终效果"></a>🎯 <strong>最终效果</strong></h2><ul>
+<li>本地 VSCode → 一键 SSH → 自动进入远程 Windows 的 WSL 子系统。</li>
+<li>代码目录 &#x2F; 工具链都在 Linux 环境，支持 Docker &#x2F; apt &#x2F; Python &#x2F; GCC。</li>
+<li>调试体验 &#x3D; 真 Linux 环境，解决跨平台开发问题。</li>
+</ul>
+<hr>
+<p>💡 <strong>温馨提示</strong></p>
+<ul>
+<li><code>ForceCommand</code> 方式不支持 Windows 桌面环境，纯命令行进 WSL；适合专注开发。</li>
+</ul>
 
                 
               </div>
@@ -418,15 +449,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%A5%BD%E7%89%A9%E5%88%86%E4%BA%AB/" class="category-chain-item">好物分享</a>
+  <a href="/categories/%E7%BB%8F%E9%AA%8C-VSCode/" class="category-chain-item">经验 - VSCode</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%A5%BD%E7%89%A9%E5%88%86%E4%BA%AB/Tools/" class="category-chain-item">Tools</a>
-  
-  
-
   
 
       </span>
@@ -440,11 +464,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%9B%BE%E5%BA%8A/" class="print-no-link">#图床</a>
+        <a href="/tags/Remote/" class="print-no-link">#Remote</a>
       
-        <a href="/tags/Typora/" class="print-no-link">#Typora</a>
-      
-        <a href="/tags/Markdown/" class="print-no-link">#Markdown</a>
+        <a href="/tags/WSL/" class="print-no-link">#WSL</a>
       
     </div>
   
@@ -456,8 +478,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Markdown|Tools分享</div>
-      <div>https://liegu0317.top/2022/11/13/tools-md/</div>
+      <div>远程连接WSL 的最佳解决方案</div>
+      <div>https://liegu0317.top/2025/04/18/20250418-remote-wsl/</div>
     </div>
     <div class="license-meta">
       
@@ -469,7 +491,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年11月13日</div>
+          <div>2025年4月18日</div>
         </div>
       
       
@@ -501,18 +523,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/11/14/J4125-01/" title="倍控G30-J4125工控机开箱">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">倍控G30-J4125工控机开箱</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/11/09/Deep-Learning-illustrated/" title="《深度学习图解》读书笔记">
-                        <span class="hidden-mobile">《深度学习图解》读书笔记</span>
+                      <a href="/2023/09/16/20250418-cpolar-openvpn/" title="Cpolar与OpenVPN实现任意内网接入|随时随地连接内网">
+                        <span class="hidden-mobile">Cpolar与OpenVPN实现任意内网接入|随时随地连接内网</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
