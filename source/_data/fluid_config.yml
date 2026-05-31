@@ -141,15 +141,15 @@ dark_mode:
 color:
   # body 背景色
   # Color of body background
-  body_bg_color: "#eee"
+  body_bg_color: "#F9F9F7"
   # 暗色模式下的 body 背景色，下同
   # Color in dark mode, the same below
-  body_bg_color_dark: "#181c27"
+  body_bg_color_dark: "#1a1a24"
 
   # 顶部菜单背景色
   # Color of navigation bar background
-  navbar_bg_color: "#428a7f"
-  navbar_bg_color_dark: "#1f3144"
+  navbar_bg_color: "#2b2a27"
+  navbar_bg_color_dark: "#1a1a24"
 
   # 顶部菜单字体色
   # Color of navigation bar text
@@ -163,48 +163,48 @@ color:
 
   # 全局字体色
   # Color of global text
-  text_color: "#3c4858"
-  text_color_dark: "#c4c6c9"
+  text_color: "#2b2a27"
+  text_color_dark: "#c9d1d9"
 
   # 全局次级字体色（摘要、简介等位置）
   # Color of global secondary text (excerpt, introduction, etc.)
-  sec_text_color: "#718096"
-  sec_text_color_dark: "#a7a9ad"
+  sec_text_color: "#7c756d"
+  sec_text_color_dark: "#8b949e"
 
   # 主面板背景色
   # Color of main board
-  board_color: "#fff"
-  board_color_dark: "#252d38"
+  board_color: "#ffffff"
+  board_color_dark: "#22222e"
 
   # 文章正文字体色
   # Color of post text
-  post_text_color: "#2c3e50"
-  post_text_color_dark: "#c4c6c9"
+  post_text_color: "#2b2a27"
+  post_text_color_dark: "#c9d1d9"
 
   # 文章正文字体色（h1 h2 h3...）
   # Color of Article heading (h1 h2 h3...)
-  post_heading_color: "#1a202c"
-  post_heading_color_dark: "#c4c6c9"
+  post_heading_color: "#1a1a1a"
+  post_heading_color_dark: "#e6edf3"
 
   # 文章超链接字体色
   # Color of post link
-  post_link_color: "#0366d6"
-  post_link_color_dark: "#1589e9"
+  post_link_color: "#D97706"
+  post_link_color_dark: "#D97706"
 
   # 超链接悬浮时字体色
   # Color of link when hovering
-  link_hover_color: "#30a9de"
-  link_hover_color_dark: "#30a9de"
+  link_hover_color: "#B45309"
+  link_hover_color_dark: "#F59E0B"
 
   # 超链接悬浮背景色
   # Color of link background when hovering
-  link_hover_bg_color: "#f8f9fa"
-  link_hover_bg_color_dark: "#364151"
+  link_hover_bg_color: "#F9F9F7"
+  link_hover_bg_color_dark: "#2a2a38"
 
   # 分隔线和表格边线的颜色
   # Color of horizontal rule and table border
-  line_color: "#eaecef"
-  line_color_dark: "#435266"
+  line_color: "#e5e5e0"
+  line_color_dark: "#2a2a38"
 
   # 滚动条颜色
   # Color of scrollbar
@@ -259,7 +259,7 @@ web_analytics: # 网页访问统计
   # Google Analytics 4 MEASUREMENT_ID
   # See: https://support.google.com/analytics/answer/9744165#zippy=%2Cin-this-article
   google:
-    measurement_id:
+    measurement_id: G-TM5TQ042BY
 
   # 腾讯统计的 H5 App ID，开启高级功能才有cid
   # Tencent analytics, set APP ID
@@ -268,30 +268,68 @@ web_analytics: # 网页访问统计
     sid:
     cid:
 
-  # 51.la 站点统计 ID
-  # 51.la analytics
-  # See: https://www.51.la/user/site/index
-  woyaola:  # 51.la 站点统计 ID，参见
-
-  # 友盟/cnzz 站点统计 web_id
-  # cnzz analytics
-  # See: https://web.umeng.com/main.php?c=site&a=show
-  cnzz:
-
   # LeanCloud 计数统计，可用于 PV UV 展示，如果 `web_analytics: enable` 没有开启，PV UV 展示只会查询不会增加
   # LeanCloud count statistics, which can be used for PV UV display. If `web_analytics: enable` is false, PV UV display will only query and not increase
   leancloud:
-    app_id:
-    app_key:
+    app_id: 02Ocw5gbVFWmJOpZzqzxVNvE-gzGzoHsz
+    app_key: HOmbKZZHwFNjJpcsIqnjWYGu
     # REST API 服务器地址，国际版不填
     # Only the Chinese mainland users need to set
-    server_url:
+    server_url: https://02ocw5gb.lc-cn-n1-shared.com
     # 统计页面时获取路径的属性
     # Get the attribute of the page path during statistics
     path: window.location.pathname
     # 开启后不统计本地路径( localhost 与 127.0.0.1 )
     # If true, ignore localhost & 127.0.0.1
     ignore_local: false
+
+  # OpenKounter 计数统计（基于 EdgeOne Pages），可用于 PV UV 展示
+  # OpenKounter count statistics (based on EdgeOne Pages), which can be used for PV UV display
+  # See: https://github.com/Mintimate/open-kounter
+  openkounter:
+    # OpenKounter API 服务器地址
+    # OpenKounter API server URL
+    server_url: https://open-kounter.mintimate.cn
+    # 统计页面时获取路径的属性，通常使用 window.location.pathname
+    # Get the attribute of the page path during statistics
+    path: window.location.pathname
+    # 开启后不统计本地路径（localhost、127.0.0.1、[::1]）
+    # If true, ignore localhost & 127.0.0.1 & [::1]
+    ignore_local: false
+
+  # Umami Analytics，仅支持自部署。如果要展示 PV UV 需要填写所有配置项，否则只填写 `src` 和 `website_id` 即可
+  # Umami Analytics, only Self-host support. If you want to display PV UV need to set all config items, otherwise only set 'src' and 'website_id'
+  # See: https://umami.is/docs
+  umami:
+    # umami js 文件地址，需要在 umami 后台创建站点后获取
+    # umami js file url, get after create website in umami
+    src:
+
+    # umami 的 website id，需要在 umami 后台创建站点后获取
+    # umami website id, get after create website in umami
+    website_id:
+
+    # 如果你只想统计特定的域名可以填入此字段，多个域名通过逗号分隔，这可以避免统计 localhost。
+    # If you only want to tracker to specific domains you can fill in this field, multiple domain names are separated by commas, which can avoid tracker localhost
+    domains:
+
+    # 用于统计 PV UV 的开始时间，格式为 "YYYY-MM-DD"
+    # statistics on the start time, the format is "YYYY-MM-DD"
+    start_time: 2024-01-01
+
+    # 新建一个 umami viewOnly 用户，然后通过 login api 获取该用户 token
+    # create an umami viewOnly user, and then get user token through the login api
+    token:
+
+    # 填写 umami 部署的服务器地址，如 "https://umami.example.com"
+    # server url of umami deployment, such as "https://umami.example.com"
+    api_server:
+
+# Canonical 用于向 Google 搜索指定规范网址，开启前确保 hexo _config.yml 中配置 `url: http://yourdomain.com`
+# Canonical, to specify a canonical URL for Google Search, need to set up `url: http://yourdomain.com` in hexo _config.yml
+# See: https://support.google.com/webmasters/answer/139066
+canonical:
+  enable: false
 
 # 对页面中的图片和评论插件进行懒加载处理，可见范围外的元素不会提前加载
 # Lazy loading of images and comment plugin on the page
@@ -312,7 +350,7 @@ lazyload:
 
 # 图标库，包含了大量社交类图标，主题依赖的不包含在内，因此可自行修改，详见 https://hexo.fluid-dev.com/docs/icon/
 # Icon library, which includes many social icons, does not include those theme dependent, so your can modify link by yourself. See: https://hexo.fluid-dev.com/docs/en/icon/
-iconfont: //at.alicdn.com/t/font_1736178_lbnruvf0jn.css
+iconfont: //at.alicdn.com/t/c/font_1736178_k526ubmyhba.css
 
 
 #---------------------------
@@ -379,6 +417,10 @@ search:
 # 首屏图片的相关配置
 # Config of the big image on the first screen
 banner:
+  # 是否开启所有页面的随机头图，仅在页面对应 banner_img 为空时生效，将图片放在 source/img/random/ 目录下
+  # Enable random banner for all pages, only works when banner_img is empty, put images in the directory `source/img/random/`
+  random_img: false
+
   # 视差滚动，图片与板块会随着屏幕滚动产生视差效果
   # Scrolling parallax
   parallax: true
@@ -426,7 +468,7 @@ footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
   content: '
-    <a href="https://liegu0317.top" target="_blank" rel="nofollow noopener"><span>Liegu</span></a>
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
     <i class="iconfont icon-love"></i>
     <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
   '
@@ -436,9 +478,9 @@ footer:
   statistics:
     enable: true
 
-    # 统计数据来源，使用 leancloud 需要设置 `web_analytics: leancloud` 中的参数；使用 busuanzi 不需要额外设置，但是有时不稳定，另外本地运行时 busuanzi 显示统计数据很大属于正常现象，部署后会正常
-    # Data source. If use leancloud, you need to set the parameter in `web_analytics: leancloud`
-    # Options: busuanzi | leancloud
+    # 统计数据来源，使用 leancloud, umami, openkounter 需要设置 `web_analytics` 中对应的参数；使用 busuanzi 不需要额外设置，但是有时不稳定，另外本地运行时 busuanzi 显示统计数据很大属于正常现象，部署后会正常
+    # Data source. If use leancloud, umami, openkounter, you need to set the parameter in `web_analytics`
+    # Options: busuanzi | leancloud | umami | openkounter
     source: "leancloud"
 
   # 国内大陆服务器的备案信息
@@ -469,7 +511,7 @@ index:
   # Available: 0 - 100
   banner_img_height: 100
 
-  # 头图黑色蒙版的不透明度，available: 0 - 1.0， 1 是完全不透明
+  # 头图黑色蒙版的不透明度，available: 0 - 1.0，1 是完全不透明
   # Opacity of the banner mask, 1.0 is completely opaque
   # Available: 0 - 1.0
   banner_mask_alpha: 0.3
@@ -486,11 +528,11 @@ index:
     # 通过 API 接口作为首页副标题的内容，必须返回的是 JSON 格式，如果请求失败则按 text 字段显示，该功能必须先开启 typing 打字机功能
     # Subtitle of the homepage through the API, must be returned a JSON. If the request fails, it will be displayed in `text` value. This feature must first enable the typing animation
     api:
-      enable: false
+      enable: true
 
       # 请求地址
       # Request url
-      url: ""
+      url: "https://v1.hitokoto.cn/?c=f"
 
       # 请求方法
       # Request method
@@ -499,11 +541,11 @@ index:
 
       # 请求头
       # Request headers
-      headers: { }
+      headers: {}
 
       # 从请求结果获取字符串的取值字段，最终必须是一个字符串，例如返回结果为 {"data": {"author": "fluid", "content": "An elegant theme"}}, 则取值字段为 ['data', 'content']；如果返回是列表则自动选择第一项
       # The value field of the string obtained from the response. For example, the response content is {"data": {"author": "fluid", "content": "An elegant theme"}}, the expected `keys: ['data','content']`; if the return is a list, the first item is automatically selected
-      keys: [ ]
+      keys: ["hitokoto"]
 
   # 自动截取文章摘要
   # Auto extract post
@@ -573,7 +615,7 @@ post:
       awl: 2
       # 每分钟阅读字数，如果大部分是技术文章可适度调低
       # Words per minute
-      wpm: 50
+      wpm: 60
 
     # 浏览量计数
     # Number of visits
@@ -630,6 +672,9 @@ post:
   # Table of contents (TOC) in the sidebar
   toc:
     enable: true
+    # 进入文章时是否默认展开全部目录
+    # Expand all TOC items on enter
+    expand_all: true
 
     # 置于板块的左侧或右侧
     # place in the board
@@ -650,7 +695,8 @@ post:
     enable: true
 
     # CreativeCommons license
-    # Options: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND
+    # See: https://creativecommons.org/share-your-work/cclicenses/
+    # Options: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND | ZERO
     license: 'BY'
 
     # 显示作者
@@ -685,7 +731,7 @@ post:
     enable: true
     # 放大后图片链接替换规则，可用于将压缩图片链接替换为原图片链接，如 ['-slim', ''] 是将链接中 `-slim` 移除；如果想使用正则请使用 `re:` 前缀，如 ['re:\\d{3,4}\\/\\d{3,4}\\/', '']
     # The image url replacement when zooming, the feature can be used to replace the compressed image to the original image, eg: ['-slim', ''] removes `-slim` from the image url when zooming; if you want to use regular, use prefix `re:`, eg: ['re:\\d{3,4}\\/\\d{3,4}\\/','']
-    img_url_replace: [ '', '' ]
+    img_url_replace: ['', '']
 
   # 脚注语法，会在文章底部生成脚注，如果 Markdown 渲染器本身支持，则建议关闭，否则可能会冲突
   # Support footnote syntax, footnotes will be generated at the bottom of the post page. If the Markdown renderer itself supports it, please disable it, otherwise it may conflict
@@ -758,11 +804,16 @@ utterances:
 # See: https://disqus.com
 disqus:
   shortname:
-  # 以下为 Disqusjs 支持, 国内用户如果想使用 Disqus 建议配合使用
-  # The following are Disqusjs configurations, please ignore if DisqusJS is not required
+  # 以下为 Disqusjs 支持, 国内用户如果想使用 Disqus 建议配合使用，支持填入多个 apikey，建议自行搭建 api 端点
+  # The following are Disqusjs configurations, please ignore if DisqusJS is not required, it supports filling in multiple apikeys, it is recommended to build the API endpoint by yourself
   # See: https://github.com/SukkaW/DisqusJS
   disqusjs: false
   apikey:
+    - 'KEY1'
+    #- 'KEY2'
+  api: https://disqus.skk.moe/disqus/
+  admin:
+  adminLabel:
 
 # Gitalk
 # 基于 GitHub Issues
@@ -773,9 +824,9 @@ gitalk:
   clientSecret:
   repo:
   owner:
-  admin: [ 'name' ]
+  admin: ['name']
   language: zh-CN
-  labels: [ 'Gitalk' ]
+  labels: ['Gitalk']
   perPage: 10
   pagerDirection: last
   distractionFreeMode: false
@@ -796,8 +847,8 @@ valine:
   path: window.location.pathname
   placeholder:
   avatar: 'retro'
-  meta: [ 'nick', 'mail', 'link' ]
-  requiredFields: [ ]
+  meta: ['nick', 'mail', 'link']
+  requiredFields: []
   pageSize: 10
   lang: 'zh-CN'
   highlight: false
@@ -814,10 +865,10 @@ valine:
 waline:
   serverURL: ''
   path: window.location.pathname
-  meta: [ 'nick', 'mail', 'link' ]
-  requiredMeta: [ 'nick' ]
+  meta: ['nick', 'mail', 'link']
+  requiredMeta: ['nick']
   lang: 'zh-CN'
-  emoji: [ 'https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo' ]
+  emoji: ['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']
   dark: 'html[data-user-color-scheme="dark"]'
   wordLimit: 0
   pageSize: 10
@@ -846,7 +897,7 @@ remark42:
   site_id:
   max_shown_comments: 10
   locale: zh
-  components: [ 'embed' ]
+  components: ['embed']
 
 # Twikoo
 # 支持腾讯云、Vercel、Railway 等多种平台部署
@@ -1093,7 +1144,7 @@ static_prefix:
   internal_css: /css
   internal_img: /img
 
-  anchor: https://lib.baomitu.com/anchor-js/4.3.1/
+  anchor: https://lib.baomitu.com/anchor-js/5.0.0/
 
   github_markdown: https://lib.baomitu.com/github-markdown-css/4.0.0/
 
@@ -1123,7 +1174,7 @@ static_prefix:
 
   valine: https://lib.baomitu.com/valine/1.5.1/
 
-  waline: https://cdn.staticfile.org/waline/2.15.5/
+  waline: https://lib.baomitu.com/waline/3.6.0/
 
   gitalk: https://lib.baomitu.com/gitalk/1.8.0/
 
@@ -1134,3 +1185,5 @@ static_prefix:
   discuss: https://lib.baomitu.com/discuss/1.2.1/
 
   hint: https://lib.baomitu.com/hint.css/2.7.0/
+
+  moment: https://lib.baomitu.com/moment.js/2.29.4/

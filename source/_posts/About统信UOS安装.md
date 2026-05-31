@@ -18,8 +18,8 @@ sticky:
 
 # 统信UOS安装方式合集
 
-<br> {% pdf https://liegu0317.gitee.io/AboutUOS/installs.pdf%} <br>
+{% pdf /AboutUOS/installs.pdf %}
 
 # 统信 UOS 镜像安装教程
 
-<br> {% pdf https://liegu0317.gitee.io/AboutUOS/UOSinstall.pdf%} <br>
+{% pdf /AboutUOS/UOSinstall.pdf %}
