@@ -231,11 +231,11 @@ Fluid.events = {
 /* 2026-11-18 站点收口：正文迁至主站 /writing/，此处为学生时期归档 */
 (function () {
   if (document.querySelector('.lg-archive-bar')) return;
-  var css = '.lg-archive-bar{position:fixed;left:12px;bottom:12px;z-index:9999;max-width:calc(100vw - 24px);'
+  var css = '.lg-archive-bar{position:fixed;right:12px;bottom:12px;z-index:9999;max-width:calc(100vw - 24px);'
     + 'background:rgba(0,47,167,.94);color:#fff;font:12px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;'
     + 'padding:7px 12px;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.16);letter-spacing:.02em}'
     + '.lg-archive-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px}'
-    + '@media(max-width:768px){.lg-archive-bar{font-size:11px;left:8px;bottom:8px;padding:6px 10px}}';
+    + '@media(max-width:768px){.lg-archive-bar{font-size:11px;right:8px;bottom:8px;padding:6px 10px}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
   var bar = document.createElement('div');
   bar.className = 'lg-archive-bar';
