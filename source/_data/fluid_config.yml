@@ -1011,10 +1011,11 @@ about:
   # avatar: https://s2.loli.net/2022/04/13/zGqvnVm9lZ3RTEs.png
   avatar: https://s2.loli.net/2022/10/14/c2EWKFaqfjHoLbA.jpg
   name: "多双升"
-  intro: "<p>
-河北北方学院在校生<br>
-首批统信UOS校园联盟成员<br>
-河北北方学院医疗大数据科研室成员</p>"
+  intro: |-
+    <p>
+    语音算法工程师 · 课堂与会议场景的语音理解<br>
+    ASR 词级时间戳 · 说话人分离 · 语音事件与情绪 · 文本分类<br>
+    主页 <a href="https://liegu0317.top">liegu0317.top</a>　写作 <a href="https://liegu0317.top/writing/">liegu0317.top/writing</a></p>
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
